@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-bright": "#faf8ff", "tertiary-fixed": "#bdece2", "surface-container-low": "#f2f3ff", "outline-variant": "#bec9c7", "surface-container-highest": "#dae2fd", "primary-fixed": "#abefe8", "on-secondary-container": "#006f64", "error-container": "#ffdad6", "inverse-primary": "#8fd3cc", "on-primary": "#ffffff", "secondary-fixed": "#71f8e4", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3f4947", "on-error": "#ffffff", "surface-container": "#eaedff", "on-surface": "#131b2e", "error": "#ba1a1a", "surface-tint": "#216963", "on-primary-fixed": "#00201e", "on-secondary-fixed-variant": "#005048", "inverse-on-surface": "#eef0ff", "on-error-container": "#93000a", "on-tertiary-fixed": "#00201c", "on-primary-container": "#91d5ce", "primary-container": "#115e59", "secondary-container": "#6df5e1", "tertiary-fixed-dim": "#a2d0c6", "tertiary": "#17443e", "inverse-surface": "#283044", "on-tertiary-container": "#a4d2c9", "on-tertiary": "#ffffff", "on-background": "#131b2e", "background": "#faf8ff", "on-tertiary-fixed-variant": "#224e47", "on-primary-fixed-variant": "#00504b", "surface-dim": "#d2d9f4", "outline": "#6f7977", "primary": "004541", "secondary": "#006b5f", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "secondary-fixed-dim": "#4fdbc8", "surface-container-high": "#e2e7ff", "surface": "#faf8ff", "primary-fixed-dim": "#8fd3cc", "on-secondary-fixed": "#00201c", "tertiary-container": "#305c55" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin": "1rem", "space-xl": "2rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, fontFamily: { "body-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Manrope"], "headline-md": ["Manrope"], "label-lg": ["Hanken Grotesk"], "headline-lg": ["Manrope"], "headline-sm": ["Manrope"], "label-sm": ["Hanken Grotesk"], "display-lg": ["Manrope"], "label-md": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "body-sm": ["Hanken Grotesk"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.005em", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="VetCare Pro Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XAaPRQ6x4HwHVPbe1k7butDMNm4ET9LPWOJtq5uDMx5f5rzG8noTtHkbFFGFdIwnP8tTSDmiI9wpiVHPBznBH6d9riPIJLjUuj07Hril-8KBmES_DFT8fQqngixA6Q-mM2cvhCmXqOy0j17lFzt4D0HCPYT5CUMNKQ6RhDWcPZenuYf-3wDYbBmQtV0xbacn9jrcPruxE0isggO-QfJwOieVlQRtxYxaOWRj3V6u4a"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase truncate">VetCare Pro</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Tratamientos</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="relative w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXc3FTZ0ZtTrDuz-6tmD083YJ13Wp39oDWOr7W_3BcUZWYukZ8dpBw1KSf0wtvpoAg9iOJBsOc-WXNVeFt12MPXXaRJMdCk3rDZUNxufL19Egf2t4RhMqEYlvs6jw-fAxjxVI-O2xmtJk_fvxV-ovg14WD3j6dfuqU8PJoEKhu7HKBpHtcATpX68pb5R7Kt-JPVjLOuStGgUOrYCg8_OwKrQDi7PtaOQ6fWOnTww"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Status Badge & Micro Header -->
+<div class="px-margin pt-4 pb-2 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        RF-M05-04 · Cierre Clínico
+      </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+      Protocolo Activo
+    </span>
+</div>
+<div class="px-margin mb-3">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Cierre y Alta de Tratamiento Médico</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Certificación final de protocolo terapéutico, evolución y recomendaciones para el tutor.</p>
+</div>
+<!-- Active Treatment Card & Patient Card (Delightful Bento Layout) -->
+<div class="px-margin mb-4">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary-fixed/30 pointer-events-none blur-xl"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<img class="w-13 h-13 w-12 h-12 rounded-full object-cover shadow-sm ring-2 ring-primary-fixed" data-alt="Portrait close-up of an elegant Siamese cat named Luna with striking blue almond-shaped eyes, creamy fawn fur and chocolate points, sitting calmly in a modern bright veterinary clinic environment with soft natural lighting and warm emerald tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjqQ5w-qw2MNkc1iB5j_viikFhHYMpcMw82R2oEncsUCH85hZe0yjqOByHvvwEaXdLh07At6ITnEIJ1cEa9HTx1gvL2JXuD-qf_bSvCPAUnHx8q5QAffCP0JdNuFmFSgzLrYSn7xZdeblXdbpb-NcZOwiDQ6UIBLcp6fmKKfgCqaCp2iu3tD5-u3sBU0zWMr_sZ2VeHCutKWkXSGy77YwrOYVM4z1ksk6P6QyDS-g"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-secondary rounded-full flex items-center justify-center text-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">pets</span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Luna</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Siamés · 2 años</span>
+</div>
+<p class="font-label-md text-label-md text-primary font-semibold truncate mt-0.5">Dermatitis Alérgica y Otitis Bilateral</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tutor: Camila Morales (ID: #4092)</p>
+</div>
+</div>
+<span class="flex-shrink-0 px-2 py-1 rounded-full bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+          Completado
+        </span>
+</div>
+<!-- Treatment Progress Tracker (100% Completed) -->
+<div class="mt-2 pt-3 bg-surface-container-low rounded-lg p-3">
+<div class="flex justify-between items-center mb-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">event_available</span>
+            Cumplimiento del Protocolo
+          </span>
+<span class="font-label-sm text-label-sm text-primary font-bold">14 / 14 días cumplidos (100%)</span>
+</div>
+<!-- Progress Bar Visual -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden relative">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-700 ease-out" style="width: 100%;"></div>
+</div>
+<!-- Micro Milestones Row -->
+<div class="flex justify-between items-center mt-2.5 pt-1 text-center">
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">✓</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant mt-0.5">Día 1: Inicio</span>
+</div>
+<div class="h-[2px] flex-1 bg-primary/40 mx-1"></div>
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">✓</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant mt-0.5">Día 7: Control</span>
+</div>
+<div class="h-[2px] flex-1 bg-primary/40 mx-1"></div>
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-secondary text-surface-container-lowest font-label-sm text-label-sm flex items-center justify-center font-bold shadow-sm">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+</span>
+<span class="font-label-sm text-[9px] text-secondary font-bold mt-0.5">Día 14: Cierre</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Resolution / Outcome Selector Form -->
+<div class="px-margin mb-5">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">assignment_turned_in</span>
+        Resolución Clínica *
+      </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Seleccione una opción</span>
+</div>
+<!-- Interactive Outcome Radios Styled as Rich Interactive Cards -->
+<div class="grid grid-cols-1 gap-2.5" id="outcome-container">
+<!-- Option 1: Selected by default -->
+<label class="outcome-card relative flex items-start p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-lowest shadow-sm hover:shadow-md border-transparent">
+<input checked="" class="peer sr-only" name="clinical_outcome" type="radio" value="alta"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center mr-3 mt-0.5 transition-colors peer-checked:bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Alta Médica Definitiva</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Recomendado</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Resolución completa del cuadro prurítico y normalización del conducto auditivo externo.</p>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="outcome-card relative flex items-start p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-lowest shadow-sm hover:shadow-md border-transparent">
+<input class="peer sr-only" name="clinical_outcome" type="radio" value="mantenimiento"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center mr-3 mt-0.5 transition-colors peer-checked:bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface">Pasa a Mantenimiento</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Control preventivo tópico intermitente o dieta hipoalergénica con monitoreo periódico.</p>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="outcome-card relative flex items-start p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-lowest shadow-sm hover:shadow-md border-transparent">
+<input class="peer sr-only" name="clinical_outcome" type="radio" value="derivacion"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center mr-3 mt-0.5 transition-colors peer-checked:bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface">Derivación a Especialidad</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Envío a dermatología clínica avanzada o estudio alérgico intradérmico específico.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Medical Fields & Instructions Section -->
+<div class="px-margin flex flex-col gap-space-md mb-6">
+<!-- Field 1: Resumen de evolución -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5" for="clinical-summary">
+<span class="material-symbols-outlined text-[17px] text-secondary">clinical_notes</span>
+          Resumen de evolución clínica y respuesta favorable
+        </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Obligatorio</span>
+</div>
+<div class="relative bg-surface-container-lowest rounded-lg shadow-sm">
+<textarea class="w-full bg-transparent p-3 text-body-md text-on-surface outline-none resize-none placeholder:text-on-surface-variant/50" id="clinical-summary" placeholder="Detalle la remisión de síntomas, examen otoscópico final y estado dérmico..." rows="3">Paciente felino Luna finaliza ciclo de 14 días con amoxicilina-clavulánico y gotas óticas. A la otoscopía se constata epitelio íntegro sin secreciones ni eritema. Reflejo prurítico negativo. Sin alopecia periocular residual.</textarea>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Este texto formará parte del registro permanente en la ficha médica de Luna.</p>
+</div>
+<!-- Field 2: Cuidados en el hogar -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5" for="home-care">
+<span class="material-symbols-outlined text-[17px] text-secondary">home_health</span>
+        Indicaciones de cuidados en el hogar para el tutor
+      </label>
+<div class="relative bg-surface-container-lowest rounded-lg shadow-sm">
+<textarea class="w-full bg-transparent p-3 text-body-md text-on-surface outline-none resize-none placeholder:text-on-surface-variant/50" id="home-care" placeholder="Pautas higiénicas, baños o advertencias..." rows="3">Mantener oídos completamente secos tras higienización. Realizar limpieza con loción fisiológica no irritante una vez por semana con gasa suave. Evitar uso de hisopos. Suspender aerosoles ambientales.</textarea>
+</div>
+</div>
+<!-- Field 3: Alimentación recomendada -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5" for="nutrition-plan">
+<span class="material-symbols-outlined text-[17px] text-secondary">restaurant</span>
+        Pautas de alimentación recomendada
+      </label>
+<div class="relative bg-surface-container-lowest rounded-lg shadow-sm flex items-center px-3 py-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-2">nutrition</span>
+<input class="w-full bg-transparent py-2.5 text-body-md text-on-surface outline-none" id="nutrition-plan" type="text" value="Alimento Mono-Proteico Hipoalergénico Felino (Pato o Salmón) por 60 días"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">info</span>
+        Evitar premios comerciales cárnicos durante la fase de mantención digestivo-cutánea.
+      </span>
+</div>
+</div>
+<!-- Digital Signature Area -->
+<div class="px-margin mb-6">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between border-b pb-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Firma Digital del Veterinario Responsable</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Autenticación clínica biométrica / trazabilidad</p>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1" id="clear-sig" type="button">
+<span class="material-symbols-outlined text-[13px]">refresh</span>
+          Limpiar
+        </button>
+</div>
+<!-- Simulated Signature Pad Canvas / Pad preview -->
+<div class="relative w-full h-28 bg-surface-container-low rounded-lg flex flex-col items-center justify-center overflow-hidden cursor-crosshair group" id="sig-pad-box">
+<!-- Ambient grid micro-pattern -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#004541_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none"></div>
+<!-- Rendered realistic SVG digital signature -->
+<svg class="w-64 h-20 text-primary drop-shadow-sm transition-transform group-hover:scale-[1.02]" fill="none" viewbox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 50 C 35 20, 50 10, 60 45 C 70 75, 85 25, 95 35 C 105 45, 115 55, 130 30 C 145 10, 160 60, 180 40 C 200 20, 225 35, 245 25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M70 48 Q 120 70 195 52" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M175 35 L 210 38" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+<span class="absolute bottom-2 right-3 font-label-sm text-label-sm text-on-surface-variant/70 italic flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-secondary">lock</span>
+          Firma validada digitalmente
+        </span>
+</div>
+<!-- Professional Meta Bar (Doctor Info + License + Live Timestamp) -->
+<div class="pt-1 flex flex-wrap items-center justify-between gap-y-1 gap-x-2 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">badge</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dr. Martín Benítez Soto</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.5 rounded text-on-surface">MP: #8492-VET</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span id="timestamp-tag">14 Octubre 2024 · 17:45 hrs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Operations Bottom Dock / Actions -->
+<div class="px-margin flex flex-col gap-2.5">
+<!-- Primary CTA: Confirmar y PDF -->
+<button class="w-full py-3.5 px-space-md rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-tertiary active:scale-[0.99] transition-all" id="btn-alta-pdf" type="button">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+      Confirmar Alta y Generar Certificado PDF
+    </button>
+<!-- Secondary CTA: Enviar al tutor -->
+<button class="w-full py-3 px-space-md rounded-lg bg-surface-container-highest text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 hover:bg-surface-container active:scale-[0.99] transition-all" id="btn-send-tutor" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">send</span>
+      Enviar Resumen al Tutor (WhatsApp / Email)
+    </button>
+<!-- Micro Safe Assurance Note -->
+<div class="flex items-center justify-center gap-1.5 text-center mt-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">cloud_done</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">El historial médico se sincroniza instantáneamente con el expediente central.</span>
+</div>
+</div>
+<!-- Delightful Interactive Toast Notification for Cierre Feedback -->
+<div class="fixed bottom-24 left-4 right-4 bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-xl flex items-center gap-3 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none z-50" id="toast-delight">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-headline-sm text-headline-sm text-inverse-on-surface leading-tight" id="toast-title">¡Alta Médica Confirmada!</p>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80 truncate" id="toast-msg">Certificado generado y notificaciones despachadas con éxito.</p>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Dynamic Timestamp formatted in Spanish
+    const now = new Date();
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const timeFormatted = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} · ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} hrs`;
+    const tsElement = document.getElementById('timestamp-tag');
+    if (tsElement) {
+      tsElement.textContent = timeFormatted;
+    }
+
+    // Outcome Card Selection styling toggle
+    const outcomeRadios = document.querySelectorAll('input[name="clinical_outcome"]');
+    const outcomeCards = document.querySelectorAll('.outcome-card');
+
+    function updateOutcomeState() {
+      outcomeCards.forEach(card => {
+        const radio = card.querySelector('input[type="radio"]');
+        if (radio && radio.checked) {
+          card.classList.add('ring-2', 'ring-primary', 'bg-surface-container-lowest');
+          card.classList.remove('opacity-75');
+        } else {
+          card.classList.remove('ring-2', 'ring-primary');
+          card.classList.add('opacity-75');
+        }
+      });
+    }
+
+    outcomeRadios.forEach(radio => {
+      radio.addEventListener('change', updateOutcomeState);
+    });
+    updateOutcomeState();
+
+    // Toast micro-interaction helper
+    const toast = document.getElementById('toast-delight');
+    const toastTitle = document.getElementById('toast-title');
+    const toastMsg = document.getElementById('toast-msg');
+    let toastTimeout;
+
+    function showToast(title, message) {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 3500);
+    }
+
+    // PDF Discharge button action
+    const btnPdf = document.getElementById('btn-alta-pdf');
+    if (btnPdf) {
+      btnPdf.addEventListener('click', function() {
+        btnPdf.classList.add('scale-95');
+        setTimeout(() => btnPdf.classList.remove('scale-95'), 150);
+        showToast('Alta Médica Firmada y Registrada', 'Luna fue dada de alta con éxito. Certificado PDF descargándose...');
+      });
+    }
+
+    // Tutor Send Button
+    const btnTutor = document.getElementById('btn-send-tutor');
+    if (btnTutor) {
+      btnTutor.addEventListener('click', function() {
+        btnTutor.classList.add('scale-95');
+        setTimeout(() => btnTutor.classList.remove('scale-95'), 150);
+        showToast('Resumen Enviado a Camila Morales', 'Mensaje con indicaciones dietéticas y cuidados remitido vía WhatsApp.');
+      });
+    }
+
+    // Signature clear interaction
+    const btnClearSig = document.getElementById('clear-sig');
+    const sigBox = document.getElementById('sig-pad-box');
+    if (btnClearSig && sigBox) {
+      btnClearSig.addEventListener('click', function() {
+        const svg = sigBox.querySelector('svg');
+        if (svg) {
+          svg.style.opacity = '0.1';
+          setTimeout(() => {
+            svg.style.opacity = '1';
+          }, 600);
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(17,94,89,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-14 rounded-xl px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="mascotas" href="#"><span class="material-symbols-outlined text-[22px]">pets</span><span class="font-label-sm text-label-sm mt-space-xs">Mascotas</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 rounded-xl px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="consultas" href="#"><span class="material-symbols-outlined text-[22px]">stethoscope</span><span class="font-label-sm text-label-sm mt-space-xs">Consultas</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 rounded-xl px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="vacunas" href="#"><span class="material-symbols-outlined text-[22px]">vaccines</span><span class="font-label-sm text-label-sm mt-space-xs">Vacunas</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-14 rounded-xl px-space-xs transition-colors text-primary-container font-semibold" data-path="tratamientos" href="#"><span class="material-symbols-outlined text-[22px]">medication</span><span class="font-label-sm text-label-sm mt-space-xs">Tratamientos</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 rounded-xl px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-label-sm text-label-sm mt-space-xs">Admin</span></a></div></nav></body></html>
