@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container": "#e6eeff", "tertiary-fixed": "#ffdcc3", "on-tertiary-fixed": "#2f1500", "inverse-primary": "#70d8c8", "on-background": "#0d1c2e", "primary-container": "#008376", "inverse-on-surface": "#eaf1ff", "primary-fixed-dim": "#70d8c8", "secondary-fixed": "#afefdd", "primary-fixed": "#8df5e4", "on-primary": "#ffffff", "on-secondary-container": "#2e6d5f", "surface-dim": "#ccdbf3", "surface-container-highest": "#d5e3fc", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "outline": "#6d7a77", "tertiary": "#8d4b00", "surface-container-lowest": "#ffffff", "surface-tint": "#006b5f", "on-primary-fixed-variant": "#005048", "on-secondary-fixed-variant": "#065043", "on-error": "#ffffff", "tertiary-container": "#b15f00", "surface": "#f8f9ff", "primary": "#00685d", "on-tertiary-container": "#fffbff", "inverse-surface": "#233144", "error-container": "#ffdad6", "outline-variant": "#bcc9c5", "on-surface-variant": "#3d4946", "surface-variant": "#d5e3fc", "surface-container-high": "#dce9ff", "secondary-container": "#acedda", "surface-bright": "#f8f9ff", "on-primary-container": "#f4fffb", "on-tertiary": "#ffffff", "background": "#f8f9ff", "on-primary-fixed": "#00201c", "on-secondary": "#ffffff", "on-secondary-fixed": "#00201a", "on-surface": "#0d1c2e", "error": "#ba1a1a", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#6e3900", "secondary-fixed-dim": "#94d3c1", "secondary": "#29695b" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "1.5rem", "margin": "1rem", "gutter-lg": "1.5rem", "margin-md": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin-lg": "2rem", "space-2xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem" }, fontFamily: { "display-lg": ["Inter"], "mono-clinical": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "mono-clinical": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[20px]">pets</span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">VetCare Clínico</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Citas</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Buscar registros" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notificaciones y alertas clínicas" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Weekly Bar & Doctor Filter -->
+<section class="px-margin pt-space-md pb-space-sm bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Semana anterior" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" id="prevWeekBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Octubre 2024</span>
+<button aria-label="Semana siguiente" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" id="nextWeekBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Quick Date Jump Badge -->
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        Hoy: 24 Oct
+      </span>
+</div>
+<!-- Week Days Ribbon -->
+<div class="grid grid-cols-7 gap-1.5 select-none" id="weekDayStrip">
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Lun</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">21</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+</button>
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Mar</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">22</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/70"></span>
+</button>
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Mié</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">23</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-error"></span>
+</button>
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-primary text-on-primary font-semibold shadow-md text-center transform scale-105" type="button">
+<span class="font-label-sm text-label-sm text-on-primary/80 mb-0.5">Jue</span>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">24</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+</button>
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Vie</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">25</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/70"></span>
+</button>
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Sáb</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">26</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</button>
+<button class="day-chip flex flex-col items-center py-2 px-1 rounded-xl bg-surface-container-low/50 hover:bg-surface-container opacity-60 transition-all text-center" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Dom</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">27</span>
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+</button>
+</div>
+<!-- Doctor Filter Selector -->
+<div class="mt-space-md pt-space-sm flex items-center gap-space-sm overflow-x-auto no-scrollbar">
+<span class="text-on-surface-variant font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stethoscope</span>
+        Filtro:
+      </span>
+<button class="filter-tab px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shrink-0 transition-colors shadow-sm" data-filter="all" type="button">
+        Todos (14)
+      </button>
+<button class="filter-tab px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-highest transition-colors" data-filter="pena" type="button">
+        Dr. Alejandro Peña (6)
+      </button>
+<button class="filter-tab px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-highest transition-colors" data-filter="morales" type="button">
+        Dra. Camila Morales (8)
+      </button>
+</div>
+</section>
+<!-- Key Daily Metrics Banner -->
+<section class="px-margin pt-space-lg">
+<div class="grid grid-cols-4 gap-2">
+<div class="bg-surface-container-lowest p-2.5 rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Citas Hoy</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-0.5">14</span>
+<span class="font-label-sm text-[10px] text-outline mt-0.5 leading-tight">Planificadas</span>
+</div>
+<div class="bg-secondary-container/40 p-2.5 rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-secondary-container">Confirmadas</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold mt-0.5">11</span>
+<span class="font-label-sm text-[10px] text-secondary font-medium mt-0.5 leading-tight">78% total</span>
+</div>
+<div class="bg-tertiary-fixed/40 p-2.5 rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">En Espera</span>
+<span class="font-headline-md text-headline-md text-tertiary-container font-bold mt-0.5">2</span>
+<span class="font-label-sm text-[10px] text-tertiary font-semibold mt-0.5 leading-tight">En sala</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Listas</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">1</span>
+<span class="font-label-sm text-[10px] text-outline mt-0.5 leading-tight">Completadas</span>
+</div>
+</div>
+</section>
+<!-- Action Bar & Chronological Heading -->
+<section class="px-margin pt-space-lg pb-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Agenda Quirúrgica y Clínica</h2>
+</div>
+<!-- Quick Schedule Button -->
+<button class="px-3.5 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-md hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1.5 shrink-0" id="newAppointmentBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Nueva Cita</span>
+</button>
+</section>
+<!-- Chronological Appointments Stream -->
+<section class="px-margin space-y-space-md pb-space-lg" id="appointmentList">
+<!-- Card 1: Max (En Espera / Recepcionado) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden transition-all duration-200" data-doctor="morales">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Close up warm portrait of a friendly adult Golden Retriever dog sitting calmly in a bright veterinary clinic room with soft natural lighting and natural teal background accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClmDD7JkcfaPM-_KZOOmn8T2G4lHU8O8YZOnPXPgm26s3zgWZsNpWY0L3P5UniPg34nKIZJh5S1xSWmGjgU5De2tMldCbu2y_H5t8PENruBNW-PR0HjKfUjrc0KL2svff4CqZuEWRnv5GsllEmsZkcx2i6p_JvmXk611VozNDupRK4yrO9R1ISgFeiD62hX1tEpLTKIw_rKiTU13dL6IYGq2g5eXTzwv3aWbdPJA"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Max</span>
+<span class="font-label-sm text-label-sm text-outline">Golden Retriever</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+              Tutor: Dra. Camila Morales
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-clinical text-mono-clinical font-bold text-on-surface">09:30</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+            En Espera
+          </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs pl-1 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">
+            Control Dermatológico / Otitis
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px]">meeting_room</span> Sala 2
+          </span>
+</div>
+<button class="action-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1 ml-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>Pasar a Consulta</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Thor (Confirmada) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden transition-all duration-200" data-doctor="pena">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Attentive German Shepherd dog alert and smiling gently with ears perked up in an airy modern clinical veterinary exam cabinet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxcmvst6J5x7R2ZXrtSUTYCfY_dkMqK74my8B0-UrGQE4VdiEqnows73qeL34bqq6LjUfv2rYB70YKco5-6fLxwry-13IeC28v0ZgMk2Mzsi4RG-zr2tJ6rAFl4unRKcF51i8KLGrBnv3il6sUQbayCwwYZRPQFusax0STB3BwDJ1UZW9p6gFQprsv5CKRoBJunWjFvaqaCV4ziwwYKraegGMMi5F4lmNMTIR7uw"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Thor</span>
+<span class="font-label-sm text-label-sm text-outline">Pastor Alemán</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+              Tutor: Roberto Silva
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-clinical text-mono-clinical font-bold text-on-surface">10:15</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Confirmada
+          </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs pl-1 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">
+            Vacunación Séxtuple Anual
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px]">meeting_room</span> Sala 1
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Dr. Alejandro Peña
+          </span>
+</div>
+<button class="action-btn px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold hover:bg-secondary-container hover:text-on-secondary-container active:scale-95 transition-all flex items-center gap-1 ml-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span>Check-in</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Misi (Pre-operatorio en curso) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden transition-all duration-200" data-doctor="morales">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Close portrait of a calm domestic European shorthair cat resting safely on a hygienic veterinary surgical prep table, crisp medical teals and serene lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHBXsgTNQP5K5CU1ofCl_PRFCXyCsxeEZHbOpOalAmw_KViC5nfaCVBg3s8s7mtmL8_TEMvcwYan8jV_dQZYUbt0U8SW-EqSRU64vykl4F1JH2rZngPN9EyiLaEIgy0XNFIHKr0zEwrnN3mL-ZMk4c7B4ZmA3G_WVM7eRUpKuUnWeqAaw2UA-HFpuLrVR3Ona4tGx76pb648fxtQZhDJchrSqduboJbsksHyUdkQ"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Misi</span>
+<span class="font-label-sm text-label-sm text-outline">Gato Común Europeo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+              Tutor: Elena Gómez
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-clinical text-mono-clinical font-bold text-on-surface">11:30</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+            Pre-operatorio
+          </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs pl-1 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">
+            Esterilización Quirúrgica
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[13px]">emergency</span> Quirófano A
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Dra. Camila Morales
+          </span>
+</div>
+<div class="flex items-center gap-1 ml-auto">
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" title="Monitoreo anestésico" type="button">
+<span class="material-symbols-outlined text-[18px]">monitor_heart</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:bg-primary transition-all flex items-center gap-1" type="button">
+<span>En Quirófano</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Toby (Confirmada) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden transition-all duration-200" data-doctor="pena">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Playful healthy tricolor Beagle puppy sitting attentively inside an orderly veterinary examination setting, gentle ambient lighting with clinical accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMmz76vO50735CJ5z_j7sjrVmvgDTyMEr4vbaQlwjIO-1LV1NQRh8h4JxJqeReoFXYKyN4b7TXZeFmxUAMve2srpItpcuGLCTTKifC01zlgfRw7-y0rEf85QKqZNUMJr_yHAkoDmqnRkTlwgSXqFdYkB5sgbOnAtj7XG9oahV0eoNmS5dqRRIQrz8lvlNMx9kcwRlkKQ76RlR9YO1T2FvFlK5scY677Slz1jqEoA"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Toby</span>
+<span class="font-label-sm text-label-sm text-outline">Beagle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+              Tutor: Fernando Blanco
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-clinical text-mono-clinical font-bold text-on-surface">12:45</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Confirmada
+          </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs pl-1 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">
+            Limpieza Dental Ultrasonido
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px]">meeting_room</span> Sala 3
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Dr. Alejandro Peña
+          </span>
+</div>
+<button class="action-btn px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold hover:bg-secondary-container hover:text-on-secondary-container active:scale-95 transition-all flex items-center gap-1 ml-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span>Check-in</span>
+</button>
+</div>
+</article>
+<!-- Card 5: Bella (Pendiente Confirmación) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden transition-all duration-200" data-doctor="morales">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant"></div>
+<div class="flex items-start justify-between gap-space-sm pl-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Charming small Yorkshire Terrier looking cutely at camera in a tidy veterinary waiting room with warm soft clinic ambience" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF5GVp9nuNKfES9eXlaHFarvLydtPFVnflxqiOOzdAUGFK731vY_3OKfZVTF_S9ipAmwbE6Qfk6yQVtN30UasWgVylcpoPOrLmDxxHUY4zv_dRW8n6PhUmuX9WDh6RRW_G6t7n5PyuPdRR2G9NWyedrdxIcDLdBYcmDfIGHYzpg8YC3BJxdtmio3ARTLXloNNLypNsJhqo9h0DnwcuRZLF7JdfBE50OGYxwEja0w"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bella</span>
+<span class="font-label-sm text-label-sm text-outline">Yorkshire Terrier</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+              Tutor: Laura Díaz
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-clinical text-mono-clinical font-bold text-on-surface">16:30</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+            Pendiente
+          </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs pl-1 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm">
+            Consulta General
+          </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Dra. Camila Morales
+          </span>
+</div>
+<div class="flex items-center gap-1.5 ml-auto">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container-highest transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">send_to_mobile</span>
+<span>Recordar</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow hover:bg-primary-container transition-all flex items-center gap-1" type="button">
+<span>Confirmar</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Reports & Clinical Certificates Hub -->
+<section class="px-margin pt-space-md pb-space-2xl bg-surface-container-low/60 rounded-t-3xl shadow-inner mt-space-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Reportes y Certificados</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Generación clínica instantánea y exportación</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-medium">3 Plantillas</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Report 1: Ocupación y Productividad -->
+<button class="report-card w-full text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-space-sm group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">bar_chart</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">
+              Reporte de Ocupación y Productividad Diaria
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+              Métricas de consulta, quirófano y balance por facultativo (PDF)
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 text-primary">
+<span class="font-label-sm text-label-sm font-semibold hidden sm:inline">Exportar</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform">download</span>
+</div>
+</button>
+<!-- Report 2: Certificado de Viajes -->
+<button class="report-card w-full text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-space-sm group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">flight_takeoff</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-tertiary transition-colors">
+              Certificado de Salud para Viajes
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+              Validación legal nacional e internacional SENASA / USDA
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 text-tertiary">
+<span class="font-label-sm text-label-sm font-semibold hidden sm:inline">Generar</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform">verified</span>
+</div>
+</button>
+<!-- Report 3: Cobertura Vacunal -->
+<button class="report-card w-full text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-space-sm group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">vaccines</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">
+              Cobertura Vacunal y Recordatorios
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+              Lotes aplicados, revacunaciones y despachos por SMS/Email
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 text-primary">
+<span class="font-label-sm text-label-sm font-semibold hidden sm:inline">Lanzar</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform">forward_to_inbox</span>
+</div>
+</button>
+</div>
+<!-- Export Quick Status Banner -->
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface">Firma digital activa: Dr. Alejandro Peña (Reg. MP 4182)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Configurar</span>
+</div>
+</section>
+<!-- Interactive Modal / Quick-Action Toast placeholder (JS-managed) -->
+<div class="fixed bottom-20 left-4 right-4 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-inverse-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toastMessage">Estado actualizado correctamente</span>
+</div>
+<button class="text-inverse-on-surface/70 hover:text-inverse-on-surface" id="closeToast" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function initAppointmentsApp() {
+    // Week day selection micro-interaction
+    const dayChips = document.querySelectorAll('.day-chip');
+    dayChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        dayChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'shadow-md', 'scale-105');
+          c.classList.add('bg-surface-container-low');
+          const numSpan = c.querySelector('span:nth-child(2)');
+          if (numSpan) numSpan.classList.remove('text-on-primary', 'font-bold');
+          const daySpan = c.querySelector('span:nth-child(1)');
+          if (daySpan) daySpan.classList.remove('text-on-primary/80');
+        });
+
+        chip.classList.remove('bg-surface-container-low');
+        chip.classList.add('bg-primary', 'text-on-primary', 'shadow-md', 'scale-105');
+        const activeNum = chip.querySelector('span:nth-child(2)');
+        if (activeNum) activeNum.classList.add('text-on-primary', 'font-bold');
+        const activeDay = chip.querySelector('span:nth-child(1)');
+        if (activeDay) activeDay.classList.add('text-on-primary/80');
+
+        showToast('Fecha cambiada para visualización de agenda');
+      });
+    });
+
+    // Doctor filtering micro-interaction
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const appointmentCards = document.querySelectorAll('#appointmentList article');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary');
+          t.classList.add('bg-surface-container-high', 'text-on-surface');
+        });
+
+        tab.classList.remove('bg-surface-container-high', 'text-on-surface');
+        tab.classList.add('bg-primary', 'text-on-primary');
+
+        const filter = tab.getAttribute('data-filter');
+        appointmentCards.forEach(card => {
+          const doc = card.getAttribute('data-doctor');
+          if (filter === 'all' || doc === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Toast helper
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const closeToast = document.getElementById('closeToast');
+    let toastTimeout;
+
+    function showToast(msg) {
+      if (!toast) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-32', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    if (closeToast) {
+      closeToast.addEventListener('click', () => {
+        toast.classList.add('translate-y-32', 'opacity-0');
+      });
+    }
+
+    // Interactive action buttons
+    document.querySelectorAll('.action-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const text = btn.innerText.trim();
+        showToast(`Acción "${text}" iniciada en consultorio`);
+      });
+    });
+
+    // Program new appointment CTA
+    const newAptBtn = document.getElementById('newAppointmentBtn');
+    if (newAptBtn) {
+      newAptBtn.addEventListener('click', () => {
+        showToast('Abriendo formulario de programación...');
+      });
+    }
+
+    // Report generation triggers
+    document.querySelectorAll('.report-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('h4')?.textContent.trim();
+        showToast(`Generando y exportando: ${title}`);
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(13,28,46,0.05)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="mascotas" href="#"><span class="material-symbols-outlined text-[20px]">pets</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Mascotas</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="historial-clinico" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Historial</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="vacunacion" href="#"><span class="material-symbols-outlined text-[20px]">vaccines</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Vacunas</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="tratamientos" href="#"><span class="material-symbols-outlined text-[20px]">medication</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Tratamiento</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 rounded-lg transition-colors text-primary font-semibold" data-path="citas" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Citas</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogos" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Admin</span></a></div></nav></body></html>
