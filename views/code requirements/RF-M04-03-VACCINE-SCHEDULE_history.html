@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"inverse-on-surface": "#eaf1ff", "on-secondary-fixed": "#00174b", "error": "#ba1a1a", "on-secondary-fixed-variant": "#003ea8", "surface-variant": "#d3e4fe", "tertiary-container": "#004a31", "surface-container-lowest": "#ffffff", "secondary-container": "#316bf3", "error-container": "#ffdad6", "surface-container": "#e5eeff", "on-surface-variant": "#444651", "on-primary-fixed-variant": "#264191", "on-surface": "#0b1c30", "on-tertiary-container": "#27c38a", "on-secondary": "#ffffff", "surface-bright": "#f8f9ff", "primary-fixed-dim": "#b6c4ff", "primary-fixed": "#dce1ff", "on-primary-container": "#90a8ff", "background": "#f8f9ff", "secondary-fixed": "#dbe1ff", "surface": "#f8f9ff", "primary": "#00236f", "surface-tint": "#4059aa", "inverse-surface": "#213145", "on-primary": "#ffffff", "secondary": "#0051d5", "on-background": "#0b1c30", "on-error-container": "#93000a", "primary-container": "#1e3a8a", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#00164e", "tertiary-fixed-dim": "#4edea3", "on-secondary-container": "#fefcff", "outline-variant": "#c5c5d3", "on-error": "#ffffff", "surface-container-low": "#eff4ff", "tertiary": "#00311f", "tertiary-fixed": "#6ffbbe", "on-tertiary-fixed": "#002113", "on-tertiary-fixed-variant": "#005236", "outline": "#757682", "on-tertiary": "#ffffff", "surface-dim": "#cbdbf5", "inverse-primary": "#b6c4ff", "surface-container-high": "#dce9ff", "secondary-fixed-dim": "#b4c5ff"}, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, spacing: {"margin-desktop": "2rem", "margin": "1rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-md": "1rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem"}, fontFamily: {"body-sm": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "display": ["Inter"], "headline-md": ["Inter"]}, fontSize: {"body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}], "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}]}}}};</script>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-space-md flex items-center justify-between">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center"><span
+            class="material-symbols-outlined text-surface-container-lowest text-[20px]">pets</span></div>
+        <div class="flex flex-col"><span
+            class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Portal Clínico</span>
+          <h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Vacunas Y Prevencion</h1>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-sm"><button aria-label="Notificaciones"
+          class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors"><span
+            class="material-symbols-outlined text-[22px]">notifications</span></button>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-space-md">
+    <div class="flex flex-col w-full gap-space-md">
+      <!-- Patient Context Header Card -->
+      <section
+        class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+        <div class="flex items-start justify-between gap-space-sm">
+          <div class="flex items-center gap-space-sm min-w-0">
+            <div class="relative shrink-0">
+              <img class="w-16 h-16 rounded-full object-cover shadow-sm"
+                data-alt="Close-up portrait of a friendly, healthy golden retriever named Toby with shining golden fur and warm eyes, sitting proudly against a clean clinic backdrop in soft natural daylight, high resolution."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPk41-mW75nl_UJS6eXnMe90AimhP8UFSFLKZRdlOUydDIuGTOqX4-XA1OJ2kL--DJbyoeMviBvyavxAZda2_23eJRWqEZK5xiUTe_N8jChK9nRl0NxzlUk606hOEVVyivYuMBGE2cC_z20aTjKM-X12VCKzrmKj991XFoEfqiZxC1twttw-swtNJxs7NGX1WvZ7lLd7x3DtcjqhVPnLrJQZWklTO28TVwNPHo1x8" />
+              <div
+                class="absolute -bottom-1 -right-1 bg-tertiary text-on-tertiary rounded-full p-0.5 shadow-sm flex items-center justify-center">
+                <span class="material-symbols-outlined text-[14px]">verified</span>
+              </div>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h2 class="font-headline-md text-headline-md text-on-surface truncate">Toby</h2>
+                <span
+                  class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  92% Al Día
+                </span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Golden Retriever • 4 años (Macho)
+              </p>
+              <p class="font-label-sm text-label-sm text-outline truncate mt-0.5">Chip: ES-98109810239 • Tutor: Carlos
+                Gómez F.</p>
+            </div>
+          </div>
+          <button aria-label="Código QR de la cartilla"
+            class="shrink-0 w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors"
+            id="btn-qr-cartilla">
+            <span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+          </button>
+        </div>
+        <!-- Cobertura Preventiva Metric Bar -->
+        <div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col gap-1.5 mt-1">
+          <div class="flex justify-between items-center text-on-surface">
+            <span class="font-label-md text-label-md flex items-center gap-1 text-primary">
+              <span class="material-symbols-outlined text-[16px]">shield</span>
+              Índice de Protección Preventiva
+            </span>
+            <span class="font-label-md text-label-md text-primary font-bold">92%</span>
+          </div>
+          <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="h-full bg-secondary rounded-full" style="width: 92%;"></div>
+          </div>
+          <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+            <span>5 pautas cubiertas activamente</span>
+            <span class="text-error font-semibold flex items-center gap-0.5">
+              <span class="material-symbols-outlined text-[12px]">schedule</span> 1 refuerzo en 6d
+            </span>
+          </p>
+        </div>
+      </section>
+      <!-- Automated Engine Regulatory Banner -->
+      <aside class="bg-primary-container text-inverse-on-surface rounded-lg p-3 flex items-start gap-2.5 shadow-sm">
+        <span class="material-symbols-outlined text-tertiary-fixed text-[20px] shrink-0 mt-0.5">neurology</span>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-label-sm uppercase text-tertiary-fixed tracking-wider">Cálculo Predictivo
+            Regulatorio</span>
+          <p class="font-body-sm text-body-sm leading-tight text-surface-container-high">
+            Próximos eventos calculados automáticamente conforme a registros veterinarios certificados y fichas técnicas
+            oficiales (AEMPS/EMA).
+          </p>
+        </div>
+      </aside>
+      <!-- Interactive Type Filter Chips -->
+      <section class="flex flex-col gap-2">
+        <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-none text-nowrap" id="type-filter-container">
+          <button
+            class="filter-type-btn active px-3 py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm flex items-center gap-1.5 transition-all"
+            data-filter="all">
+            <span>Todos</span>
+            <span
+              class="bg-primary-fixed text-on-primary-fixed rounded-full px-1.5 py-0.2 text-[10px] font-bold">6</span>
+          </button>
+          <button
+            class="filter-type-btn px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5 shadow-sm"
+            data-filter="vacunas">
+            <span>Vacunación</span>
+            <span
+              class="bg-surface-container text-on-surface-variant rounded-full px-1.5 py-0.2 text-[10px] font-bold">4</span>
+          </button>
+          <button
+            class="filter-type-btn px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5 shadow-sm"
+            data-filter="desp-int">
+            <span>Desparasitación Interna</span>
+            <span
+              class="bg-surface-container text-on-surface-variant rounded-full px-1.5 py-0.2 text-[10px] font-bold">1</span>
+          </button>
+          <button
+            class="filter-type-btn px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5 shadow-sm"
+            data-filter="desp-ext">
+            <span>Desparasitación Externa</span>
+            <span
+              class="bg-surface-container text-on-surface-variant rounded-full px-1.5 py-0.2 text-[10px] font-bold">1</span>
+          </button>
+        </div>
+        <!-- Status View Tab Switcher -->
+        <div class="bg-surface-container rounded-lg p-1 grid grid-cols-2 gap-1 text-center">
+          <button
+            class="py-2 rounded-md font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center gap-1.5 transition-all"
+            id="tab-upcoming">
+            <span class="material-symbols-outlined text-[18px]">event_upcoming</span>
+            Próximos / Pendientes (2)
+          </button>
+          <button
+            class="py-2 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1.5 transition-all"
+            id="tab-history">
+            <span class="material-symbols-outlined text-[18px]">fact_check</span>
+            Realizadas / Histórico (4)
+          </button>
+        </div>
+      </section>
+      <!-- Section 1: Upcoming / Predicted Schedule (Default Open Focus) -->
+      <section class="flex flex-col gap-space-sm" id="section-upcoming">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Próximos Eventos Calculados</h3>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">2 requerimientos</span>
+        </div>
+        <!-- Item 1: Rabia Anual (High Priority Alert) -->
+        <article
+          class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden"
+          data-category="vacunas">
+          <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start gap-2.5">
+              <div
+                class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[22px]">vaccines</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Vacuna Antirrábica Anual</h4>
+                  <span
+                    class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-0.5 rounded-full">Legal
+                    Obligatoria</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Pauta oficial: 1 dosis cada 365 días
+                  (Nobivac Rabies)</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Vencimiento Calculado</span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">14 Nov 2024</span>
+            </div>
+            <div
+              class="flex items-center gap-1 bg-surface-variant text-on-secondary-fixed-variant px-2.5 py-1 rounded-full font-label-md text-label-md font-bold">
+              <span class="material-symbols-outlined text-[16px]">alarm</span>
+              En 6 días
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button
+              class="flex-1 bg-secondary text-on-secondary py-2 px-3 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-1.5 hover:bg-primary transition-colors shadow-sm">
+              <span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+              Agendar Cita
+            </button>
+            <button aria-label="Información pauta AEMPS"
+              class="bg-surface-container text-on-surface-variant hover:text-on-surface p-2 rounded-lg flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">info</span>
+            </button>
+          </div>
+        </article>
+        <!-- Item 2: Desparasitación Interna Predictiva -->
+        <article
+          class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden"
+          data-category="desp-int">
+          <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-fixed-dim"></div>
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start gap-2.5">
+              <div
+                class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary-container shrink-0">
+                <span class="material-symbols-outlined text-[22px]">medication</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Desparasitación Interna</h4>
+                  <span
+                    class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full">Trimestral</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Milbemycina Oxima / Praziquantel (Comp.
+                  oral)</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Próxima Toma Programada</span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">05 Dic 2024</span>
+            </div>
+            <div
+              class="flex items-center gap-1 bg-surface-container text-on-surface-variant px-2.5 py-1 rounded-full font-label-md text-label-md">
+              <span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+              En 27 días
+            </div>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button
+              class="flex-1 bg-surface-container text-primary hover:bg-surface-container-high py-2 px-3 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-1.5 transition-colors">
+              <span class="material-symbols-outlined text-[18px]">notifications_active</span>
+              Recordatorio SMS/Push
+            </button>
+          </div>
+        </article>
+      </section>
+      <!-- Section 2: Historical / Completed Registered Treatments -->
+      <section class="flex flex-col gap-space-sm" id="section-history">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">task_alt</span>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Registros Oficiales Vigentes</h3>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Firma Colegiada</span>
+        </div>
+        <!-- Treatment 1: Polivalente DHPPi-L4 -->
+        <article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5"
+          data-category="vacunas">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start gap-2.5">
+              <div
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">shield_with_heart</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Vacuna Polivalente DHPPi-L4</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Nobivac • Lote: A409B01</p>
+              </div>
+            </div>
+            <span
+              class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
+              <span class="material-symbols-outlined text-[13px]">check_circle</span> Vigente
+            </span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-left bg-surface-container-low p-2.5 rounded-lg">
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Aplicación</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">20 May 2024</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant block">Dra. Laura Ruiz (VET-0019)</span>
+            </div>
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Vencimiento</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">20 May 2025</span>
+              <span class="font-label-sm text-label-sm text-tertiary font-semibold block">365 días vigencia</span>
+            </div>
+          </div>
+          <div class="flex justify-end gap-2 pt-0.5">
+            <button
+              class="px-2.5 py-1 text-primary hover:bg-surface-container rounded-md font-label-md text-label-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">visibility</span> Detalle
+            </button>
+            <button
+              class="px-2.5 py-1 text-secondary hover:bg-surface-container rounded-md font-label-md text-label-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">verified</span> Certificado
+            </button>
+          </div>
+        </article>
+        <!-- Treatment 2: Antirrábica 2023 (Por Vencer) -->
+        <article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5"
+          data-category="vacunas">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start gap-2.5">
+              <div
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">vaccines</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Vacuna Antirrábica</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Nobivac Rabies • Lote: R882C04</p>
+              </div>
+            </div>
+            <span
+              class="bg-surface-variant text-on-secondary-fixed-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
+              <span class="material-symbols-outlined text-[13px]">warning</span> Por Vencer
+            </span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-left bg-surface-container-low p-2.5 rounded-lg">
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Aplicación</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">15 Nov 2023</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant block">Dr. Carlos Mendoza</span>
+            </div>
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Vence</span>
+              <span class="font-body-sm text-body-sm text-error font-semibold">14 Nov 2024</span>
+              <span class="font-label-sm text-label-sm text-error font-semibold block">Refuerzo requerido</span>
+            </div>
+          </div>
+          <div class="flex justify-end gap-2 pt-0.5">
+            <button
+              class="px-2.5 py-1 text-primary hover:bg-surface-container rounded-md font-label-md text-label-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">visibility</span> Detalle
+            </button>
+          </div>
+        </article>
+        <!-- Treatment 3: Desparasitación Externa Bravecto -->
+        <article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5"
+          data-category="desp-ext">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start gap-2.5">
+              <div
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">pest_control</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Desparasitación Externa</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Bravecto Masticable 10-20kg (Fluralaner)
+                </p>
+              </div>
+            </div>
+            <span
+              class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
+              <span class="material-symbols-outlined text-[13px]">check_circle</span> Activo
+            </span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-left bg-surface-container-low p-2.5 rounded-lg">
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Administrado</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">10 Sep 2024</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant block">Tutor verificado</span>
+            </div>
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Protección Hasta</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">10 Dic 2024</span>
+              <span class="font-label-sm text-label-sm text-tertiary font-semibold block">12 semanas cobertura</span>
+            </div>
+          </div>
+          <div class="flex justify-end gap-2 pt-0.5">
+            <button
+              class="px-2.5 py-1 text-primary hover:bg-surface-container rounded-md font-label-md text-label-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">visibility</span> Detalle
+            </button>
+          </div>
+        </article>
+        <!-- Treatment 4: Desparasitación Interna Milbemax -->
+        <article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5"
+          data-category="desp-int">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start gap-2.5">
+              <div
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">medication</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Desparasitación Interna</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Milbemax Canino • Elanco</p>
+              </div>
+            </div>
+            <span
+              class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
+              <span class="material-symbols-outlined text-[13px]">check_circle</span> Activo
+            </span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-left bg-surface-container-low p-2.5 rounded-lg">
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Administrado</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">05 Sep 2024</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant block">Clínica San Antón</span>
+            </div>
+            <div>
+              <span class="font-label-sm text-label-sm text-outline block">Válido Hasta</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">05 Dic 2024</span>
+              <span class="font-label-sm text-label-sm text-tertiary font-semibold block">90 días vigencia</span>
+            </div>
+          </div>
+          <div class="flex justify-end gap-2 pt-0.5">
+            <button
+              class="px-2.5 py-1 text-primary hover:bg-surface-container rounded-md font-label-md text-label-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">visibility</span> Detalle
+            </button>
+          </div>
+        </article>
+      </section>
+      <!-- Legal & Regulatory Audit Box RF-M04-03 -->
+      <footer class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-2.5 mt-1">
+        <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">gavel</span>
+        <div class="flex flex-col gap-0.5">
+          <h5 class="font-label-md text-label-md text-on-surface font-bold">Condición Especial RF-M04-03</h5>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Las fechas de cobertura y revacunación corresponden estrictamente a los registros firmados con sello
+            temporal colegiado y ficha técnica acreditada. No reemplaza criterio clínico directo.
+          </p>
+        </div>
+      </footer>
+      <!-- Floating Direct Action Sticky Container -->
+      <div class="flex flex-col gap-2 pt-2">
+        <button
+          class="w-full bg-primary text-on-primary py-3 px-4 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-primary-container transition-all"
+          id="btn-nueva-aplicacion">
+          <span class="material-symbols-outlined text-[20px]">add_circle</span>
+          Registrar Nueva Aplicación Preventiva
+        </button>
+        <button
+          class="w-full bg-surface-container-lowest text-primary hover:bg-surface-container py-2.5 px-4 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm transition-all"
+          id="btn-descargar-pasaporte">
+          <span class="material-symbols-outlined text-[20px]">download</span>
+          Descargar Pasaporte Sanitario Digital (PDF)
+        </button>
+      </div>
+    </div>
+    <script>
+      // Simple micro-interactions for active filters and tabs
+      (function () {
+        const filterButtons = document.querySelectorAll('.filter-type-btn');
+        const articles = document.querySelectorAll('article[data-category]');
+
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterButtons.forEach(b => {
+              b.classList.remove('bg-primary', 'text-on-primary');
+              b.classList.add('bg-surface-container-lowest', 'text-on-surface');
+            });
+            btn.classList.add('bg-primary', 'text-on-primary');
+            btn.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+
+            const filterVal = btn.getAttribute('data-filter');
+            articles.forEach(art => {
+              if (filterVal === 'all' || art.getAttribute('data-category') === filterVal) {
+                art.style.display = 'flex';
+              } else {
+                art.style.display = 'none';
+              }
+            });
+          });
+        });
+
+        // Tab switcher between upcoming and historical focus
+        const tabUpcoming = document.getElementById('tab-upcoming');
+        const tabHistory = document.getElementById('tab-history');
+        const secUpcoming = document.getElementById('section-upcoming');
+        const secHistory = document.getElementById('section-history');
+
+        if (tabUpcoming && tabHistory && secUpcoming && secHistory) {
+          tabUpcoming.addEventListener('click', () => {
+            tabUpcoming.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            tabUpcoming.classList.remove('text-on-surface-variant');
+            tabHistory.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            tabHistory.classList.add('text-on-surface-variant');
+
+            secUpcoming.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+          });
+
+          tabHistory.addEventListener('click', () => {
+            tabHistory.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            tabHistory.classList.remove('text-on-surface-variant');
+            tabUpcoming.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            tabUpcoming.classList.add('text-on-surface-variant');
+
+            secHistory.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+          });
+        }
+
+        // Set active tab on shell's bottom navigation for "Vacunas"
+        const navLinks = document.querySelectorAll('nav a[data-path]');
+        navLinks.forEach(link => {
+          if (link.getAttribute('data-path') === 'vacunas-y-prevencion') {
+            link.classList.remove('text-on-surface-variant');
+            link.classList.add('text-primary', 'font-bold');
+            const icon = link.querySelector('.material-symbols-outlined');
+            if (icon) {
+              icon.style.fontVariationSettings = "'FILL' 1";
+            }
+          } else {
+            link.classList.remove('text-primary', 'font-bold');
+            link.classList.add('text-on-surface-variant');
+          }
+        });
+      })();
+    </script>
+  </main>
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"
+    data-active-classes="text-primary font-bold">
+    <div class="flex justify-around items-center h-16 px-space-xs"><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-colors"
+        data-path="historial-medico" href="#"><span
+          class="material-symbols-outlined text-[22px]">clinical_notes</span><span
+          class="font-label-sm text-label-sm">Historial</span></a><a aria-current="page"
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 transition-colors text-primary font-bold"
+        data-path="vacunas-y-prevencion" href="#"><span
+          class="material-symbols-outlined text-[22px]">vaccines</span><span
+          class="font-label-sm text-label-sm">Vacunas</span></a><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-colors"
+        data-path="pruebas-diagnosticas" href="#"><span class="material-symbols-outlined text-[22px]">chips</span><span
+          class="font-label-sm text-label-sm">Pruebas</span></a><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] h-12 text-on-surface-variant hover:text-primary transition-colors"
+        data-path="citas-veterinarias" href="#"><span
+          class="material-symbols-outlined text-[22px]">calendar_month</span><span
+          class="font-label-sm text-label-sm">Citas</span></a></div>
+  </nav>
+</body>
+
+</html>

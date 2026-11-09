@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <title>Citas Y Recordatorios - VetCare Pro</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary": "#ffffff", "surface-bright": "#f8f9ff", "outline": "#757682", "surface-container": "#e5eeff", "outline-variant": "#c5c5d3", "on-tertiary-container": "#27c38a", "on-primary-fixed-variant": "#264191", "tertiary-container": "#004a31", "error-container": "#ffdad6", "tertiary-fixed": "#6ffbbe", "on-primary": "#ffffff", "on-background": "#0b1c30", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "background": "#f8f9ff", "on-secondary-fixed-variant": "#003ea8", "on-secondary": "#ffffff", "on-error": "#ffffff", "on-primary-container": "#90a8ff", "surface-container-lowest": "#ffffff", "secondary-container": "#316bf3", "surface-container-high": "#dce9ff", "primary-container": "#1e3a8a", "surface-variant": "#d3e4fe", "inverse-surface": "#213145", "on-tertiary-fixed": "#002113", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#00164e", "tertiary": "#00311f", "on-tertiary-fixed-variant": "#005236", "primary": "#00236f", "secondary-fixed-dim": "#b4c5ff", "primary-fixed-dim": "#b6c4ff", "surface-tint": "#4059aa", "tertiary-fixed-dim": "#4edea3", "on-error-container": "#93000a", "on-surface": "#0b1c30", "error": "#ba1a1a", "on-secondary-fixed": "#00174b", "secondary": "#0051d5", "surface": "#f8f9ff", "inverse-primary": "#b6c4ff", "surface-dim": "#cbdbf5", "on-surface-variant": "#444651", "on-secondary-container": "#fefcff", "secondary-fixed": "#dbe1ff", "primary-fixed": "#dce1ff"}, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, spacing: {"space-xl": "2rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "space-xs": "0.25rem", "margin-tablet": "1.5rem", "space-sm": "0.5rem", "margin": "1rem"}, fontFamily: {"display": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "label-lg": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"]}, fontSize: {"display": ["36px", {lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "700"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", letterSpacing: "0em", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600"}], "headline-md": ["20px", {lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-lg": ["30px", {lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["14px", {lineHeight: "20px", letterSpacing: "0em", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400"}], "headline-sm": ["16px", {lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600"}], "label-sm": ["10px", {lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "700"}]}}}}</script>
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior-y: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen antialiased selection:bg-secondary selection:text-on-secondary">
+  <header
+    class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-gutter flex items-center justify-between">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"><span
+            class="material-symbols-outlined text-[20px]">pets</span></div>
+        <div><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">VetCare
+            Hospital</span>
+          <h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Citas Y Recordatorios</h1>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-sm"><button aria-label="Alertas de sistema"
+          class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span
+            class="material-symbols-outlined text-[22px]">notifications</span></button>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col relative w-full pt-16 pb-20 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- Patient Context Card -->
+      <div class="px-gutter pt-space-md pb-space-sm">
+        <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-space-sm">
+              <div class="relative w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+                <img class="w-full h-full object-cover"
+                  data-alt="Close up warm studio portrait of a healthy golden retriever dog named Toby, golden fur, friendly expression, veterinary clinic context, soft diffused light, premium enterprise photography style"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYC36jBCQvN-vllj28shOpLjJ9aLoK9NrCnU9Cs0mR6wN5KwO5PdNt-Wqll0b8is_aVHVlS5yvlIg4t1j0nznUMeujw4kMi88ODUyhvmgc5kNyWU9jbsvURknypz8HZ2lSqCQzR-nSZBkTNIGkH4s6HeIYn70Dx1MLf1hW_t3i5dkzosLtHKvL4OBNbM2B25wSQsveNEHIZ5mjQb2Uxom5dgCp1Dlt1mPZMAJw25M" />
+                <div
+                  class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest">
+                </div>
+              </div>
+              <div class="min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Toby</h2>
+                  <span class="font-label-sm text-label-sm text-outline-variant">•</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Golden Retriever</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Tutor: Carlos Gómez Fernández</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-end gap-1">
+              <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed/30 text-tertiary text-label-sm font-label-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+                ACTIVO
+              </span>
+              <span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+                <span class="material-symbols-outlined text-[13px] text-on-tertiary-container">sync</span> Sincronizado
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-between pt-space-xs text-body-sm text-on-surface-variant bg-surface-container-low px-3 py-2 rounded-lg">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+              <span class="font-label-md text-label-md text-on-surface">Motor RF-M06-03</span>
+            </div>
+            <span
+              class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">Auto-Dispatch
+              48h / 24h</span>
+          </div>
+        </div>
+      </div>
+      <!-- Operational Engine Status Banner -->
+      <div class="px-gutter py-space-xs">
+        <div
+          class="bg-primary-container text-on-primary p-space-md rounded-xl shadow-sm flex flex-col gap-2 relative overflow-hidden">
+          <div class="flex items-start justify-between relative z-10">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-7 h-7 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-on-primary">
+                <span class="material-symbols-outlined text-[18px]">notifications_active</span>
+              </div>
+              <div>
+                <h3 class="font-label-lg text-label-lg text-on-primary">Motor de Anticipación RF-M06-03</h3>
+                <p class="font-label-sm text-label-sm text-on-primary-container">Protocolo de emisión secuencial
+                  validado</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-[20px] text-on-tertiary-container">check_circle</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-surface-container-high relative z-10">
+            Evalúa citas confirmadas y ejecuta disparadores automáticos a <strong>48h</strong> y <strong>24h</strong>.
+            La capa criptográfica bloquea reenvíos y previene duplicidades operativas.
+          </p>
+          <!-- Subtle Decorative Vector -->
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-secondary-container/20 pointer-events-none">
+          </div>
+        </div>
+      </div>
+      <!-- Segmented Controls / Quick Filters -->
+      <div class="px-gutter pt-space-md pb-space-xs">
+        <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar" role="tablist">
+          <button
+            class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md shadow-sm whitespace-nowrap">
+            <span>Próximas Citas</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-on-secondary/20 text-on-secondary text-label-sm">3</span>
+          </button>
+          <button
+            class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">
+            <span>Enviados</span>
+            <span class="px-1.5 py-0.2 rounded-full bg-surface-variant text-on-surface-variant text-label-sm">5</span>
+          </button>
+          <button
+            class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-error-container text-on-error-container font-label-md text-label-md whitespace-nowrap hover:opacity-90 transition-opacity">
+            <span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+            <span>Reintentos</span>
+            <span
+              class="px-1.5 py-0.2 rounded-full bg-on-error-container/10 text-on-error-container text-label-sm">1</span>
+          </button>
+        </div>
+      </div>
+      <!-- Appointments Queue Stack -->
+      <div class="px-gutter flex flex-col gap-space-sm pt-space-sm pb-space-md">
+        <!-- CITA 1: Disparada 24h & Enviada (Success) -->
+        <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container flex-shrink-0"></span>
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/30 text-tertiary text-label-sm font-label-sm">
+                RECORDATORIO GENERADO Y ENVIADO
+              </span>
+            </div>
+            <span
+              class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">T-24h</span>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Revisión Postquirúrgica y Retirada de Puntos
+            </h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Especialista: Dra. Laura Ruiz Sánchez</p>
+          </div>
+          <!-- Schedule Pill Box -->
+          <div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between text-body-sm">
+            <div class="flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-[20px] text-secondary">calendar_clock</span>
+              <span class="font-label-md text-label-md">Mañana, 28 Oct 2024</span>
+            </div>
+            <span
+              class="font-label-md text-label-md text-on-primary-container bg-primary-container px-2.5 py-1 rounded text-on-primary">10:30
+              h</span>
+          </div>
+          <!-- Channels & Delivery Telemetry -->
+          <div class="flex flex-col gap-1.5 text-body-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-outline font-label-sm text-label-sm uppercase">Canales de salida</span>
+              <div class="flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[16px] text-on-tertiary-container">done_all</span>
+                <span>Entregado a Carlos Gómez</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[14px] text-on-tertiary-container">chat</span> WhatsApp
+                Business
+              </span>
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[14px] text-secondary">sms</span> SMS Transaccional
+              </span>
+            </div>
+          </div>
+          <!-- Anti-Duplicate Safety Hash Badge -->
+          <div
+            class="flex items-center justify-between bg-surface-container-high/40 px-2.5 py-1.5 rounded text-label-sm font-label-sm text-outline">
+            <span class="flex items-center gap-1 truncate">
+              <span class="material-symbols-outlined text-[14px] text-secondary">fingerprint</span>
+              ID Unicidad: <span class="font-mono text-on-surface">REC-2024-8842-A</span>
+            </span>
+            <span class="text-on-tertiary-container flex items-center gap-0.5 flex-shrink-0">
+              <span class="material-symbols-outlined text-[14px]">lock</span> Sin duplicados
+            </span>
+          </div>
+          <button
+            class="w-full mt-1 py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+            <span>Ver Detalle y Trazabilidad</span>
+          </button>
+        </div>
+        <!-- CITA 2: Programado por anticipación futura (Scheduled) -->
+        <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-secondary flex-shrink-0"></span>
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-secondary text-label-sm font-label-sm">
+                PROGRAMADO POR ANTICIPACIÓN
+              </span>
+            </div>
+            <span class="font-label-sm text-label-sm text-outline">En 17 días</span>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Vacunación Antirrábica Obligatoria Anual</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Especialista: Dr. Carlos Mendoza</p>
+          </div>
+          <div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between text-body-sm">
+            <div class="flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-[20px] text-secondary">event</span>
+              <span class="font-label-md text-label-md">14 Nov 2024</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface bg-surface-container-high px-2 py-1 rounded">17:00
+              h</span>
+          </div>
+          <!-- Trigger Rule Definition -->
+          <div class="p-2.5 rounded-lg bg-surface-container text-body-sm flex flex-col gap-1">
+            <div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+                Disparo de Regla: 48h Previas
+              </span>
+              <span class="text-secondary font-label-md">12 Nov, 17:00 h</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Canales previstos: SMS Oficial + Notificación
+              Push App Tutor.</p>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button
+              class="flex-1 py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors"
+              type="button">
+              <span class="material-symbols-outlined text-[18px]">tune</span>
+              <span>Ajustar Anticipación</span>
+            </button>
+          </div>
+        </div>
+        <!-- CITA 3: Alerta de Reintento (Retry Queue) -->
+        <div
+          class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-3 relative overflow-hidden">
+          <!-- Error Indication Pill -->
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-error flex-shrink-0 animate-pulse"></span>
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-label-sm font-label-sm">
+                FALLO DE ENVÍO EXTERNO - REINTENTO EN COLA
+              </span>
+            </div>
+            <span
+              class="font-label-sm text-label-sm text-error bg-error-container/60 px-1.5 py-0.5 rounded">Alerta</span>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Control Dermatológico Trimestral</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Servicio Dermatología Veterinaria Integral</p>
+          </div>
+          <div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between text-body-sm">
+            <div class="flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-[20px] text-error">warning</span>
+              <span class="font-label-md text-label-md">29 Oct 2024</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface bg-surface-container-high px-2 py-1 rounded">12:00
+              h</span>
+          </div>
+          <!-- Error Diagnostics -->
+          <div class="p-2.5 rounded-lg bg-error-container/40 text-on-error-container text-body-sm flex flex-col gap-1">
+            <div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[16px] text-error">report_problem</span>
+              <span class="font-label-md">Gateway SMS no disponible (504 Timeout)</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Próximo reintento automático programado en <span class="font-semibold text-on-surface">14 minutos</span>
+              vía canal de contingencia (WhatsApp/Email).
+            </p>
+          </div>
+          <button
+            class="w-full py-2 px-3 rounded-lg bg-error text-on-error font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:opacity-90 active:scale-[0.99] transition-all"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]">cached</span>
+            <span>Gestionar Reintento Inmediato</span>
+          </button>
+        </div>
+      </div>
+      <!-- Global Rule Configuration Card -->
+      <div class="px-gutter pb-space-md">
+        <div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary">
+              <span class="material-symbols-outlined text-[18px]">settings_suggest</span>
+            </div>
+            <div>
+              <h4 class="font-headline-sm text-headline-sm text-on-surface">Configuración Global de Anticipación</h4>
+              <p class="font-label-sm text-label-sm text-outline">Políticas del Hospital VetCare Pro</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-3 rounded-lg flex flex-col gap-2">
+            <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+              <span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0 mt-0.5">check</span>
+              <span><strong>1° Aviso (48h):</strong> Recordatorio preliminar con enlace a pre-confirmación o
+                cancelación.</span>
+            </div>
+            <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+              <span
+                class="material-symbols-outlined text-[18px] text-on-tertiary-container flex-shrink-0 mt-0.5">check</span>
+              <span><strong>2° Aviso (24h):</strong> Confirmación final con instrucciones de ayuno y acceso a la
+                clínica.</span>
+            </div>
+          </div>
+          <button
+            class="w-full py-2 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-secondary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]">edit_note</span>
+            <span>Modificar Parámetros de Anticipación</span>
+          </button>
+        </div>
+      </div>
+      <!-- Primary Bottom Actions Sticky Layout Wrapper -->
+      <div class="px-gutter pb-space-lg flex flex-col gap-2.5">
+        <button
+          class="w-full h-11 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:bg-primary-container transition-all"
+          type="button">
+          <span class="material-symbols-outlined text-[20px]">add_circle</span>
+          <span>+ Agendar Nueva Cita Médica</span>
+        </button>
+        <button
+          class="w-full h-10 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors"
+          type="button">
+          <span class="material-symbols-outlined text-[18px] text-outline">download_for_offline</span>
+          <span>Exportar Bitácora de Notificaciones (CSV / PDF)</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <nav
+    class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]"
+    data-active-classes="text-primary font-label-md">
+    <div class="flex justify-around items-center h-16 px-gutter"><a
+        class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5"
+        data-path="historial-clinico" href="#"><span
+          class="material-symbols-outlined text-[22px]">medical_information</span><span
+          class="font-label-md text-label-md">Historial</span></a><a
+        class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5"
+        data-path="vacunas" href="#"><span class="material-symbols-outlined text-[22px]">vaccines</span><span
+          class="font-label-md text-label-md">Vacunas</span></a><a
+        class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5"
+        data-path="farmacos" href="#"><span class="material-symbols-outlined text-[22px]">prescriptions</span><span
+          class="font-label-md text-label-md">Fármacos</span></a><a aria-current="page"
+        class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors gap-0.5 text-primary font-label-md"
+        data-path="citas-y-recordatorios" href="#"><span
+          class="material-symbols-outlined text-[22px]">event_upcoming</span><span
+          class="font-label-md text-label-md">Citas</span></a></div>
+  </nav>
+</body>
+
+</html>

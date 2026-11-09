@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_stack" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d3e4fe",
+            "tertiary-container": "#004a31",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "secondary": "#0051d5",
+            "tertiary-fixed-dim": "#4edea3",
+            "surface": "#f8f9ff",
+            "on-primary-fixed-variant": "#264191",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#00174b",
+            "surface-container": "#e5eeff",
+            "on-secondary-container": "#fefcff",
+            "inverse-surface": "#213145",
+            "surface-dim": "#cbdbf5",
+            "on-error": "#ffffff",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#444651",
+            "on-secondary-fixed-variant": "#003ea8",
+            "error-container": "#ffdad6",
+            "primary": "#00236f",
+            "outline": "#757682",
+            "on-surface": "#0b1c30",
+            "tertiary": "#00311f",
+            "primary-container": "#1e3a8a",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#316bf3",
+            "surface-bright": "#f8f9ff",
+            "primary-fixed": "#dce1ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#4059aa",
+            "on-primary-container": "#90a8ff",
+            "outline-variant": "#c5c5d3",
+            "surface-container-high": "#dce9ff",
+            "secondary-fixed-dim": "#b4c5ff",
+            "on-primary-fixed": "#00164e",
+            "secondary-fixed": "#dbe1ff",
+            "inverse-primary": "#b6c4ff",
+            "on-tertiary-fixed": "#002113",
+            "on-tertiary-container": "#27c38a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#6ffbbe",
+            "on-primary": "#ffffff",
+            "on-background": "#0b1c30",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "display": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    }</script>
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-space-md flex items-center justify-between">
+      <div class="flex items-center gap-space-xs"><button aria-label="Regresar"
+          class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors"
+          onclick="history.back()"><span
+            class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button>
+        <h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[240px]">Vincular O
+          Cambiar Propietario</h1>
+      </div>
+      <div class="flex items-center gap-space-xs">
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary/20"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col relative w-full pt-16 pb-safe bg-surface flex-1 min-h-screen">
+    <div class="flex flex-col w-full pb-10">
+      <div class="px-space-md pt-space-md space-y-space-md">
+        <!-- Mascota & Titular Actual -->
+        <div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+          <div class="flex items-center gap-space-sm mb-space-sm">
+            <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+              <img class="w-full h-full object-cover"
+                data-alt="Close up happy Golden Retriever dog portrait with gentle warm sunlight, soft cream fur, friendly intelligent eyes in high quality veterinary clinic setting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHRIjqE02uHptjM8ZT6fy-0urZsAzpsk_klFHDxglj9_6QfN-t2M4fFPybmu71sZRXXlZfVFUoy6EBoKWBQ0_3WHM__3wY6W0ss-pX-qppRneYkIi2ngU6rbskIHIFq6hE2xs1ORvPb6xiyi-qr6XUT5ZWbBcpMHkjKSoND1Ov09cwZzfwOFJMWkXjiDP5wxjHChQCZbpZRsZuh-mxhOntumdsqtr7zzn7jj9Hdjc" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-space-xs">
+                <span class="font-headline-sm text-headline-sm text-on-surface truncate">Toby</span>
+                <span
+                  class="bg-surface-container-highest text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider">Activo</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Golden Retriever • Chip:
+                ES-98109810239</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-space-xs min-w-0">
+              <div
+                class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px]">person</span>
+              </div>
+              <div class="min-w-0">
+                <p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Titular Actual Registrado</p>
+                <p class="font-label-md text-label-md text-on-surface truncate">Carlos Gómez Fernández</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">DNI: 47382910-K</p>
+              </div>
+            </div>
+            <div
+              class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant flex-shrink-0">
+              <span class="material-symbols-outlined text-[16px]">verified_user</span>
+            </div>
+          </div>
+        </div>
+        <!-- Buscador de Propietario -->
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+          <div class="space-y-1">
+            <label class="font-headline-sm text-headline-sm text-on-surface block">Seleccionar Nuevo Propietario</label>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Busque si el nuevo propietario ya está dado de alta en la base de datos de la clínica o portal.
+            </p>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+              <span class="material-symbols-outlined text-[20px]">search</span>
+            </div>
+            <input
+              class="w-full h-11 pl-10 pr-10 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container placeholder:text-outline-variant"
+              id="owner-search-input" placeholder="Buscar por DNI, Nombre, Teléfono o Email..." type="text"
+              value="Lucía Méndez" />
+            <button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface"
+              id="clear-search-btn">
+              <span class="material-symbols-outlined text-[18px]">cancel</span>
+            </button>
+          </div>
+          <!-- Tarjetas de Resultados Sugeridos -->
+          <div class="space-y-space-xs pt-1">
+            <p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Resultados Sugeridos (2)</p>
+            <!-- Card 1: Seleccionada -->
+            <div
+              class="cursor-pointer bg-primary-container text-on-primary rounded-xl p-space-sm transition-all duration-200 shadow-md"
+              id="owner-card-1" onclick="selectOwner(1)">
+              <div class="flex items-start justify-between gap-space-xs">
+                <div class="flex items-center gap-space-sm min-w-0">
+                  <div
+                    class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">
+                    LM
+                  </div>
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="font-label-lg text-label-lg font-bold text-white truncate">Lucía Méndez
+                        Serrano</span>
+                      <span
+                        class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-sm">
+                        <span class="material-symbols-outlined text-[11px]"
+                          style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Cliente Verificado
+                      </span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-primary-container">DNI: 52918234-P • Tel: +34 645 889
+                      912</p>
+                    <div class="flex items-center gap-1 mt-1 text-on-primary-container font-label-md text-label-md">
+                      <span class="material-symbols-outlined text-[15px]">pets</span>
+                      <span>Tutor de: <strong class="text-white">Rocky (Labrador)</strong></span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 shadow"
+                  id="check-icon-1">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style="font-variation-settings: 'FILL' 1;">check</span>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: No seleccionada -->
+            <div
+              class="cursor-pointer bg-surface-container-low text-on-surface rounded-xl p-space-sm transition-all duration-200"
+              id="owner-card-2" onclick="selectOwner(2)">
+              <div class="flex items-start justify-between gap-space-xs">
+                <div class="flex items-center gap-space-sm min-w-0">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0">
+                    JN
+                  </div>
+                  <div class="min-w-0">
+                    <p class="font-label-lg text-label-lg text-on-surface truncate">Javier Navarro Gil</p>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">DNI: 30981245-M • Tel: +34 611 234 567
+                    </p>
+                    <p class="font-body-sm text-body-sm text-outline mt-0.5">Sin mascotas activas en este centro</p>
+                  </div>
+                </div>
+                <div
+                  class="w-6 h-6 rounded-full bg-surface-container-high text-surface-container-highest flex items-center justify-center flex-shrink-0"
+                  id="check-icon-2">
+                  <span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Flujo Alternativo (Registro Nuevo) -->
+        <div
+          class="bg-gradient-to-r from-surface-container to-surface-container-high rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
+          <div class="min-w-0 space-y-0.5">
+            <p class="font-label-lg text-label-lg text-on-surface">¿El propietario no está en la base de datos?</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Registre a la persona en 2 minutos sin salir de
+              este expediente.</p>
+          </div>
+          <button
+            class="bg-secondary text-on-secondary font-label-md text-label-md px-3 py-2.5 rounded-lg flex items-center gap-1 shadow-sm whitespace-nowrap active:scale-95 transition-transform flex-shrink-0"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]">person_add</span>
+            <span>+ Registrar Nuevo</span>
+          </button>
+        </div>
+        <!-- Justificación Legal y Datos del Cambio -->
+        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Justificación Legal y Trazabilidad</h2>
+          </div>
+          <!-- Motivo del Cambio -->
+          <div class="space-y-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="motive-select">Motivo del Cambio de
+              Titularidad *</label>
+            <div class="relative">
+              <select
+                class="w-full h-11 px-3 appearance-none bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container"
+                id="motive-select">
+                <option selected="" value="adopcion">Adopción / Cesión formal</option>
+                <option value="domicilio">Cambio de domicilio familiar</option>
+                <option value="fallecimiento">Fallecimiento de titular</option>
+                <option value="correccion">Corrección de registro administrativo</option>
+              </select>
+              <div
+                class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-on-surface-variant">
+                <span class="material-symbols-outlined text-[20px]">expand_more</span>
+              </div>
+            </div>
+          </div>
+          <!-- Fecha Efectiva -->
+          <div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-[20px]">calendar_today</span>
+              <div>
+                <p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fecha Efectiva del Registro</p>
+                <p class="font-label-md text-label-md text-on-surface" id="effective-date-display">Fecha de hoy
+                  (Automática)</p>
+              </div>
+            </div>
+            <span
+              class="bg-surface-container-high text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full">Inmediato</span>
+          </div>
+          <!-- Campo Adjunto de Documento -->
+          <div class="space-y-1.5">
+            <label class="font-label-md text-label-md text-on-surface">Documento de Cesión o Contrato (PDF / Foto
+              firmado) *</label>
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors"
+              id="file-dropzone">
+              <input accept=".pdf,image/*" class="hidden" id="file-input" type="file" />
+              <div
+                class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-2">
+                <span class="material-symbols-outlined text-[22px]">upload_file</span>
+              </div>
+              <p class="font-label-md text-label-md text-on-surface" id="file-name-preview">Adjuntar contrato de cesión
+                firmado</p>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Formato PDF, JPG o PNG (Máx. 10 MB)
+              </p>
+            </div>
+          </div>
+          <!-- Declaración Jurada / Checkbox Legal -->
+          <div class="bg-surface-container-low rounded-lg p-space-sm flex items-start gap-space-sm cursor-pointer"
+            onclick="toggleLegalCheckbox()">
+            <input checked="" class="mt-1 w-5 h-5 accent-secondary cursor-pointer flex-shrink-0" id="legal-checkbox"
+              type="checkbox" />
+            <label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="legal-checkbox">
+              Confirmo que se ha verificado la identidad del nuevo tutor y la lectura del microchip según normativa
+              vigente.
+            </label>
+          </div>
+        </div>
+        <!-- Botones de Acción y Aviso -->
+        <div class="space-y-space-sm pt-space-xs">
+          <button
+            class="w-full h-12 bg-primary text-on-primary font-label-lg text-label-lg rounded-xl shadow-md active:bg-primary-container transition-colors flex items-center justify-center gap-2"
+            id="save-transfer-btn" onclick="saveTransfer()" type="button">
+            <span class="material-symbols-outlined text-[20px]"
+              style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+            <span>Guardar y Actualizar Titularidad</span>
+          </button>
+          <button
+            class="w-full h-11 bg-surface-container text-on-surface font-label-lg text-label-lg rounded-xl active:bg-surface-container-high transition-colors flex items-center justify-center"
+            onclick="history.back()" type="button">
+            Cancelar
+          </button>
+          <div class="flex items-center justify-center gap-1.5 pt-1 text-center px-space-sm">
+            <span class="material-symbols-outlined text-[16px] text-outline flex-shrink-0">history</span>
+            <p class="font-body-sm text-body-sm text-outline">
+              La relación anterior quedará archivada en el historial de trazabilidad del paciente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let selectedOwnerId = 1;
+
+      function selectOwner(id) {
+        selectedOwnerId = id;
+        const card1 = document.getElementById('owner-card-1');
+        const card2 = document.getElementById('owner-card-2');
+        const icon1 = document.getElementById('check-icon-1');
+        const icon2 = document.getElementById('check-icon-2');
+
+        if (id === 1) {
+          card1.className = 'cursor-pointer bg-primary-container text-on-primary rounded-xl p-space-sm transition-all duration-200 shadow-md';
+          card2.className = 'cursor-pointer bg-surface-container-low text-on-surface rounded-xl p-space-sm transition-all duration-200';
+          icon1.innerHTML = '<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: \'FILL\' 1;">check</span>';
+          icon1.className = 'w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 shadow';
+          icon2.innerHTML = '<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>';
+          icon2.className = 'w-6 h-6 rounded-full bg-surface-container-high text-surface-container-highest flex items-center justify-center flex-shrink-0';
+        } else {
+          card2.className = 'cursor-pointer bg-primary-container text-on-primary rounded-xl p-space-sm transition-all duration-200 shadow-md';
+          card1.className = 'cursor-pointer bg-surface-container-low text-on-surface rounded-xl p-space-sm transition-all duration-200';
+          icon2.innerHTML = '<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: \'FILL\' 1;">check</span>';
+          icon2.className = 'w-6 h-6 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 shadow';
+          icon1.innerHTML = '<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>';
+          icon1.className = 'w-6 h-6 rounded-full bg-surface-container-high text-surface-container-highest flex items-center justify-center flex-shrink-0';
+        }
+      }
+
+      function toggleLegalCheckbox() {
+        const cb = document.getElementById('legal-checkbox');
+        cb.checked = !cb.checked;
+      }
+
+      // Manejo de archivo
+      const fileDrop = document.getElementById('file-dropzone');
+      const fileInput = document.getElementById('file-input');
+      const fileNamePreview = document.getElementById('file-name-preview');
+
+      fileDrop.addEventListener('click', (e) => {
+        if (e.target !== fileInput) {
+          fileInput.click();
+        }
+      });
+
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          fileNamePreview.textContent = fileInput.files[0].name;
+          fileNamePreview.classList.add('text-secondary');
+        }
+      });
+
+      // Limpiar buscador
+      const clearBtn = document.getElementById('clear-search-btn');
+      const searchInput = document.getElementById('owner-search-input');
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+      });
+
+      // Fecha actual formateada
+      const today = new Date();
+      const options = {day: '2-digit', month: 'short', year: 'numeric'};
+      const dateFormatted = today.toLocaleDateString('es-ES', options);
+      document.getElementById('effective-date-display').textContent = dateFormatted + ' (Hoy)';
+
+      function saveTransfer() {
+        const legalChecked = document.getElementById('legal-checkbox').checked;
+        if (!legalChecked) {
+          alert('Debe confirmar la verificación de identidad y lectura de microchip antes de continuar.');
+          return;
+        }
+        const btn = document.getElementById('save-transfer-btn');
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> Actualizando expediente...';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: \'FILL\' 1;">task_alt</span> ¡Titularidad Actualizada!';
+          btn.classList.remove('bg-primary');
+          btn.classList.add('bg-tertiary-container', 'text-on-tertiary');
+          setTimeout(() => {
+            window.history.back();
+          }, 1200);
+        }, 900);
+      }
+    </script>
+  </main>
+</body>
+
+</html>

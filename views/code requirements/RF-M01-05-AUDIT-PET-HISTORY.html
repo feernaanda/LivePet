@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_stack" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d3e4fe",
+            "tertiary-container": "#004a31",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "secondary": "#0051d5",
+            "tertiary-fixed-dim": "#4edea3",
+            "surface": "#f8f9ff",
+            "on-primary-fixed-variant": "#264191",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#00174b",
+            "surface-container": "#e5eeff",
+            "on-secondary-container": "#fefcff",
+            "inverse-surface": "#213145",
+            "surface-dim": "#cbdbf5",
+            "on-error": "#ffffff",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#444651",
+            "on-secondary-fixed-variant": "#003ea8",
+            "error-container": "#ffdad6",
+            "primary": "#00236f",
+            "outline": "#757682",
+            "on-surface": "#0b1c30",
+            "tertiary": "#00311f",
+            "primary-container": "#1e3a8a",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#316bf3",
+            "surface-bright": "#f8f9ff",
+            "primary-fixed": "#dce1ff",
+            "surface-tint": "#4059aa",
+            "on-primary-container": "#90a8ff",
+            "outline-variant": "#c5c5d3",
+            "surface-container-high": "#dce9ff",
+            "secondary-fixed-dim": "#b4c5ff",
+            "on-primary-fixed": "#00164e",
+            "secondary-fixed": "#dbe1ff",
+            "inverse-primary": "#b6c4ff",
+            "on-tertiary-fixed": "#002113",
+            "on-tertiary-container": "#27c38a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#6ffbbe",
+            "on-primary": "#ffffff",
+            "on-background": "#0b1c30",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "display": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    }</script>
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-space-md flex items-center justify-between">
+      <div class="flex items-center gap-space-xs"><button aria-label="Regresar"
+          class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors"
+          onclick="history.back()"><span
+            class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button>
+        <h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[210px]">Historial
+          Mascota</h1>
+      </div>
+      <div class="flex items-center gap-space-xs">
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary/20"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col relative w-full pt-16 pb-safe bg-surface flex-1 min-h-screen">
+    <div class="flex flex-col w-full px-space-md py-space-sm space-y-space-md">
+      <!-- Header Context Badge: Event ID & Verification State -->
+      <div
+        class="flex flex-wrap items-center justify-between gap-space-xs bg-surface-container-low p-space-sm rounded-xl shadow-sm">
+        <div class="flex items-center gap-space-xs">
+          <span class="material-symbols-outlined text-secondary text-[20px]"
+            style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          <div class="flex flex-col">
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Identificador de
+              Auditoría</span>
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight">#AUD-2024-88492</span>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-1.5 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Verificado en Cadena</span>
+        </div>
+      </div>
+      <!-- Compliance Banner: WORM Storage Immutable Alert -->
+      <div class="bg-surface-container-highest p-space-md rounded-xl shadow-sm space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-primary">
+            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+            <span class="font-label-lg text-label-lg font-bold">Aviso de Cumplimiento Normativo</span>
+          </div>
+          <span
+            class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container tracking-wider uppercase font-semibold">
+            INMUTABLE / WORM Storage
+          </span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Este registro es de solo lectura y no puede ser modificado ni eliminado desde la interfaz de usuario en
+          conformidad con el protocolo <strong class="text-on-surface">RF-M01-05</strong> y la ley reguladora de
+          protección de datos clínicos y sanitarios.
+        </p>
+      </div>
+      <!-- Event Summary Card -->
+      <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-md">
+        <div class="flex items-start justify-between gap-space-xs">
+          <div class="space-y-1">
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operación
+              Registrada</span>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Modificación de Dosis y Diagnóstico Clínico
+            </h2>
+          </div>
+          <span
+            class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-semibold uppercase tracking-wider flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">warning</span>
+            Alta / Crítica
+          </span>
+        </div>
+        <!-- Timestamp detail -->
+        <div class="flex items-center gap-2 p-2.5 bg-surface-container-low rounded-lg text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+          <div class="flex flex-col">
+            <span class="font-label-sm text-label-sm text-outline">Marca Temporal de Servidor NTP</span>
+            <span class="font-body-sm text-body-sm text-on-surface font-semibold">24 de Octubre de 2024, 10:42:15.302
+              UTC+2</span>
+          </div>
+        </div>
+        <!-- Affected Module & Patient Profile -->
+        <div class="p-space-sm bg-surface-container rounded-xl space-y-2">
+          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Módulo
+            Afectado & Paciente</span>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-surface-container-highest overflow-hidden flex-shrink-0">
+              <img class="w-full h-full object-cover"
+                data-alt="A friendly Golden Retriever dog named Toby wearing a blue medical neck collar in a bright modern veterinary consultation clinic, high key daylight, warm professional clinical aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZSoMoEITvEtAqkEbkGj4v6VizBqDhhbAU7DWc1jpM51Oko0lUEUHDd8T9XdpM5Tl6IG7buTB3tLQvrQxQ8vTVTqDxwRA2shMT1zk6Fiha9_1RVlRkg5HrworSI7CGxQQHXYjzGmutbzwIV7p7yWHjtDHBvej5hqExlQRvhtG9PHriStznBzm8Rw0nXWdDLuqGsW_D5RJLFmoT5Sq145jKkGg3bx8nNdPHVpz392k" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Toby</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Canino • Golden Retriever</p>
+              <div class="flex items-center gap-1 text-outline font-label-sm text-label-sm mt-0.5">
+                <span class="material-symbols-outlined text-[14px]">memory</span>
+                <span class="font-mono">Chip: 98109810239</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Authentication & Authorization Metadata -->
+      <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+        <div class="flex items-center gap-2 text-on-surface">
+          <span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+          <h3 class="font-headline-sm text-headline-sm">Credenciales y Origen de Sesión</h3>
+        </div>
+        <div class="flex items-center gap-3 p-space-sm bg-surface-container-low rounded-xl">
+          <div
+            class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-on-secondary-container">
+            <span class="material-symbols-outlined text-[24px]">clinical_notes</span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between">
+              <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Dra. Laura Ruiz Sánchez</h4>
+              <span
+                class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-mono">VET-0019</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Médico Veterinario Especialista</p>
+          </div>
+        </div>
+        <!-- Security Session Specs -->
+        <div class="space-y-2 pt-1 font-body-sm text-body-sm">
+          <div class="flex items-start gap-2.5 p-2 bg-surface-container-low rounded-lg">
+            <span class="material-symbols-outlined text-tertiary-container text-[18px] mt-0.5">fingerprint</span>
+            <div class="min-w-0 flex-1">
+              <span class="font-label-sm text-label-sm text-outline block">Autenticación Biométrica</span>
+              <span class="text-on-surface">Token JWT firmado con sesión biométrica activa (Hardware Security
+                Key)</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 p-2 bg-surface-container-low rounded-lg">
+            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">router</span>
+            <div class="min-w-0 flex-1">
+              <span class="font-label-sm text-label-sm text-outline block">Origen de Red & Cliente</span>
+              <span class="text-on-surface font-mono text-[12px] block">192.168.1.45 (Red Clínica Central - Quirófano
+                B)</span>
+              <span class="text-on-surface-variant text-[12px]">Chrome iOS 17.4 • Dispositivo Autorizado
+                #DEV-VET-04</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Detailed Traceability Diff (Before vs After) -->
+      <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-md">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-[20px]">difference</span>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Comparativa Forense de Cambios</h3>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container-high text-on-surface rounded-full">2
+            Campos Modificados</span>
+        </div>
+        <!-- Diff 1: Diagnóstico -->
+        <div class="space-y-1.5 bg-surface-container-low p-space-sm rounded-xl">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-outline">diagnosis</span>
+              Campo: Diagnóstico
+            </span>
+            <span class="font-label-sm text-label-sm text-secondary font-mono">schema.medicalHistory.diagnosis</span>
+          </div>
+          <!-- Before State -->
+          <div class="p-2.5 rounded-lg bg-surface-container space-y-0.5">
+            <div class="flex items-center gap-1.5 text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">remove_circle_outline</span>
+              <span class="font-label-sm text-label-sm font-semibold uppercase">Estado Anterior</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-through">Gastroenteritis leve en
+              observación</p>
+          </div>
+          <!-- After State -->
+          <div class="p-2.5 rounded-lg bg-surface-container-highest space-y-0.5">
+            <div class="flex items-center gap-1.5 text-primary">
+              <span class="material-symbols-outlined text-[14px]">add_circle</span>
+              <span class="font-label-sm text-label-sm font-bold uppercase">Estado Actual Registrado</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-primary font-medium">Gastroenteritis infecciosa aguda con
+              deshidratación grado I</p>
+          </div>
+        </div>
+        <!-- Diff 2: Prescripción -->
+        <div class="space-y-1.5 bg-surface-container-low p-space-sm rounded-xl">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-outline">prescriptions</span>
+              Campo: Prescripción & Posología
+            </span>
+            <span class="font-label-sm text-label-sm text-secondary font-mono">schema.medicalHistory.rx</span>
+          </div>
+          <!-- Before State -->
+          <div class="p-2.5 rounded-lg bg-surface-container space-y-0.5">
+            <div class="flex items-center gap-1.5 text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">remove_circle_outline</span>
+              <span class="font-label-sm text-label-sm font-semibold uppercase">Estado Anterior</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-through">Metoclopramida 0.5 mg/kg c/12h</p>
+          </div>
+          <!-- After State -->
+          <div class="p-2.5 rounded-lg bg-surface-container-highest space-y-0.5">
+            <div class="flex items-center gap-1.5 text-primary">
+              <span class="material-symbols-outlined text-[14px]">add_circle</span>
+              <span class="font-label-sm text-label-sm font-bold uppercase">Estado Actual Registrado</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-primary font-medium">Metoclopramida 0.5 mg/kg + Fluidoterapia
+              Ringer Lactato 250ml</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cryptographic Blockchain Fingerprint -->
+      <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-[20px]">enhanced_encryption</span>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Huella Criptográfica SHA-256</h3>
+          </div>
+          <span
+            class="font-label-sm text-label-sm text-on-tertiary-container bg-tertiary-container px-2 py-0.5 rounded-full font-bold">Bloque
+            #492810</span>
+        </div>
+        <!-- Previous Block Hash -->
+        <div class="p-2.5 bg-surface-container-low rounded-lg space-y-1">
+          <span class="font-label-sm text-label-sm text-outline uppercase block">Hash del Bloque Anterior (Parent
+            Chain)</span>
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-mono text-body-sm text-on-surface-variant truncate">e3b0c44298fc1c149afbf4c8...</span>
+            <button class="p-1 rounded text-outline hover:text-primary hover:bg-surface-container transition-colors"
+              onclick="navigator.clipboard?.writeText('e3b0c44298fc1c149afbf4c8a82d021c7d23d8c199859f71c4c1d2e539829f01')"
+              title="Copiar hash" type="button">
+              <span class="material-symbols-outlined text-[16px]">content_copy</span>
+            </button>
+          </div>
+        </div>
+        <!-- Event Signature Hash -->
+        <div class="p-2.5 bg-surface-container-high rounded-lg space-y-1">
+          <span class="font-label-sm text-label-sm text-primary font-semibold uppercase block">Hash de Firma del Evento
+            (Merkle Root Node)</span>
+          <div class="flex items-center justify-between gap-2">
+            <span
+              class="font-mono text-body-sm text-primary font-semibold truncate">8f434346648f6b96df89dda9011f...</span>
+            <button class="p-1 rounded text-primary hover:bg-surface-container-highest transition-colors"
+              onclick="navigator.clipboard?.writeText('8f434346648f6b96df89dda9011f180327f311c9bc5e9058b8f2c246f90111ef')"
+              title="Copiar hash" type="button">
+              <span class="material-symbols-outlined text-[16px]">content_copy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Action Controls -->
+      <div class="space-y-space-sm pt-2">
+        <!-- Primary CTA -->
+        <button
+          class="w-full h-12 bg-secondary text-on-secondary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm hover:bg-primary-container active:scale-[0.99] transition-all"
+          type="button">
+          <span class="material-symbols-outlined text-[20px]">pets</span>
+          Ver Historial Completo del Paciente Toby
+        </button>
+        <!-- Secondary CTA -->
+        <button
+          class="w-full h-11 bg-surface-container-highest text-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm hover:bg-surface-container active:scale-[0.99] transition-all"
+          type="button">
+          <span class="material-symbols-outlined text-[20px]">download</span>
+          Descargar Certificado Criptográfico de Trazabilidad
+        </button>
+        <!-- Explicit Audit Policy Footer Note -->
+        <div class="flex items-center justify-center gap-2 p-3 text-center">
+          <span class="material-symbols-outlined text-[16px] text-outline flex-shrink-0">gavel</span>
+          <p class="font-body-sm text-body-sm text-outline">
+            La eliminación de este registro está deshabilitada permanentemente por política de auditoría clínica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

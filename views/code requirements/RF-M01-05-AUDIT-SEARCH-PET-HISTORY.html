@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d3e4fe",
+            "tertiary-container": "#004a31",
+            "primary-fixed-dim": "#b6c4ff",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "secondary": "#0051d5",
+            "tertiary-fixed-dim": "#4edea3",
+            "surface": "#f8f9ff",
+            "on-primary-fixed-variant": "#264191",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#00174b",
+            "surface-container": "#e5eeff",
+            "on-secondary-container": "#fefcff",
+            "inverse-surface": "#213145",
+            "surface-dim": "#cbdbf5",
+            "on-error": "#ffffff",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#444651",
+            "on-secondary-fixed-variant": "#003ea8",
+            "error-container": "#ffdad6",
+            "primary": "#00236f",
+            "outline": "#757682",
+            "on-surface": "#0b1c30",
+            "tertiary": "#00311f",
+            "primary-container": "#1e3a8a",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#316bf3",
+            "surface-bright": "#f8f9ff",
+            "primary-fixed": "#dce1ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#4059aa",
+            "on-primary-container": "#90a8ff",
+            "outline-variant": "#c5c5d3",
+            "surface-container-high": "#dce9ff",
+            "secondary-fixed-dim": "#b4c5ff",
+            "on-primary-fixed": "#00164e",
+            "secondary-fixed": "#dbe1ff",
+            "inverse-primary": "#b6c4ff",
+            "on-tertiary-fixed": "#002113",
+            "on-tertiary-container": "#27c38a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#6ffbbe",
+            "on-primary": "#ffffff",
+            "on-background": "#0b1c30",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-desktop": "2rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "display": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    }</script>
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-space-md flex items-center justify-between">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center"><span
+            class="material-symbols-outlined text-secondary text-[22px]">local_hospital</span></div>
+        <h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[200px]">Auditoría
+        </h1>
+      </div>
+      <div class="flex items-center gap-space-xs"><button aria-label="Notificaciones"
+          class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span
+            class="material-symbols-outlined text-[22px]">notifications</span></button>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary/20"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col relative w-full pt-16 pb-24 bg-surface flex-1 min-h-screen">
+    <div class="flex flex-col w-full">
+      <!-- Status & Integrity Banner -->
+      <div class="px-space-md pt-space-md pb-space-sm">
+        <div
+          class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-space-xs">
+              <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+              <span class="font-label-md text-label-md text-on-surface-variant font-semibold">1,420 eventos
+                sincronizados</span>
+            </div>
+            <div class="flex items-center gap-1 bg-surface-container-high px-2.5 py-0.5 rounded-full">
+              <span class="material-symbols-outlined text-secondary text-[14px]"
+                style="font-variation-settings: 'FILL' 1;">verified</span>
+              <span class="font-label-sm text-label-sm text-primary font-bold">SHA-256 VERIFICADO</span>
+            </div>
+          </div>
+          <div class="flex items-baseline justify-between pt-1">
+            <div>
+              <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Libro Maestro</p>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Trazabilidad Clínica Inmutable
+              </h2>
+            </div>
+            <span class="material-symbols-outlined text-surface-tint/40 text-[28px]">lock</span>
+          </div>
+          <!-- Immutable Notice -->
+          <div class="bg-surface-container-high/60 rounded-lg p-2.5 flex items-start gap-2">
+            <span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">policy</span>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+              <strong class="font-semibold text-on-surface">Registro protegido:</strong> Los eventos son inmutables por
+              normativa de trazabilidad y custodia médica veterinaria.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Search & Filter Controls -->
+      <div class="px-space-md py-space-xs flex flex-col gap-space-sm">
+        <!-- Search Bar -->
+        <div class="relative w-full">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <span class="material-symbols-outlined text-outline text-[20px]">search</span>
+          </div>
+          <input
+            class="w-full h-11 pl-10 pr-10 bg-surface-container-lowest text-on-surface rounded-xl font-body-md text-body-md shadow-sm outline-none placeholder:text-outline focus:bg-surface-container-low transition-all"
+            id="auditSearch" placeholder="Buscar por usuario, IP, paciente o evento..." type="text" />
+          <button class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface"
+            id="clearSearch"
+            onclick="document.getElementById('auditSearch').value=''; this.classList.add('hidden'); filterList();">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+        <!-- Category Quick Filters -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+          <button
+            class="filter-chip active-filter px-3.5 py-1.5 rounded-full font-label-md text-label-md font-semibold bg-primary text-on-primary shadow-sm shrink-0 transition-colors"
+            onclick="setFilter('all', this)">
+            Todos
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-on-surface-variant shrink-0 flex items-center gap-1.5 hover:bg-surface-container transition-colors"
+            onclick="setFilter('critico', this)">
+            <span class="w-2 h-2 rounded-full bg-error"></span>
+            Críticos
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-on-surface-variant shrink-0 hover:bg-surface-container transition-colors"
+            onclick="setFilter('historia', this)">
+            Historias
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-on-surface-variant shrink-0 hover:bg-surface-container transition-colors"
+            onclick="setFilter('farmaco', this)">
+            Fármacos
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-on-surface-variant shrink-0 hover:bg-surface-container transition-colors"
+            onclick="setFilter('acceso', this)">
+            Acceso
+          </button>
+        </div>
+        <!-- Time Horizon Bar -->
+        <div class="flex items-center justify-between bg-surface-container-low p-1 rounded-xl">
+          <button
+            class="time-btn flex-1 py-1 text-center font-label-sm text-label-sm font-semibold rounded-lg bg-surface-container-lowest text-primary shadow-sm transition-all"
+            onclick="setTimeRange('today', this)">
+            Hoy
+          </button>
+          <button
+            class="time-btn flex-1 py-1 text-center font-label-sm text-label-sm text-on-surface-variant transition-all"
+            onclick="setTimeRange('7d', this)">
+            Últimos 7 días
+          </button>
+          <button
+            class="time-btn flex-1 py-1 text-center font-label-sm text-label-sm text-on-surface-variant transition-all"
+            onclick="setTimeRange('month', this)">
+            Este mes
+          </button>
+        </div>
+      </div>
+      <!-- Audit Event Feed -->
+      <div class="px-space-md py-space-sm flex flex-col gap-space-sm" id="eventFeed">
+        <!-- Item 1: Critical History Modification -->
+        <div
+          class="audit-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5 transition-all"
+          data-search="laura ruiz toby golden modificacion historial medico 192.168.1.45" data-type="critico historia">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span
+                class="bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold tracking-wider">
+                CRÍTICO
+              </span>
+              <span
+                class="bg-surface-container-high text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+                MODIFICACIÓN
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[14px]">schedule</span>
+              <span>Hoy, 10:42:15</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 pt-0.5">
+            <div
+              class="w-10 h-10 rounded-full bg-error-container/40 flex items-center justify-center shrink-0 text-error">
+              <span class="material-symbols-outlined text-[20px]">edit_note</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Modificación de
+                Historia Clínica</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+                <span class="material-symbols-outlined text-secondary text-[16px]">stethoscope</span>
+                Dra. Laura Ruiz <span class="font-label-sm text-label-sm text-outline">(VET-0019)</span>
+              </p>
+            </div>
+          </div>
+          <!-- Target Detail Pill -->
+          <div class="bg-surface-container rounded-lg p-2.5 flex items-center justify-between text-on-surface">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary text-[16px]">pets</span>
+              </div>
+              <div class="truncate">
+                <p class="font-label-md text-label-md font-semibold truncate">Toby (Canino • Golden Retriever)</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Módulo: Historial Médico</p>
+              </div>
+            </div>
+            <span class="font-label-sm text-label-sm text-outline shrink-0 ml-2 font-mono">192.168.1.45</span>
+          </div>
+        </div>
+        <!-- Item 2: Blocked Deletion Attempt (Alert) -->
+        <div
+          class="audit-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5 transition-all"
+          data-search="pablo ramos recetas clinicas eliminacion intento bloqueado alerta" data-type="critico">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span
+                class="bg-error text-on-error px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold tracking-wider">
+                ALERTA
+              </span>
+              <span
+                class="bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+                ELIMINACIÓN BLOQUEADA
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[14px]">schedule</span>
+              <span>Hoy, 09:15:02</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 pt-0.5">
+            <div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center shrink-0 text-error">
+              <span class="material-symbols-outlined text-[20px]">gpp_bad</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-sm text-headline-sm text-error font-semibold truncate">Intento de Eliminación
+                Denegado</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+                <span class="material-symbols-outlined text-outline text-[16px]">badge</span>
+                Aux. Pablo Ramos <span class="font-label-sm text-label-sm text-error font-semibold">(Restricción de
+                  Rol)</span>
+              </p>
+            </div>
+          </div>
+          <div class="bg-error-container/30 rounded-lg p-2.5 flex items-center justify-between text-on-surface">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="material-symbols-outlined text-error text-[18px]">receipt_long</span>
+              <div class="truncate">
+                <p class="font-label-md text-label-md font-semibold truncate">Módulo: Recetas Clínicas</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Acción: DELETE fallido sobre folio #RC-8921
+                </p>
+              </div>
+            </div>
+            <span class="font-label-sm text-label-sm text-error font-mono shrink-0 ml-2">HASH: 9a4f..e1</span>
+          </div>
+        </div>
+        <!-- Item 3: System Login (Auth) -->
+        <div
+          class="audit-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5 transition-all"
+          data-search="carlos mendoza admin autenticacion login exitoso 2fa" data-type="acceso">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span
+                class="bg-surface-container-high text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+                ACCESO
+              </span>
+              <span
+                class="bg-surface-container text-tertiary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+                2FA OK
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[14px]">schedule</span>
+              <span>Hoy, 08:30:11</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 pt-0.5">
+            <div
+              class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-secondary">
+              <span class="material-symbols-outlined text-[20px]">login</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Acceso al Sistema
+                (Login Exitoso)</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+                <span class="material-symbols-outlined text-secondary text-[16px]">shield_person</span>
+                Dr. Carlos Mendoza <span
+                  class="bg-primary/10 text-primary px-1.5 py-0.2 rounded font-label-sm text-label-sm font-bold">ADMIN</span>
+              </p>
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between text-on-surface">
+            <p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+              Módulo: <strong class="font-medium text-on-surface">Autenticación Central</strong> • Sesión Token Cifrado
+            </p>
+            <span class="font-label-sm text-label-sm text-outline shrink-0 ml-2 font-mono">10.0.4.12</span>
+          </div>
+        </div>
+        <!-- Item 4: Patient Registration -->
+        <div
+          class="audit-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5 transition-all"
+          data-search="elena vega misi felino carlos gomez creacion mascotas alta" data-type="historia">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span
+                class="bg-surface-container-high text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+                CREACIÓN
+              </span>
+              <span
+                class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                NUEVO PACIENTE
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[14px]">schedule</span>
+              <span>Ayer, 18:22:40</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 pt-0.5">
+            <div
+              class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+              <span class="material-symbols-outlined text-[20px]">person_add</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Alta de Paciente y
+                Tutor</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+                <span class="material-symbols-outlined text-outline text-[16px]">support_agent</span>
+                Asist. Elena Vega <span class="font-label-sm text-label-sm text-outline">(Recepción)</span>
+              </p>
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between text-on-surface">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-secondary text-[16px]">pets</span>
+              </div>
+              <div class="truncate">
+                <p class="font-label-md text-label-md font-semibold truncate">Misi (Felino) • Tutor: Carlos Gómez</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Módulo: Registro Mascotas</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]">verified</span>
+          </div>
+        </div>
+        <!-- Item 5: Controlled Drug Prescription -->
+        <div
+          class="audit-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2.5 transition-all"
+          data-search="carlos mendoza ketamina thor farmaco controlado prescripcion farmacia"
+          data-type="critico farmaco">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span
+                class="bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold tracking-wider">
+                CRÍTICO
+              </span>
+              <span
+                class="bg-surface-container-high text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+                FÁRMACO CONTROLADO
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[14px]">schedule</span>
+              <span>Ayer, 16:05:19</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 pt-0.5">
+            <div
+              class="w-10 h-10 rounded-full bg-error-container/50 flex items-center justify-center shrink-0 text-error">
+              <span class="material-symbols-outlined text-[20px]">medication</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Prescripción de
+                Fármaco Controlado</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+                <span class="material-symbols-outlined text-secondary text-[16px]">stethoscope</span>
+                Dr. Carlos Mendoza <span class="font-label-sm text-label-sm text-outline">(VET-0001)</span>
+              </p>
+            </div>
+          </div>
+          <div class="bg-surface-container rounded-lg p-2.5 flex items-center justify-between text-on-surface">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-error text-[16px]">vaccines</span>
+              </div>
+              <div class="truncate">
+                <p class="font-label-md text-label-md font-semibold truncate text-error">Ketamina Vet 50mg / Paciente:
+                  Thor</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Módulo: Farmacia Clínica Especial</p>
+              </div>
+            </div>
+            <span class="font-label-sm text-label-sm text-outline shrink-0 ml-2 font-mono">REC-CT-901</span>
+          </div>
+        </div>
+        <!-- Empty Filter State (Hidden by default) -->
+        <div class="hidden flex-col items-center justify-center py-8 text-center px-4" id="noResults">
+          <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined text-outline text-[24px]">search_off</span>
+          </div>
+          <p class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sin coincidencias</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">No se encontraron eventos para el filtro o
+            término ingresado.</p>
+        </div>
+      </div>
+      <!-- Retention Policy & Export Card -->
+      <div class="px-space-md py-space-sm pb-space-lg">
+        <div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Garantía de Retención Sanitaria
+            </h4>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Conforme a la directiva legal de trazabilidad sanitaria y farmacológica, los registros se custodian durante
+            5 años con firma criptográfica asimétrica. Queda inhabilitada toda acción de borrado o purga manual.
+          </p>
+          <button
+            class="w-full h-11 bg-secondary text-on-secondary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm hover:bg-primary transition-colors active:scale-[0.99]"
+            onclick="triggerExport()">
+            <span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+            <span>Exportar Reporte Cifrado (PDF / CSV)</span>
+          </button>
+          <!-- Toast Feedback (Hidden initially) -->
+          <div
+            class="hidden items-center justify-center gap-2 text-center py-1.5 px-3 bg-tertiary text-on-tertiary rounded-lg font-label-md text-label-md transition-all"
+            id="exportToast">
+            <span class="material-symbols-outlined text-[16px]">task_alt</span>
+            <span>Reporte con firma SHA-256 generado con éxito</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Filter and Interactive Logic
+      let currentFilter = 'all';
+
+      function setFilter(type, btn) {
+        currentFilter = type;
+        document.querySelectorAll('.filter-chip').forEach(el => {
+          el.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          el.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        filterList();
+      }
+
+      function setTimeRange(range, btn) {
+        document.querySelectorAll('.time-btn').forEach(el => {
+          el.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          el.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant');
+      }
+
+      function filterList() {
+        const searchVal = (document.getElementById('auditSearch').value || '').toLowerCase().trim();
+        const cards = document.querySelectorAll('.audit-card');
+        const clearBtn = document.getElementById('clearSearch');
+
+        if (searchVal.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardType = card.getAttribute('data-type') || '';
+          const cardSearch = card.getAttribute('data-search') || '';
+
+          const matchesType = (currentFilter === 'all') || cardType.includes(currentFilter);
+          const matchesSearch = !searchVal || cardSearch.toLowerCase().includes(searchVal);
+
+          if (matchesType && matchesSearch) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        const noResults = document.getElementById('noResults');
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+          noResults.classList.add('flex');
+        } else {
+          noResults.classList.remove('flex');
+          noResults.classList.add('hidden');
+        }
+      }
+
+      document.getElementById('auditSearch').addEventListener('input', filterList);
+
+      function triggerExport() {
+        const toast = document.getElementById('exportToast');
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.remove('flex');
+          toast.classList.add('hidden');
+        }, 3800);
+      }
+
+      // Update shell's active nav tab state for "Auditoría"
+      document.addEventListener('DOMContentLoaded', () => {
+        const auditTab = document.querySelector('nav [data-path="auditoria"]');
+        if (auditTab) {
+          document.querySelectorAll('nav a').forEach(a => {
+            a.classList.remove('text-secondary', 'font-label-md', 'font-semibold');
+            a.classList.add('text-on-surface-variant');
+          });
+          auditTab.classList.add('text-secondary', 'font-label-md', 'font-semibold');
+          auditTab.classList.remove('text-on-surface-variant');
+        }
+      });
+    </script>
+  </main>
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"
+    data-active-classes="text-secondary font-label-md font-semibold">
+    <div class="flex justify-around items-center h-16 px-space-xs"><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors"
+        data-path="usuarios" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span
+          class="font-label-sm text-label-sm">Usuarios</span></a><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors"
+        data-path="mascotas" href="#"><span class="material-symbols-outlined text-[22px]">pets</span><span
+          class="font-label-sm text-label-sm">Mascotas</span></a><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors"
+        data-path="auditoria" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span
+          class="font-label-sm text-label-sm">Auditoría</span></a><a
+        class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant transition-colors"
+        data-path="ajustes" href="#"><span class="material-symbols-outlined text-[22px]">settings</span><span
+          class="font-label-sm text-label-sm">Ajustes</span></a></div>
+  </nav>
+</body>
+
+</html>

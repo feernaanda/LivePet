@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport">
+  <meta content="mobile_stack" name="shell-type">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9ff;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary-container": "#27c38a", "on-surface-variant": "#444651", "surface-bright": "#f8f9ff", "surface-container": "#e5eeff", "on-tertiary": "#ffffff", "secondary-container": "#316bf3", "primary-container": "#1e3a8a", "surface-container-lowest": "#ffffff", "inverse-primary": "#b6c4ff", "on-surface": "#0b1c30", "on-background": "#0b1c30", "outline": "#757682", "primary": "#00236f", "inverse-on-surface": "#eaf1ff", "on-secondary": "#ffffff", "on-primary-fixed": "#00164e", "on-error-container": "#93000a", "on-error": "#ffffff", "secondary-fixed": "#dbe1ff", "surface-dim": "#cbdbf5", "surface-container-low": "#eff4ff", "outline-variant": "#c5c5d3", "on-secondary-fixed": "#00174b", "on-tertiary-fixed": "#002113", "on-primary": "#ffffff", "surface-tint": "#4059aa", "error-container": "#ffdad6", "tertiary-fixed-dim": "#4edea3", "surface-variant": "#d3e4fe", "tertiary-fixed": "#6ffbbe", "tertiary-container": "#004a31", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#003ea8", "background": "#f8f9ff", "surface-container-highest": "#d3e4fe", "inverse-surface": "#213145", "on-secondary-container": "#fefcff", "on-primary-container": "#90a8ff", "secondary": "#0051d5", "on-primary-fixed-variant": "#264191", "primary-fixed-dim": "#b6c4ff", "secondary-fixed-dim": "#b4c5ff", "primary-fixed": "#dce1ff", "on-tertiary-fixed-variant": "#005236", "surface": "#f8f9ff", "error": "#ba1a1a", "tertiary": "#00311f"}, borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, spacing: {"margin-tablet": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "margin-desktop": "2rem", "space-lg": "1.5rem", "gutter": "1rem", "space-md": "1rem"}, fontFamily: {"display": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"]}, fontSize: {"display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]}}}};</script>
+</head>
+
+<body
+  class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-secondary-fixed">
+  <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="h-16 px-margin flex items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Volver"
+          class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container transition-colors"
+          onclick="history.back()" type="button"><span
+            class="material-symbols-outlined text-[24px]">arrow_back</span></button>
+        <div class="flex items-center gap-space-xs min-w-0"><img alt="AuthShield Logo"
+            class="h-6 w-auto object-contain shrink-0"
+            src="https://lh3.googleusercontent.com/aida/ALJJyrCDXSzgio-5y2G1FyyZGk-pZV0pPu353xtQRu9RQCXh5iyMTdPyjuuGggfEwGNgxLsyd_dVj9QSX3Yfv5YZKSCw8rjB-YituKEOrShx_IWuwyanpNw0lYBqmUriWlPr_SLzpMXCUTwjZgTKRB9L6r8EQg6bXk6SiQIUsu3T92XdJ0BH0Gg6K9Evm0UzH-k84MzBaZkjMhnBs0P9dwGy1Vc6WZZRBq7BW-Rtx71pp8U">
+          <div class="flex flex-col min-w-0"><span
+              class="font-label-sm text-label-sm uppercase tracking-wider text-outline truncate leading-none">VetHealth
+              Admin</span>
+            <h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight mt-0.5">Alta en Portal
+              Veterinario</h1>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center pl-1 shrink-0"><img alt="Profile"
+          class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdmAg8TOU6RImO1CdACAgeKtayQ5tpfsMVwQTNgIHiwaVnwjgvBhxJye4iQofxwUn0UfXgPw0Ip76KOzO89NlAZiCfrnd-R1yCmQHf4cElSSNRYP69bEQClDpr2aXa6weOrpyTc7TzQpVD11VBUFoYQE3FZEbOv2F2Qbbn4zNaSglBAUTuk-KH_XmXJxa2RflFZKV9_dFQ9-FN1MGfhZITwg1pOpKr9J1TtGnuRGg">
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen">
+    <div class="flex flex-col w-full pb-8">
+      <!-- Interactive Feedback Banner (Delightful toast container) -->
+      <div
+        class="hidden fixed top-20 left-4 right-4 z-50 transition-all transform duration-300 -translate-y-4 opacity-0"
+        id="toastNotification">
+        <div
+          class="bg-surface-container-lowest p-space-md rounded-xl shadow-xl flex items-center gap-space-sm text-on-surface">
+          <div
+            class="w-8 h-8 rounded-full bg-tertiary-fixed-dim/30 flex items-center justify-center text-on-tertiary-container shrink-0">
+            <span class="material-symbols-outlined text-[18px]">verified_user</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-headline-sm text-headline-sm text-on-surface">¡Usuario registrado con éxito!</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Se ha enviado el enlace de activación.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="px-margin pt-space-md">
+        <!-- Breadcrumb & Page Heading -->
+        <a class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-primary transition-colors py-1 group mb-space-xs"
+          href="javascript:history.back()"><span
+            class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span><span
+            class="">Volver a Equipo</span></a>
+        <div class="flex items-start justify-between gap-space-md mb-space-md">
+          <div class="flex-1 min-w-0">
+            <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Registrar Nuevo
+              Usuario</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">Cree una cuenta para
+              miembros del equipo veterinario o tutores de pacientes.</p>
+          </div>
+          <!-- Visual Avatar Creator Badge / Delightful Identity Pill -->
+          <div class="relative shrink-0 mt-0.5">
+            <div
+              class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-primary shadow-sm transition-all duration-300"
+              id="avatarPreview">
+              AM
+            </div>
+            <div
+              class="absolute -bottom-1 -right-1 w-5 h-5 bg-on-tertiary-container rounded-full flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[12px] text-on-tertiary">add</span>
+            </div>
+          </div>
+        </div>
+        <!-- Main Card Form -->
+        <form
+          class="flex flex-col gap-space-md bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm"
+          id="newUserForm" onsubmit="event.preventDefault(); handleSubmit();">
+          <!-- 1. Nombre & Apellido (2 cols) -->
+          <div class="grid grid-cols-2 gap-space-sm">
+            <div class="flex flex-col gap-1.5">
+              <label class="font-label-md text-label-md text-on-surface flex items-center justify-between"
+                for="firstName">
+                <span class="">Nombre <span class="text-error">*</span></span>
+              </label>
+              <input
+                class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline outline-none shadow-[0_0_0_1px_rgba(197,197,211,0.6)] focus:shadow-[0_0_0_2px_#0051d5] transition-all"
+                id="firstName" name="firstName" oninput="updateAvatarInitials()" placeholder="Ej. Alejandro" required=""
+                type="text" value="Alejandro">
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="font-label-md text-label-md text-on-surface flex items-center justify-between"
+                for="lastName">
+                <span class="">Apellido <span class="text-error">*</span></span>
+              </label>
+              <input
+                class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline outline-none shadow-[0_0_0_1px_rgba(197,197,211,0.6)] focus:shadow-[0_0_0_2px_#0051d5] transition-all"
+                id="lastName" name="lastName" oninput="updateAvatarInitials()" placeholder="Ej. Morales" required=""
+                type="text" value="Morales">
+            </div>
+          </div>
+          <!-- 2. Correo Electrónico -->
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="email">
+              Correo electrónico <span class="text-error">*</span>
+            </label>
+            <div class="relative flex items-center">
+              <span
+                class="material-symbols-outlined absolute left-3 text-[20px] text-outline pointer-events-none">mail</span>
+              <input
+                class="w-full h-11 pl-10 pr-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline outline-none shadow-[0_0_0_1px_rgba(197,197,211,0.6)] focus:shadow-[0_0_0_2px_#0051d5] transition-all"
+                id="email" name="email" placeholder="alejandro.morales@pethealth.vet" required="" type="email"
+                value="alejandro.morales@pethealth.vet">
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5"><span
+                class="material-symbols-outlined text-[14px] text-secondary shrink-0">info</span><span class="">Se usará
+                para acceder al historial clínico y firmar consultas.</span></p>
+          </div>
+          <!-- 3. Teléfono con Prefijo -->
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="phone">
+              Teléfono <span class="text-error">*</span>
+            </label>
+            <div class="flex gap-2">
+              <!-- Country code select -->
+              <div class="relative w-28 shrink-0">
+                <select
+                  class="w-full h-11 pl-3 pr-7 bg-surface-container-low rounded-lg font-label-lg text-label-lg text-on-surface outline-none appearance-none cursor-pointer shadow-[0_0_0_1px_rgba(197,197,211,0.6)] focus:shadow-[0_0_0_2px_#0051d5]"
+                  id="countryCode" name="countryCode">
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+52">🇲🇽 +52</option>
+                  <option value="+57">🇨🇴 +57</option>
+                  <option value="+1">🇺🇸 +1</option>
+                </select>
+                <span
+                  class="material-symbols-outlined absolute right-2 top-3 text-[18px] text-outline pointer-events-none">expand_more</span>
+              </div>
+              <!-- Phone input -->
+              <div class="relative flex-1">
+                <input
+                  class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline outline-none shadow-[0_0_0_1px_rgba(197,197,211,0.6)] focus:shadow-[0_0_0_2px_#0051d5] transition-all"
+                  id="phone" name="phone" placeholder="600 123 456" required="" type="tel" value="600 123 456">
+              </div>
+            </div>
+          </div>
+          <!-- 4. Rol del Usuario (Segmented interactive cards) -->
+          <div class="flex flex-col gap-2 pt-1">
+            <div class="flex items-center justify-between">
+              <label class="font-label-md text-label-md text-on-surface">
+                Rol del usuario <span class="text-error">*</span>
+              </label>
+              <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Nivel de Acceso</span>
+            </div>
+            <div class="flex flex-col gap-2" id="roleSelector"><!-- Medico Veterinario (Selected by default) -->
+              <label
+                class="group relative flex items-start gap-3 p-3 rounded-lg bg-surface-container cursor-pointer transition-all shadow-[0_0_0_1.5px_#316bf3] hover:bg-surface-container-high"
+                id="roleCardVet">
+                <input checked="" class="mt-1 w-4 h-4 accent-secondary shrink-0 cursor-pointer" name="userRole"
+                  onchange="handleRoleChange(this)" type="radio" value="vet">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-lg text-label-lg text-primary">Médico Veterinario</span>
+                    <span
+                      class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Acceso
+                      Clínico</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Acceso total a historias clínicas,
+                    diagnósticos, recetas y cirugías.</p>
+                </div>
+                <span class="material-symbols-outlined text-[20px] text-secondary">medical_services</span>
+              </label>
+              <!-- Asistente / Enfermero Veterinario -->
+              <label
+                class="group relative flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest cursor-pointer transition-all shadow-[0_0_0_1px_rgba(197,197,211,0.4)] hover:bg-surface-container-low">
+                <input class="mt-1 w-4 h-4 accent-secondary shrink-0 cursor-pointer" name="userRole"
+                  onchange="handleRoleChange(this)" type="radio" value="nurse">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-lg text-label-lg text-on-surface">Asistente / Enfermero</span>
+                    <span
+                      class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary">Soporte</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Registro de constantes, vacunas,
+                    triaje y citas de pacientes.</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-[20px] text-outline group-hover:text-primary transition-colors">vital_signs</span>
+              </label>
+              <!-- Tutor / Propietario de Mascota -->
+              <label
+                class="group relative flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest cursor-pointer transition-all shadow-[0_0_0_1px_rgba(197,197,211,0.4)] hover:bg-surface-container-low">
+                <input class="mt-1 w-4 h-4 accent-secondary shrink-0 cursor-pointer" name="userRole"
+                  onchange="handleRoleChange(this)" type="radio" value="owner">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-lg text-label-lg text-on-surface">Tutor / Propietario</span>
+                    <span
+                      class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-highest text-on-surface">Solo
+                      Lectura</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Solo lectura del historial de sus
+                    mascotas, vacunas y recordatorios.</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-[20px] text-outline group-hover:text-primary transition-colors">pets</span>
+              </label>
+            </div>
+          </div>
+          <!-- 5. Contraseña Provisional & Medidor de Fortaleza -->
+          <div class="flex flex-col gap-2 pt-1">
+            <label class="font-label-md text-label-md text-on-surface" for="tempPassword">
+              Contraseña provisional <span class="text-error">*</span>
+            </label>
+            <div class="relative flex items-center">
+              <input
+                class="w-full h-11 pl-3 pr-11 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline outline-none shadow-[0_0_0_1px_rgba(197,197,211,0.6)] focus:shadow-[0_0_0_2px_#0051d5] transition-all font-mono"
+                id="tempPassword" name="tempPassword" oninput="checkPasswordStrength(this.value)"
+                placeholder="Ingrese contraseña segura" required="" type="password" value="K8#mQx!90Auth">
+              <button aria-label="Mostrar u ocultar contraseña"
+                class="absolute right-2.5 p-1 rounded-md text-outline hover:text-on-surface transition-colors"
+                onclick="togglePasswordVisibility()" type="button">
+                <span class="material-symbols-outlined text-[20px]" id="eyeIcon">visibility</span>
+              </button>
+            </div>
+            <!-- Strength Meter Bar -->
+            <div class="flex flex-col gap-1.5 mt-1 bg-surface-container-low p-2.5 rounded-lg">
+              <div class="flex items-center justify-between font-label-md text-label-md">
+                <span class="text-on-surface-variant">Fortaleza:</span>
+                <span class="text-on-tertiary-container font-headline-sm text-headline-sm flex items-center gap-1"
+                  id="strengthLabel">
+                  <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-ping"></span>
+                  Segura
+                </span>
+              </div>
+              <!-- 4 segments meter -->
+              <div class="grid grid-cols-4 gap-1.5 h-1.5 w-full">
+                <div class="h-full rounded-full bg-on-tertiary-container transition-all duration-300" id="bar1"></div>
+                <div class="h-full rounded-full bg-on-tertiary-container transition-all duration-300" id="bar2"></div>
+                <div class="h-full rounded-full bg-on-tertiary-container transition-all duration-300" id="bar3"></div>
+                <div class="h-full rounded-full bg-on-tertiary-container transition-all duration-300" id="bar4"></div>
+              </div>
+            </div>
+            <!-- Security policy note -->
+            <div class="flex items-start gap-2 bg-surface-container p-2.5 rounded-lg text-primary">
+              <span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">lock</span>
+              <p class="font-body-sm text-body-sm leading-tight text-on-surface-variant">Se almacenará con cifrado de
+                grado médico (<strong class="font-semibold text-primary">AES-256 / argon2</strong>) para estricta
+                protección de datos clínicos y privacidad de pacientes.</p>
+            </div>
+          </div>
+          <!-- 6. Checkbox Enviar Credenciales -->
+          <div class="pt-1">
+            <label
+              class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+              <input checked="" class="mt-0.5 w-5 h-5 rounded accent-secondary cursor-pointer shrink-0"
+                id="sendCredentials" name="sendCredentials" type="checkbox">
+              <div class="flex-1 min-w-0"><span
+                  class="font-label-md text-label-md text-on-surface block leading-tight">Enviar credenciales y enlace
+                  de activación al portal de salud animal</span><span
+                  class="font-body-sm text-body-sm text-outline block mt-0.5">El usuario recibirá instrucciones seguras
+                  para configurar su acceso clínico o portal de tutor.</span></div>
+            </label>
+          </div>
+          <!-- Form Actions -->
+          <div class="flex flex-col gap-2.5 pt-2">
+            <button
+              class="w-full h-12 bg-secondary hover:bg-primary-container text-on-secondary rounded-lg font-label-lg text-label-lg shadow-sm active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+              id="btnSubmit" type="submit"><span class="material-symbols-outlined text-[20px]">pets</span><span
+                class="">Crear Cuenta Veterinaria</span></button>
+            <button
+              class="w-full h-11 bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2"
+              onclick="history.back()" type="button">
+              <span class="">Cancelar</span>
+            </button>
+          </div>
+        </form>
+        <!-- Operational Mini Footer -->
+        <div class="flex items-center justify-center gap-2 py-4 text-center">
+          <span class="material-symbols-outlined text-[16px] text-outline">verified</span>
+          <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Audit Trail Protocol ID
+            #SEC-2024-M01</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function togglePasswordVisibility() {
+        const input = document.getElementById('tempPassword');
+        const icon = document.getElementById('eyeIcon');
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.textContent = 'visibility_off';
+        } else {
+          input.type = 'password';
+          icon.textContent = 'visibility';
+        }
+      }
+
+      function updateAvatarInitials() {
+        const first = document.getElementById('firstName').value.trim();
+        const last = document.getElementById('lastName').value.trim();
+        const preview = document.getElementById('avatarPreview');
+        const initials = ((first ? first[0] : '') + (last ? last[0] : '')).toUpperCase() || '??';
+        preview.textContent = initials;
+      }
+
+      function handleRoleChange(selectedRadio) {
+        const container = document.getElementById('roleSelector');
+        const cards = container.querySelectorAll('label');
+        cards.forEach(card => {
+          const radio = card.querySelector('input[type="radio"]');
+          if (radio.checked) {
+            card.className = "group relative flex items-start gap-3 p-3 rounded-lg bg-surface-container cursor-pointer transition-all shadow-[0_0_0_1.5px_#316bf3]";
+          } else {
+            card.className = "group relative flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest cursor-pointer transition-all shadow-[0_0_0_1px_rgba(197,197,211,0.4)] hover:bg-surface-container-low";
+          }
+        });
+      }
+
+      function checkPasswordStrength(val) {
+        const label = document.getElementById('strengthLabel');
+        const b1 = document.getElementById('bar1');
+        const b2 = document.getElementById('bar2');
+        const b3 = document.getElementById('bar3');
+        const b4 = document.getElementById('bar4');
+
+        const resetBars = (colorClass) => {
+          [b1, b2, b3, b4].forEach((b, idx) => {
+            b.className = 'h-full rounded-full transition-all duration-300 ' + colorClass(idx);
+          });
+        };
+
+        if (!val || val.length < 5) {
+          label.textContent = 'Débil';
+          label.className = 'text-error font-headline-sm text-headline-sm';
+          resetBars(i => (i === 0 ? 'bg-error' : 'bg-outline-variant/30'));
+        } else if (val.length < 8) {
+          label.textContent = 'Regular';
+          label.className = 'text-secondary font-headline-sm text-headline-sm';
+          resetBars(i => (i < 2 ? 'bg-secondary' : 'bg-outline-variant/30'));
+        } else if (val.length < 10) {
+          label.textContent = 'Aceptable';
+          label.className = 'text-secondary-container font-headline-sm text-headline-sm';
+          resetBars(i => (i < 3 ? 'bg-secondary-container' : 'bg-outline-variant/30'));
+        } else {
+          label.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-ping inline-block"></span> Segura';
+          label.className = 'text-on-tertiary-container font-headline-sm text-headline-sm flex items-center gap-1';
+          resetBars(() => 'bg-on-tertiary-container');
+        }
+      }
+
+      function handleSubmit() {
+        const btn = document.getElementById('btnSubmit');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Guardando...';
+
+        setTimeout(() => {
+          const toast = document.getElementById('toastNotification');
+          toast.classList.remove('hidden');
+          setTimeout(() => {
+            toast.classList.remove('-translate-y-4', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+          }, 50);
+
+          setTimeout(() => {
+            history.back();
+          }, 1600);
+        }, 700);
+      }
+    </script>
+  </main>
+
+</body>
+
+</html>
