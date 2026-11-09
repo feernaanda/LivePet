@@ -1,378 +1,527 @@
 <!DOCTYPE html>
 
-<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-bright": "#faf8ff", "tertiary-fixed": "#bdece2", "surface-container-low": "#f2f3ff", "outline-variant": "#bec9c7", "surface-container-highest": "#dae2fd", "primary-fixed": "#abefe8", "on-secondary-container": "#006f64", "error-container": "#ffdad6", "inverse-primary": "#8fd3cc", "on-primary": "#ffffff", "secondary-fixed": "#71f8e4", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3f4947", "on-error": "#ffffff", "surface-container": "#eaedff", "on-surface": "#131b2e", "error": "#ba1a1a", "surface-tint": "#216963", "on-primary-fixed": "#00201e", "on-secondary-fixed-variant": "#005048", "inverse-on-surface": "#eef0ff", "on-error-container": "#93000a", "on-tertiary-fixed": "#00201c", "on-primary-container": "#91d5ce", "primary-container": "#115e59", "secondary-container": "#6df5e1", "tertiary-fixed-dim": "#a2d0c6", "tertiary": "#17443e", "inverse-surface": "#283044", "on-tertiary-container": "#a4d2c9", "on-tertiary": "#ffffff", "on-background": "#131b2e", "background": "#faf8ff", "on-tertiary-fixed-variant": "#224e47", "on-primary-fixed-variant": "#00504b", "surface-dim": "#d2d9f4", "outline": "#6f7977", "primary": "#004541", "secondary": "#006b5f", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "secondary-fixed-dim": "#4fdbc8", "surface-container-high": "#e2e7ff", "surface": "#faf8ff", "primary-fixed-dim": "#8fd3cc", "on-secondary-fixed": "#00201c", "tertiary-container": "#305c55" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin": "1rem", "space-xl": "2rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, fontFamily: { "body-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Manrope"], "headline-md": ["Manrope"], "label-lg": ["Hanken Grotesk"], "headline-lg": ["Manrope"], "headline-sm": ["Manrope"], "label-sm": ["Hanken Grotesk"], "display-lg": ["Manrope"], "label-md": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "body-sm": ["Hanken Grotesk"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.005em", fontWeight: "400" }] } } } };</script><style>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_stack" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-bright": "#faf8ff", "tertiary-fixed": "#bdece2", "surface-container-low": "#f2f3ff", "outline-variant": "#bec9c7", "surface-container-highest": "#dae2fd", "primary-fixed": "#abefe8", "on-secondary-container": "#006f64", "error-container": "#ffdad6", "inverse-primary": "#8fd3cc", "on-primary": "#ffffff", "secondary-fixed": "#71f8e4", "surface-container-lowest": "#ffffff", "on-surface-variant": "#3f4947", "on-error": "#ffffff", "surface-container": "#eaedff", "on-surface": "#131b2e", "error": "#ba1a1a", "surface-tint": "#216963", "on-primary-fixed": "#00201e", "on-secondary-fixed-variant": "#005048", "inverse-on-surface": "#eef0ff", "on-error-container": "#93000a", "on-tertiary-fixed": "#00201c", "on-primary-container": "#91d5ce", "primary-container": "#115e59", "secondary-container": "#6df5e1", "tertiary-fixed-dim": "#a2d0c6", "tertiary": "#17443e", "inverse-surface": "#283044", "on-tertiary-container": "#a4d2c9", "on-tertiary": "#ffffff", "on-background": "#131b2e", "background": "#faf8ff", "on-tertiary-fixed-variant": "#224e47", "on-primary-fixed-variant": "#00504b", "surface-dim": "#d2d9f4", "outline": "#6f7977", "primary": "#004541", "secondary": "#006b5f", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "secondary-fixed-dim": "#4fdbc8", "surface-container-high": "#e2e7ff", "surface": "#faf8ff", "primary-fixed-dim": "#8fd3cc", "on-secondary-fixed": "#00201c", "tertiary-container": "#305c55"}, borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, spacing: {"margin": "1rem", "space-xl": "2rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem"}, fontFamily: {"body-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Manrope"], "headline-md": ["Manrope"], "label-lg": ["Hanken Grotesk"], "headline-lg": ["Manrope"], "headline-sm": ["Manrope"], "label-sm": ["Hanken Grotesk"], "display-lg": ["Manrope"], "label-md": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "body-sm": ["Hanken Grotesk"]}, fontSize: {"body-md": ["14px", {lineHeight: "20px", letterSpacing: "0em", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700"}], "headline-md": ["20px", {lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700"}], "headline-sm": ["16px", {lineHeight: "24px", letterSpacing: "0em", fontWeight: "600"}], "label-sm": ["10px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700"}], "display-lg": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", letterSpacing: "0em", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.005em", fontWeight: "400"}]}}}};</script>
+  <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Volver" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors flex-shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span></button><img alt="VetCare Pro Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XAaPRQ6x4HwHVPbe1k7butDMNm4ET9LPWOJtq5uDMx5f5rzG8noTtHkbFFGFdIwnP8tTSDmiI9wpiVHPBznBH6d9riPIJLjUuj07Hril-8KBmES_DFT8fQqngixA6Q-mM2cvhCmXqOy0j17lFzt4D0HCPYT5CUMNKQ6RhDWcPZenuYf-3wDYbBmQtV0xbacn9jrcPruxE0isggO-QfJwOieVlQRtxYxaOWRj3V6u4a"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-space-xs">Detalle Paciente</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXc3FTZ0ZtTrDuz-6tmD083YJ13Wp39oDWOr7W_3BcUZWYukZ8dpBw1KSf0wtvpoAg9iOJBsOc-WXNVeFt12MPXXaRJMdCk3rDZUNxufL19Egf2t4RhMqEYlvs6jw-fAxjxVI-O2xmtJk_fvxV-ovg14WD3j6dfuqU8PJoEKhu7HKBpHtcATpX68pb5R7Kt-JPVjLOuStGgUOrYCg8_OwKrQDi7PtaOQ6fWOnTww"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-32">
-<!-- Status & Context Ribbon -->
-<section class="px-margin pt-space-md pb-space-sm flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed">
-<span class="material-symbols-outlined text-[16px]">pets</span>
-</span>
-<span class="font-label-md text-label-md text-secondary">Registro de Paciente Nuevo</span>
-</div>
-<span class="bg-secondary-container text-on-secondary-container px-space-sm py-0.5 rounded-full font-label-sm text-label-sm">
-      RF-M02-01
-    </span>
-</section>
-<!-- Form Content -->
-<form class="flex flex-col gap-space-lg px-margin" id="petRegistrationForm" onsubmit="event.preventDefault();">
-<!-- 1. Patient Avatar / Media Stage -->
-<div class="flex flex-col items-center justify-center p-space-lg bg-surface-container-lowest rounded-xl shadow-sm text-center relative overflow-hidden">
-<div class="relative group cursor-pointer" onclick="document.getElementById('petPhotoInput').click()">
-<div class="w-28 h-28 rounded-full bg-surface-container-high flex flex-col items-center justify-center overflow-hidden shadow-inner text-primary transition-all duration-200 hover:bg-surface-container-highest">
-<img class="w-full h-full object-cover hidden" data-alt="High-resolution clinical veterinary studio portrait of a healthy friendly golden retriever puppy looking at camera against a clean minimal soft-lit teal studio backdrop" id="avatarPreview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnwv_IM5BQoVCqWMNdjYeW3CoyVeni-Btd710LJ1p2DYg92DT-NllUd7cKNcMiaNGvjP8U704i2F0YuIQV5cvkef7TRhRcn85TxHRKd1Lv6lLkNZvlAllzprtmMkhPmsrSakoxzr08Zne2kUzqaLqH_zASHmdp4hEJT5MDHf2zhJhTmDChlF30pAOlodZW07DBzIosqadZdADWYLP-5fQD9EG7ds2Ow1lDZZsW-AY"/>
-<div class="flex flex-col items-center justify-center p-space-sm" id="avatarPlaceholderPrompt">
-<span class="material-symbols-outlined text-[36px] text-primary mb-1">add_a_photo</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Subir Foto</span>
-</div>
-</div>
-<div class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
-<span class="material-symbols-outlined text-[18px]">photo_camera</span>
-</div>
-</div>
-<input accept="image/*" class="hidden" id="petPhotoInput" onchange="previewPetAvatar(event)" type="file"/>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">Formatos JPG o PNG hasta 10MB. Esencial para identificación biométrica rápida.</p>
-</div>
-<!-- 2. Basic Patient Details Section -->
-<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
-<div class="flex items-center gap-space-xs pb-space-xs">
-<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
-<h2 class="font-headline-sm text-headline-sm text-on-surface">Datos Generales del Paciente</h2>
-</div>
-<!-- Nombre del Paciente -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="petName">
-          Nombre de la Mascota <span class="text-error">*</span>
-</label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5 focus-within:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-outline text-[20px] mr-2">sound_detection_dog_barking</span>
-<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="petName" name="petName" placeholder="Ej. Max, Luna, Thor" required="" type="text"/>
-</div>
-</div>
-<!-- Especie Selector (Tabs / Chips) -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface">
-          Especie <span class="text-error">*</span>
-</label>
-<div class="grid grid-cols-4 gap-space-xs" id="speciesSelector">
-<button class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-primary text-on-primary shadow-sm transition-all duration-150" onclick="selectSpecies(this, 'Canino')" type="button">
-<span class="material-symbols-outlined text-[24px]">qr_code_2</span>
-<span class="font-label-sm text-label-sm mt-1">Canino</span>
-</button>
-<button class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150" onclick="selectSpecies(this, 'Felino')" type="button">
-<span class="material-symbols-outlined text-[24px]">language_chinese_pinyin</span>
-<span class="font-label-sm text-label-sm mt-1">Felino</span>
-</button>
-<button class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150" onclick="selectSpecies(this, 'Exótico')" type="button">
-<span class="material-symbols-outlined text-[24px]">cruelty_free</span>
-<span class="font-label-sm text-label-sm mt-1">Exótico</span>
-</button>
-<button class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150" onclick="selectSpecies(this, 'Equino')" type="button">
-<span class="material-symbols-outlined text-[24px]">sound_detection_glass_break</span>
-<span class="font-label-sm text-label-sm mt-1">Equino</span>
-</button>
-</div>
-<input id="selectedSpecies" type="hidden" value="Canino"/>
-</div>
-<!-- Raza con Autocompletado -->
-<div class="flex flex-col gap-space-xs relative">
-<label class="font-label-md text-label-md text-on-surface" for="breedInput">
-          Raza <span class="text-error">*</span>
-</label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5 focus-within:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
-<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="breedInput" oninput="handleBreedAutocomplete(this.value)" placeholder="Escriba para autocompletar (Ej. Golden Retriever)" type="text"/>
-</div>
-<!-- Breed Dropdown Menu -->
-<div class="hidden absolute top-full left-0 w-full mt-1 bg-surface-container-lowest rounded-lg shadow-xl z-30 max-h-40 overflow-y-auto" id="breedSuggestions">
-<!-- Populated by JS -->
-</div>
-</div>
-<!-- Sexo y Estado Reproductivo -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface">Sexo y Condición</label>
-<div class="grid grid-cols-3 gap-space-xs">
-<button class="gender-btn py-2 px-1 rounded-lg text-center bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" onclick="selectGender(this, 'Macho')" type="button">
-            Macho
-          </button>
-<button class="gender-btn py-2 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all" onclick="selectGender(this, 'Hembra')" type="button">
-            Hembra
-          </button>
-<button class="gender-btn py-2 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all" onclick="selectGender(this, 'Castrado')" type="button">
-            Esterilizado
-          </button>
-</div>
-<input id="selectedGender" type="hidden" value="Macho"/>
-</div>
-<!-- Fecha de Nacimiento / Edad & Peso -->
-<div class="grid grid-cols-2 gap-space-sm">
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="birthDate">Nacimiento (o aprox)</label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-3 py-2.5">
-<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" id="birthDate" type="date"/>
-</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="weightInput">Peso Actual (kg)</label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-3 py-2.5">
-<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" id="weightInput" placeholder="0.0" step="0.1" type="number"/>
-<span class="font-label-sm text-label-sm text-outline font-bold">KG</span>
-</div>
-</div>
-</div>
-<!-- Microchip RFID con Escáner Activo -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="chipInput">Microchip ISO 11784/11785 (15 dígitos)</label>
-<div class="flex gap-space-xs">
-<div class="flex-1 flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5">
-<span class="material-symbols-outlined text-outline text-[20px] mr-2">qr_code_scanner</span>
-<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md tracking-wider" id="chipInput" maxlength="15" placeholder="981098102948123" type="text"/>
-</div>
-<button class="bg-secondary-container text-on-secondary-container px-space-sm rounded-lg flex items-center justify-center gap-1 active:scale-95 transition-transform shadow-sm" onclick="simulateRfidScan()" type="button">
-<span class="material-symbols-outlined text-[18px]">contactless</span>
-<span class="font-label-sm text-label-sm whitespace-nowrap">Escanear RFID</span>
-</button>
-</div>
-<p class="font-body-sm text-body-sm text-secondary hidden flex items-center gap-1" id="rfidStatus">
-<span class="material-symbols-outlined text-[14px]">check_circle</span> Transpondedor detectado exitosamente.
-        </p>
-</div>
-</section>
-<!-- 3. Owner / Tutor Section -->
-<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
-<div class="flex items-center justify-between pb-space-xs">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[20px]">person</span>
-<h2 class="font-headline-sm text-headline-sm text-on-surface">Datos del Tutor Responsable</h2>
-</div>
-<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full">Propietario</span>
-</div>
-<!-- Nombre del Tutor -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="ownerName">Nombre Completo <span class="text-error">*</span></label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5 focus-within:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-outline text-[20px] mr-2">person_outline</span>
-<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="ownerName" placeholder="Ej. Dra. Valeria Restrepo" required="" type="text"/>
-</div>
-</div>
-<!-- Teléfono & Documento -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="ownerPhone">Teléfono Celular <span class="text-error">*</span></label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5">
-<span class="material-symbols-outlined text-outline text-[20px] mr-2">call</span>
-<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="ownerPhone" placeholder="+54 9 11 4059-8822" required="" type="tel"/>
-</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="ownerDoc">DNI / Documento</label>
-<div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5">
-<span class="material-symbols-outlined text-outline text-[20px] mr-2">assignment_ind</span>
-<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="ownerDoc" placeholder="Número de identidad" type="text"/>
-</div>
-</div>
-</div>
-</section>
-<!-- 4. Clinical Medical Alerts & Temperament -->
-<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
-<div class="flex items-center gap-space-xs pb-space-xs">
-<span class="material-symbols-outlined text-error text-[20px]">warning</span>
-<h2 class="font-headline-sm text-headline-sm text-on-surface">Alertas Médicas y Conducta Inicial</h2>
-</div>
-<!-- Temperament Selector -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface">Carácter / Temperamento en Manejo</label>
-<div class="grid grid-cols-3 gap-space-xs">
-<button class="temper-btn py-2.5 px-1 rounded-lg text-center bg-tertiary-fixed text-on-tertiary-fixed shadow-sm flex flex-col items-center justify-center transition-all" onclick="selectTemperament(this, 'docil')" type="button">
-<span class="material-symbols-outlined text-[20px] text-tertiary mb-0.5">sentiment_satisfied</span>
-<span class="font-label-sm text-label-sm font-bold">Dócil</span>
-</button>
-<button class="temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant flex flex-col items-center justify-center transition-all hover:bg-surface-container" onclick="selectTemperament(this, 'nervioso')" type="button">
-<span class="material-symbols-outlined text-[20px] text-outline mb-0.5">sentiment_neutral</span>
-<span class="font-label-sm text-label-sm font-bold">Nervioso</span>
-</button>
-<button class="temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant flex flex-col items-center justify-center transition-all hover:bg-surface-container" onclick="selectTemperament(this, 'agresivo')" type="button">
-<span class="material-symbols-outlined text-[20px] text-error mb-0.5">sentiment_very_dissatisfied</span>
-<span class="font-label-sm text-label-sm font-bold">Reactivo</span>
-</button>
-</div>
-</div>
-<!-- Alergias Conocidas -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface flex justify-between" for="petAllergies">
-<span>Alergias Conocidas</span>
-<span class="font-label-sm text-label-sm text-error font-normal">Fármacos o Alimentos</span>
-</label>
-<div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-sm flex flex-col gap-space-xs">
-<textarea class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md resize-none" id="petAllergies" placeholder="Ej. Reacción anafiláctica a penicilinas, alergia a proteína de pollo..." rows="2"></textarea>
-</div>
-</div>
-<!-- Condiciones Crónicas Preexistentes -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface" for="chronicConditions">Condiciones Preexistentes</label>
-<div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-sm">
-<textarea class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md resize-none" id="chronicConditions" placeholder="Ej. Soplo cardíaco Grado II, cardiopatía, displasia de cadera, epilepsia..." rows="2"></textarea>
-</div>
-</div>
-</section>
-<!-- Micro Feedback Banner -->
-<div class="p-space-md rounded-xl bg-surface-container-high flex items-start gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Al confirmar, se generará de manera unívoca el identificador de expediente digital y se habilitará el historial de vacunas, desparasitaciones y fichas de consulta.
-      </p>
-</div>
-</form>
-<!-- Sticky Operational Floating Action Footer Bar -->
-<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)] px-margin py-3 pb-safe">
-<div class="max-w-lg mx-auto flex items-center gap-space-sm">
-<button class="w-1/3 py-3 px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg text-center active:scale-98 transition-all hover:bg-surface-container" onclick="history.back()" type="button">
-        Cancelar
-      </button>
-<button class="w-2/3 py-3 px-space-md rounded-lg bg-primary text-on-primary font-label-lg text-label-lg text-center shadow-md active:bg-primary-container active:scale-98 transition-all flex items-center justify-center gap-2" onclick="submitPetRegistration()" type="button">
-<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
-<span>Guardar y Ficha</span>
-</button>
-</div>
-</div>
-<!-- Success Notification Toast (Simulated micro-interaction) -->
-<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 transform opacity-0 pointer-events-none translate-y-[-20px] bg-primary text-on-primary px-space-lg py-space-sm rounded-full shadow-2xl flex items-center gap-2" id="saveToast">
-<span class="material-symbols-outlined text-[20px] text-secondary-container">task_alt</span>
-<span class="font-label-md text-label-md">Paciente registrado con éxito</span>
-</div>
-</div>
-<script>
-  // Autocomplete Mock Database for Breeds
-  const canineBreeds = [
-    "Golden Retriever", "Labrador Retriever", "Bulldog Francés", "Pastor Alemán", 
-    "Caniche Toy", "Beagle", "Rottweiler", "Yorkshire Terrier", "Boxer", "Mestizo / Criollo"
-  ];
-  const felineBreeds = [
-    "Común Europeo", "Siamés", "Persa", "Maine Coon", "Bengalí", "Sphynx", "Ragdoll", "Mestizo"
-  ];
+</head>
 
-  function selectSpecies(button, speciesName) {
-    document.getElementById('selectedSpecies').value = speciesName;
-    const buttons = document.querySelectorAll('.species-btn');
-    buttons.forEach(btn => {
-      btn.className = "species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150";
-    });
-    button.className = "species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-primary text-on-primary shadow-sm transition-all duration-150";
-  }
-
-  function selectGender(button, gender) {
-    document.getElementById('selectedGender').value = gender;
-    const buttons = document.querySelectorAll('.gender-btn');
-    buttons.forEach(btn => {
-      btn.className = "gender-btn py-2 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all";
-    });
-    button.className = "gender-btn py-2 px-1 rounded-lg text-center bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all";
-  }
-
-  function selectTemperament(button, type) {
-    const buttons = document.querySelectorAll('.temper-btn');
-    buttons.forEach(btn => {
-      btn.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant flex flex-col items-center justify-center transition-all hover:bg-surface-container";
-    });
-    if (type === 'docil') {
-      button.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-tertiary-fixed text-on-tertiary-fixed shadow-sm flex flex-col items-center justify-center transition-all";
-    } else if (type === 'nervioso') {
-      button.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-highest text-on-surface shadow-sm flex flex-col items-center justify-center transition-all";
-    } else {
-      button.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-error-container text-on-error-container shadow-sm flex flex-col items-center justify-center transition-all";
-    }
-  }
-
-  function handleBreedAutocomplete(query) {
-    const suggestionsContainer = document.getElementById('breedSuggestions');
-    if (!query || query.trim().length === 0) {
-      suggestionsContainer.classList.add('hidden');
-      return;
-    }
-    const species = document.getElementById('selectedSpecies').value;
-    const list = species === 'Felino' ? felineBreeds : canineBreeds;
-    const filtered = list.filter(b => b.toLowerCase().includes(query.toLowerCase()));
-
-    if (filtered.length > 0) {
-      suggestionsContainer.innerHTML = filtered.map(item => `
-        <div onclick="selectBreedPrompt('${item}')" class="px-space-md py-2 text-on-surface hover:bg-surface-container cursor-pointer font-body-md text-body-md">
-          ${item}
+<body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+    <div class="h-16 px-margin flex items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-space-xs min-w-0"><button aria-label="Volver"
+          class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors flex-shrink-0"
+          onclick="history.back()"><span
+            class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span></button><img alt="VetCare Pro Logo"
+          class="h-7 w-auto object-contain flex-shrink-0"
+          src="https://lh3.googleusercontent.com/aida/AEtjO1XAaPRQ6x4HwHVPbe1k7butDMNm4ET9LPWOJtq5uDMx5f5rzG8noTtHkbFFGFdIwnP8tTSDmiI9wpiVHPBznBH6d9riPIJLjUuj07Hril-8KBmES_DFT8fQqngixA6Q-mM2cvhCmXqOy0j17lFzt4D0HCPYT5CUMNKQ6RhDWcPZenuYf-3wDYbBmQtV0xbacn9jrcPruxE0isggO-QfJwOieVlQRtxYxaOWRj3V6u4a" />
+        <h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-space-xs">Detalle Paciente</h1>
+      </div>
+      <div class="flex items-center gap-space-xs flex-shrink-0"><img alt="Profile"
+          class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/30"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXc3FTZ0ZtTrDuz-6tmD083YJ13Wp39oDWOr7W_3BcUZWYukZ8dpBw1KSf0wtvpoAg9iOJBsOc-WXNVeFt12MPXXaRJMdCk3rDZUNxufL19Egf2t4RhMqEYlvs6jw-fAxjxVI-O2xmtJk_fvxV-ovg14WD3j6dfuqU8PJoEKhu7HKBpHtcATpX68pb5R7Kt-JPVjLOuStGgUOrYCg8_OwKrQDi7PtaOQ6fWOnTww" />
+      </div>
+    </div>
+  </header>
+  <main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface">
+    <div class="flex flex-col w-full pb-32">
+      <!-- Status & Context Ribbon -->
+      <section class="px-margin pt-space-md pb-space-sm flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span
+            class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed">
+            <span class="material-symbols-outlined text-[16px]">pets</span>
+          </span>
+          <span class="font-label-md text-label-md text-secondary">Registro de Paciente Nuevo</span>
         </div>
-      `).join('');
-      suggestionsContainer.classList.remove('hidden');
-    } else {
-      suggestionsContainer.innerHTML = `
-        <div onclick="selectBreedPrompt('${query}')" class="px-space-md py-2 text-primary hover:bg-surface-container cursor-pointer font-body-md text-body-md">
-          Usar valor ingresado: "${query}"
+        <span
+          class="bg-secondary-container text-on-secondary-container px-space-sm py-0.5 rounded-full font-label-sm text-label-sm">
+          RF-M02-01
+        </span>
+      </section>
+      <!-- Form Content -->
+      <form class="flex flex-col gap-space-lg px-margin" id="petRegistrationForm" onsubmit="event.preventDefault();">
+        <!-- 1. Patient Avatar / Media Stage -->
+        <div
+          class="flex flex-col items-center justify-center p-space-lg bg-surface-container-lowest rounded-xl shadow-sm text-center relative overflow-hidden">
+          <div class="relative group cursor-pointer" onclick="document.getElementById('petPhotoInput').click()">
+            <div
+              class="w-28 h-28 rounded-full bg-surface-container-high flex flex-col items-center justify-center overflow-hidden shadow-inner text-primary transition-all duration-200 hover:bg-surface-container-highest">
+              <img class="w-full h-full object-cover hidden"
+                data-alt="High-resolution clinical veterinary studio portrait of a healthy friendly golden retriever puppy looking at camera against a clean minimal soft-lit teal studio backdrop"
+                id="avatarPreview"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnwv_IM5BQoVCqWMNdjYeW3CoyVeni-Btd710LJ1p2DYg92DT-NllUd7cKNcMiaNGvjP8U704i2F0YuIQV5cvkef7TRhRcn85TxHRKd1Lv6lLkNZvlAllzprtmMkhPmsrSakoxzr08Zne2kUzqaLqH_zASHmdp4hEJT5MDHf2zhJhTmDChlF30pAOlodZW07DBzIosqadZdADWYLP-5fQD9EG7ds2Ow1lDZZsW-AY" />
+              <div class="flex flex-col items-center justify-center p-space-sm" id="avatarPlaceholderPrompt">
+                <span class="material-symbols-outlined text-[36px] text-primary mb-1">add_a_photo</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Subir Foto</span>
+              </div>
+            </div>
+            <div
+              class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+              <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+            </div>
+          </div>
+          <input accept="image/*" class="hidden" id="petPhotoInput" onchange="previewPetAvatar(event)" type="file" />
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">Formatos JPG o PNG hasta 10MB.
+            Esencial para identificación biométrica rápida.</p>
         </div>
-      `;
-      suggestionsContainer.classList.remove('hidden');
-    }
-  }
+        <!-- 2. Basic Patient Details Section -->
+        <section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-xs pb-space-xs">
+            <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Datos Generales del Paciente</h2>
+          </div>
+          <!-- Nombre del Paciente -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface" for="petName">
+              Nombre de la Mascota <span class="text-error">*</span>
+            </label>
+            <div
+              class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5 focus-within:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-outline text-[20px] mr-2">sound_detection_dog_barking</span>
+              <input
+                class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md"
+                id="petName" name="petName" placeholder="Ej. Max, Luna, Thor" required="" type="text" />
+            </div>
+          </div>
+          <!-- Especie Selector (Tabs / Chips) -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface">
+              Especie <span class="text-error">*</span>
+            </label>
+            <div class="grid grid-cols-4 gap-space-xs" id="speciesSelector">
+              <button
+                class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-primary text-on-primary shadow-sm transition-all duration-150"
+                onclick="selectSpecies(this, 'Canino')" type="button">
+                <span class="material-symbols-outlined text-[24px]">qr_code_2</span>
+                <span class="font-label-sm text-label-sm mt-1">Canino</span>
+              </button>
+              <button
+                class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150"
+                onclick="selectSpecies(this, 'Felino')" type="button">
+                <span class="material-symbols-outlined text-[24px]">language_chinese_pinyin</span>
+                <span class="font-label-sm text-label-sm mt-1">Felino</span>
+              </button>
+              <button
+                class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150"
+                onclick="selectSpecies(this, 'Exótico')" type="button">
+                <span class="material-symbols-outlined text-[24px]">cruelty_free</span>
+                <span class="font-label-sm text-label-sm mt-1">Exótico</span>
+              </button>
+              <button
+                class="species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150"
+                onclick="selectSpecies(this, 'Equino')" type="button">
+                <span class="material-symbols-outlined text-[24px]">sound_detection_glass_break</span>
+                <span class="font-label-sm text-label-sm mt-1">Equino</span>
+              </button>
+            </div>
+            <input id="selectedSpecies" type="hidden" value="Canino" />
+          </div>
+          <!-- Raza con Autocompletado -->
+          <div class="flex flex-col gap-space-xs relative">
+            <label class="font-label-md text-label-md text-on-surface" for="breedInput">
+              Raza <span class="text-error">*</span>
+            </label>
+            <div
+              class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5 focus-within:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+              <input
+                class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md"
+                id="breedInput" oninput="handleBreedAutocomplete(this.value)"
+                placeholder="Escriba para autocompletar (Ej. Golden Retriever)" type="text" />
+            </div>
+            <!-- Breed Dropdown Menu -->
+            <div
+              class="hidden absolute top-full left-0 w-full mt-1 bg-surface-container-lowest rounded-lg shadow-xl z-30 max-h-40 overflow-y-auto"
+              id="breedSuggestions">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          <!-- Sexo y Estado Reproductivo -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface">Sexo y Condición</label>
+            <div class="grid grid-cols-3 gap-space-xs">
+              <button
+                class="gender-btn py-2 px-1 rounded-lg text-center bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all"
+                onclick="selectGender(this, 'Macho')" type="button">
+                Macho
+              </button>
+              <button
+                class="gender-btn py-2 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all"
+                onclick="selectGender(this, 'Hembra')" type="button">
+                Hembra
+              </button>
+              <button
+                class="gender-btn py-2 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all"
+                onclick="selectGender(this, 'Castrado')" type="button">
+                Esterilizado
+              </button>
+            </div>
+            <input id="selectedGender" type="hidden" value="Macho" />
+          </div>
+          <!-- Fecha de Nacimiento / Edad & Peso -->
+          <div class="grid grid-cols-2 gap-space-sm">
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-label-md text-label-md text-on-surface" for="birthDate">Nacimiento (o aprox)</label>
+              <div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-3 py-2.5">
+                <input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none"
+                  id="birthDate" type="date" />
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-label-md text-label-md text-on-surface" for="weightInput">Peso Actual (kg)</label>
+              <div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-3 py-2.5">
+                <input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none"
+                  id="weightInput" placeholder="0.0" step="0.1" type="number" />
+                <span class="font-label-sm text-label-sm text-outline font-bold">KG</span>
+              </div>
+            </div>
+          </div>
+          <!-- Microchip RFID con Escáner Activo -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface" for="chipInput">Microchip ISO 11784/11785 (15
+              dígitos)</label>
+            <div class="flex gap-space-xs">
+              <div class="flex-1 flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5">
+                <span class="material-symbols-outlined text-outline text-[20px] mr-2">qr_code_scanner</span>
+                <input
+                  class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md tracking-wider"
+                  id="chipInput" maxlength="15" placeholder="981098102948123" type="text" />
+              </div>
+              <button
+                class="bg-secondary-container text-on-secondary-container px-space-sm rounded-lg flex items-center justify-center gap-1 active:scale-95 transition-transform shadow-sm"
+                onclick="simulateRfidScan()" type="button">
+                <span class="material-symbols-outlined text-[18px]">contactless</span>
+                <span class="font-label-sm text-label-sm whitespace-nowrap">Escanear RFID</span>
+              </button>
+            </div>
+            <p class="font-body-sm text-body-sm text-secondary hidden flex items-center gap-1" id="rfidStatus">
+              <span class="material-symbols-outlined text-[14px]">check_circle</span> Transpondedor detectado
+              exitosamente.
+            </p>
+          </div>
+        </section>
+        <!-- 3. Owner / Tutor Section -->
+        <section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center justify-between pb-space-xs">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-primary text-[20px]">person</span>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">Datos del Tutor Responsable</h2>
+            </div>
+            <span
+              class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full">Propietario</span>
+          </div>
+          <!-- Nombre del Tutor -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface" for="ownerName">Nombre Completo <span
+                class="text-error">*</span></label>
+            <div
+              class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5 focus-within:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-outline text-[20px] mr-2">person_outline</span>
+              <input
+                class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md"
+                id="ownerName" placeholder="Ej. Dra. Valeria Restrepo" required="" type="text" />
+            </div>
+          </div>
+          <!-- Teléfono & Documento -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-label-md text-label-md text-on-surface" for="ownerPhone">Teléfono Celular <span
+                  class="text-error">*</span></label>
+              <div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5">
+                <span class="material-symbols-outlined text-outline text-[20px] mr-2">call</span>
+                <input
+                  class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md"
+                  id="ownerPhone" placeholder="+54 9 11 4059-8822" required="" type="tel" />
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <label class="font-label-md text-label-md text-on-surface" for="ownerDoc">DNI / Documento</label>
+              <div class="flex items-center bg-surface-container-lowest rounded-lg shadow-sm px-space-md py-2.5">
+                <span class="material-symbols-outlined text-outline text-[20px] mr-2">assignment_ind</span>
+                <input
+                  class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md"
+                  id="ownerDoc" placeholder="Número de identidad" type="text" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 4. Clinical Medical Alerts & Temperament -->
+        <section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-xs pb-space-xs">
+            <span class="material-symbols-outlined text-error text-[20px]">warning</span>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Alertas Médicas y Conducta Inicial</h2>
+          </div>
+          <!-- Temperament Selector -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface">Carácter / Temperamento en Manejo</label>
+            <div class="grid grid-cols-3 gap-space-xs">
+              <button
+                class="temper-btn py-2.5 px-1 rounded-lg text-center bg-tertiary-fixed text-on-tertiary-fixed shadow-sm flex flex-col items-center justify-center transition-all"
+                onclick="selectTemperament(this, 'docil')" type="button">
+                <span class="material-symbols-outlined text-[20px] text-tertiary mb-0.5">sentiment_satisfied</span>
+                <span class="font-label-sm text-label-sm font-bold">Dócil</span>
+              </button>
+              <button
+                class="temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant flex flex-col items-center justify-center transition-all hover:bg-surface-container"
+                onclick="selectTemperament(this, 'nervioso')" type="button">
+                <span class="material-symbols-outlined text-[20px] text-outline mb-0.5">sentiment_neutral</span>
+                <span class="font-label-sm text-label-sm font-bold">Nervioso</span>
+              </button>
+              <button
+                class="temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant flex flex-col items-center justify-center transition-all hover:bg-surface-container"
+                onclick="selectTemperament(this, 'agresivo')" type="button">
+                <span class="material-symbols-outlined text-[20px] text-error mb-0.5">sentiment_very_dissatisfied</span>
+                <span class="font-label-sm text-label-sm font-bold">Reactivo</span>
+              </button>
+            </div>
+          </div>
+          <!-- Alergias Conocidas -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface flex justify-between" for="petAllergies">
+              <span>Alergias Conocidas</span>
+              <span class="font-label-sm text-label-sm text-error font-normal">Fármacos o Alimentos</span>
+            </label>
+            <div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-sm flex flex-col gap-space-xs">
+              <textarea
+                class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md resize-none"
+                id="petAllergies" placeholder="Ej. Reacción anafiláctica a penicilinas, alergia a proteína de pollo..."
+                rows="2"></textarea>
+            </div>
+          </div>
+          <!-- Condiciones Crónicas Preexistentes -->
+          <div class="flex flex-col gap-space-xs">
+            <label class="font-label-md text-label-md text-on-surface" for="chronicConditions">Condiciones
+              Preexistentes</label>
+            <div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-sm">
+              <textarea
+                class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md resize-none"
+                id="chronicConditions"
+                placeholder="Ej. Soplo cardíaco Grado II, cardiopatía, displasia de cadera, epilepsia..."
+                rows="2"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- Micro Feedback Banner -->
+        <div class="p-space-md rounded-xl bg-surface-container-high flex items-start gap-space-sm">
+          <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Al confirmar, se generará de manera unívoca el identificador de expediente digital y se habilitará el
+            historial de vacunas, desparasitaciones y fichas de consulta.
+          </p>
+        </div>
+      </form>
+      <!-- Sticky Operational Floating Action Footer Bar -->
+      <div
+        class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)] px-margin py-3 pb-safe">
+        <div class="max-w-lg mx-auto flex items-center gap-space-sm">
+          <button
+            class="w-1/3 py-3 px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg text-center active:scale-98 transition-all hover:bg-surface-container"
+            onclick="history.back()" type="button">
+            Cancelar
+          </button>
+          <button
+            class="w-2/3 py-3 px-space-md rounded-lg bg-primary text-on-primary font-label-lg text-label-lg text-center shadow-md active:bg-primary-container active:scale-98 transition-all flex items-center justify-center gap-2"
+            onclick="submitPetRegistration()" type="button">
+            <span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+            <span>Guardar y Ficha</span>
+          </button>
+        </div>
+      </div>
+      <!-- Success Notification Toast (Simulated micro-interaction) -->
+      <div
+        class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 transform opacity-0 pointer-events-none translate-y-[-20px] bg-primary text-on-primary px-space-lg py-space-sm rounded-full shadow-2xl flex items-center gap-2"
+        id="saveToast">
+        <span class="material-symbols-outlined text-[20px] text-secondary-container">task_alt</span>
+        <span class="font-label-md text-label-md">Paciente registrado con éxito</span>
+      </div>
+    </div>
+    <script>
+      // Autocomplete Mock Database for Breeds
+      const canineBreeds = [
+        "Golden Retriever", "Labrador Retriever", "Bulldog Francés", "Pastor Alemán",
+        "Caniche Toy", "Beagle", "Rottweiler", "Yorkshire Terrier", "Boxer", "Mestizo / Criollo"
+      ];
+      const felineBreeds = [
+        "Común Europeo", "Siamés", "Persa", "Maine Coon", "Bengalí", "Sphynx", "Ragdoll", "Mestizo"
+      ];
 
-  function selectBreedPrompt(val) {
-    document.getElementById('breedInput').value = val;
-    document.getElementById('breedSuggestions').classList.add('hidden');
-  }
-
-  function previewPetAvatar(event) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const preview = document.getElementById('avatarPreview');
-        const promptText = document.getElementById('avatarPlaceholderPrompt');
-        preview.src = e.target.result;
-        preview.classList.remove('hidden');
-        promptText.classList.add('hidden');
-      };
-      reader.readAsDataURL(file);
-    }
-  }
-
-  function simulateRfidScan() {
-    const input = document.getElementById('chipInput');
-    const status = document.getElementById('rfidStatus');
-    // Simulated RFID scanner read
-    const randomChip = "981" + Math.floor(100000000000 + Math.random() * 900000000000);
-    input.value = randomChip;
-    status.classList.remove('hidden');
-  }
-
-  function submitPetRegistration() {
-    const petName = document.getElementById('petName').value.trim();
-    const ownerName = document.getElementById('ownerName').value.trim();
-    const ownerPhone = document.getElementById('ownerPhone').value.trim();
-
-    if (!petName || !ownerName || !ownerPhone) {
-      alert("Por favor complete los campos obligatorios: Nombre de Mascota, Nombre de Tutor y Teléfono.");
-      return;
-    }
-
-    const toast = document.getElementById('saveToast');
-    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-20px]');
-    toast.classList.add('opacity-100', 'translate-y-0');
-
-    setTimeout(() => {
-      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-20px]');
-      toast.classList.remove('opacity-100', 'translate-y-0');
-      // Navigation mock redirect to patient record
-      if (window.history.length > 1) {
-        window.history.back();
+      function selectSpecies(button, speciesName) {
+        document.getElementById('selectedSpecies').value = speciesName;
+        const buttons = document.querySelectorAll('.species-btn');
+        buttons.forEach(btn => {
+          btn.className = "species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all duration-150";
+        });
+        button.className = "species-btn flex flex-col items-center justify-center p-2 rounded-lg bg-primary text-on-primary shadow-sm transition-all duration-150";
       }
-    }, 1800);
-  }
 
-  // Dismiss suggestions on blur
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('#breedInput') && !e.target.closest('#breedSuggestions')) {
-      const container = document.getElementById('breedSuggestions');
-      if (container) container.classList.add('hidden');
-    }
-  });
-</script></main></body></html>
+      function selectGender(button, gender) {
+        document.getElementById('selectedGender').value = gender;
+        const buttons = document.querySelectorAll('.gender-btn');
+        buttons.forEach(btn => {
+          btn.className = "gender-btn py-2 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all";
+        });
+        button.className = "gender-btn py-2 px-1 rounded-lg text-center bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all";
+      }
+
+      function selectTemperament(button, type) {
+        const buttons = document.querySelectorAll('.temper-btn');
+        buttons.forEach(btn => {
+          btn.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-low text-on-surface-variant flex flex-col items-center justify-center transition-all hover:bg-surface-container";
+        });
+        if (type === 'docil') {
+          button.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-tertiary-fixed text-on-tertiary-fixed shadow-sm flex flex-col items-center justify-center transition-all";
+        } else if (type === 'nervioso') {
+          button.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-surface-container-highest text-on-surface shadow-sm flex flex-col items-center justify-center transition-all";
+        } else {
+          button.className = "temper-btn py-2.5 px-1 rounded-lg text-center bg-error-container text-on-error-container shadow-sm flex flex-col items-center justify-center transition-all";
+        }
+      }
+
+      function handleBreedAutocomplete(query) {
+        const suggestionsContainer = document.getElementById('breedSuggestions');
+        if (!query || query.trim().length === 0) {
+          suggestionsContainer.classList.add('hidden');
+          return;
+        }
+        const species = document.getElementById('selectedSpecies').value;
+        const list = species === 'Felino' ? felineBreeds : canineBreeds;
+        const filtered = list.filter(b => b.toLowerCase().includes(query.toLowerCase()));
+
+        if (filtered.length > 0) {
+          suggestionsContainer.innerHTML = filtered.map(item => `
+<div onclick="selectBreedPrompt('${item}')" class="px-space-md py-2 text-on-surface hover:bg-surface-container cursor-pointer font-body-md text-body-md">
+${item}
+</div>
+`).join('');
+          suggestionsContainer.classList.remove('hidden');
+        } else {
+          suggestionsContainer.innerHTML = `
+<div onclick="selectBreedPrompt('${query}')" class="px-space-md py-2 text-primary hover:bg-surface-container cursor-pointer font-body-md text-body-md">
+Usar valor ingresado: "${query}"
+</div>
+`;
+          suggestionsContainer.classList.remove('hidden');
+        }
+      }
+
+      function selectBreedPrompt(val) {
+        document.getElementById('breedInput').value = val;
+        document.getElementById('breedSuggestions').classList.add('hidden');
+      }
+
+      function previewPetAvatar(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const preview = document.getElementById('avatarPreview');
+            const promptText = document.getElementById('avatarPlaceholderPrompt');
+            preview.src = e.target.result;
+            preview.classList.remove('hidden');
+            promptText.classList.add('hidden');
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      function simulateRfidScan() {
+        const input = document.getElementById('chipInput');
+        const status = document.getElementById('rfidStatus');
+        // Simulated RFID scanner read
+        const randomChip = "981" + Math.floor(100000000000 + Math.random() * 900000000000);
+        input.value = randomChip;
+        status.classList.remove('hidden');
+      }
+
+      function submitPetRegistration() {
+        const petName = document.getElementById('petName').value.trim();
+        const ownerName = document.getElementById('ownerName').value.trim();
+        const ownerPhone = document.getElementById('ownerPhone').value.trim();
+
+        if (!petName || !ownerName || !ownerPhone) {
+          alert("Por favor complete los campos obligatorios: Nombre de Mascota, Nombre de Tutor y Teléfono.");
+          return;
+        }
+
+        const toast = document.getElementById('saveToast');
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-20px]');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-20px]');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+          // Navigation mock redirect to patient record
+          if (window.history.length > 1) {
+            window.history.back();
+          }
+        }, 1800);
+      }
+
+      // Dismiss suggestions on blur
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('#breedInput') && !e.target.closest('#breedSuggestions')) {
+          const container = document.getElementById('breedSuggestions');
+          if (container) container.classList.add('hidden');
+        }
+      });
+    </script>
+  </main>
+</body>
+
+</html>

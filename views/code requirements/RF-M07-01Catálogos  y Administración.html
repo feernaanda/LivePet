@@ -1,428 +1,623 @@
 <!DOCTYPE html>
 
-<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container": "#e6eeff", "tertiary-fixed": "#ffdcc3", "on-tertiary-fixed": "#2f1500", "inverse-primary": "#70d8c8", "on-background": "#0d1c2e", "primary-container": "#008376", "inverse-on-surface": "#eaf1ff", "primary-fixed-dim": "#70d8c8", "secondary-fixed": "#afefdd", "primary-fixed": "#8df5e4", "on-primary": "#ffffff", "on-secondary-container": "#2e6d5f", "surface-dim": "#ccdbf3", "surface-container-highest": "#d5e3fc", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "outline": "#6d7a77", "tertiary": "#8d4b00", "surface-container-lowest": "#ffffff", "surface-tint": "#006b5f", "on-primary-fixed-variant": "#005048", "on-secondary-fixed-variant": "#065043", "on-error": "#ffffff", "tertiary-container": "#b15f00", "surface": "#f8f9ff", "primary": "#00685d", "on-tertiary-container": "#fffbff", "inverse-surface": "#233144", "error-container": "#ffdad6", "outline-variant": "#bcc9c5", "on-surface-variant": "#3d4946", "surface-variant": "#d5e3fc", "surface-container-high": "#dce9ff", "secondary-container": "#acedda", "surface-bright": "#f8f9ff", "on-primary-container": "#f4fffb", "on-tertiary": "#ffffff", "background": "#f8f9ff", "on-primary-fixed": "#00201c", "on-secondary": "#ffffff", "on-secondary-fixed": "#00201a", "on-surface": "#0d1c2e", "error": "#ba1a1a", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#6e3900", "secondary-fixed-dim": "#94d3c1", "secondary": "#29695b" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "1.5rem", "margin": "1rem", "gutter-lg": "1.5rem", "margin-md": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin-lg": "2rem", "space-2xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem" }, fontFamily: { "display-lg": ["Inter"], "mono-clinical": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "mono-clinical": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script><style>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9ff;
+      }
+
+      body {
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-container": "#e6eeff", "tertiary-fixed": "#ffdcc3", "on-tertiary-fixed": "#2f1500", "inverse-primary": "#70d8c8", "on-background": "#0d1c2e", "primary-container": "#008376", "inverse-on-surface": "#eaf1ff", "primary-fixed-dim": "#70d8c8", "secondary-fixed": "#afefdd", "primary-fixed": "#8df5e4", "on-primary": "#ffffff", "on-secondary-container": "#2e6d5f", "surface-dim": "#ccdbf3", "surface-container-highest": "#d5e3fc", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "outline": "#6d7a77", "tertiary": "#8d4b00", "surface-container-lowest": "#ffffff", "surface-tint": "#006b5f", "on-primary-fixed-variant": "#005048", "on-secondary-fixed-variant": "#065043", "on-error": "#ffffff", "tertiary-container": "#b15f00", "surface": "#f8f9ff", "primary": "#00685d", "on-tertiary-container": "#fffbff", "inverse-surface": "#233144", "error-container": "#ffdad6", "outline-variant": "#bcc9c5", "on-surface-variant": "#3d4946", "surface-variant": "#d5e3fc", "surface-container-high": "#dce9ff", "secondary-container": "#acedda", "surface-bright": "#f8f9ff", "on-primary-container": "#f4fffb", "on-tertiary": "#ffffff", "background": "#f8f9ff", "on-primary-fixed": "#00201c", "on-secondary": "#ffffff", "on-secondary-fixed": "#00201a", "on-surface": "#0d1c2e", "error": "#ba1a1a", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#6e3900", "secondary-fixed-dim": "#94d3c1", "secondary": "#29695b"}, borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, spacing: {"space-xl": "1.5rem", "margin": "1rem", "gutter-lg": "1.5rem", "margin-md": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin-lg": "2rem", "space-2xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem"}, fontFamily: {"display-lg": ["Inter"], "mono-clinical": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"]}, fontSize: {"display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "mono-clinical": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}], "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]}}}};</script>
+  <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-<style>
+  <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[20px]">pets</span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">VetCare Clínico</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Catálogos</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Buscar registros" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notificaciones y alertas clínicas" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full pb-6 px-margin">
-<!-- System Status Banner -->
-<div class="mt-space-md mb-space-lg p-space-md rounded-xl bg-surface-container-high shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Configuración Maestra</span>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-surface-container-lowest text-on-surface-variant font-mono-clinical text-body-sm shadow-xs font-medium">
-        v3.2.0
-      </span>
-</div>
-<div>
-<h2 class="font-headline-sm text-headline-sm text-on-surface">VetCare Core Admin</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Parametrización clínica, reglas de seguridad de dosis y catálogos estandarizados.</p>
-</div>
-<!-- Live Sync Alert Pill -->
-<div class="mt-1 flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-lowest text-on-secondary-container">
-<span class="material-symbols-outlined text-[18px] text-primary shrink-0">verified_user</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Sincronizado con Vademécum Oficial 2024</span>
-<span class="ml-auto font-mono-clinical text-label-sm text-primary shrink-0">08:42 AM</span>
-</div>
-</div>
-<!-- Search & Filter Area -->
-<div class="mb-space-lg flex flex-col gap-space-sm">
-<div class="relative w-full">
-<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
-<input class="w-full h-11 pl-11 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md shadow-sm outline-none transition-all focus:bg-surface-container-low" id="catalogSearch" placeholder="Buscar fármaco, vacuna, raza o código..." type="search"/>
-<button aria-label="Limpiar búsqueda" class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant items-center justify-center" id="clearSearch" type="button">
-<span class="material-symbols-outlined text-[16px]">close</span>
-</button>
-</div>
-<!-- Quick Filter Category Chips -->
-<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
-<button class="filter-chip px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap shadow-xs active:scale-95 transition-transform" data-filter="all" type="button">
-        Todos (6)
-      </button>
-<button class="filter-chip px-3 py-1.5 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" data-filter="farmacos" type="button">
-        Farmacología
-      </button>
-<button class="filter-chip px-3 py-1.5 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" data-filter="clinica" type="button">
-        Clínica &amp; SOAP
-      </button>
-<button class="filter-chip px-3 py-1.5 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" data-filter="operaciones" type="button">
-        Operaciones
-      </button>
-</div>
-</div>
-<!-- Master Catalogs Cards Feed -->
-<div class="flex flex-col gap-space-md" id="catalogsList">
-<!-- Card 1: Vademécum & Principios Activos -->
-<article class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all" data-category="farmacos" data-title="vademécum principios activos fármacos dosis mg/kg">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-[22px]">medication</span>
-</div>
-<div class="flex flex-col min-w-0">
-<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Vademécum &amp; Principios Activos</h3>
-<span class="font-label-sm text-label-sm text-primary font-semibold">420 fármacos registrados</span>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
-          Activo
-        </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Control de dosis por especie (canina, felina, exóticos), validación de contraindicaciones cruzadas y calculadora miligramo/kilo.
-      </p>
-<!-- Key metrics badge pill -->
-<div class="flex items-center gap-space-xs flex-wrap py-1">
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          12 Familias
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Alertas x Dosis: 100%
-        </span>
-<span class="px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">warning</span> 4 Restringidos
-        </span>
-</div>
-<div class="pt-space-xs mt-auto">
-<button class="w-full h-10 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-xs active:scale-[0.98] transition-transform" type="button">
-<span>Gestionar Vademécum</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
-</div>
-</article>
-<!-- Card 2: Catálogo de Vacunas y Biológicos -->
-<article class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all" data-category="farmacos" data-title="vacunas biológicos wsava inmunización virus rabia parvovirus">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-secondary text-[22px]">vaccines</span>
-</div>
-<div class="flex flex-col min-w-0">
-<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Catálogo de Vacunas &amp; Biológicos</h3>
-<span class="font-label-sm text-label-sm text-primary font-semibold">38 biológicos homologados</span>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
-          WSAVA 2024
-        </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Pautas oficiales y revacunación periódica, trazabilidad por lote/caducidad y laboratorios internacionales autorizados.
-      </p>
-<div class="flex items-center gap-space-xs flex-wrap py-1">
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Esenciales: 18
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Opcionales: 20
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          8 Labs
-        </span>
-</div>
-<div class="pt-space-xs mt-auto">
-<button class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button">
-<span>Ver Vacunas</span>
-<span class="material-symbols-outlined text-[18px]">visibility</span>
-</button>
-</div>
-</article>
-<!-- Card 3: Especies y Razas Estandarizadas -->
-<article class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all" data-category="clinica" data-title="especies razas caninos fci felinos tica exóticos aves morfología taxonomía">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-tertiary text-[22px]">pets</span>
-</div>
-<div class="flex flex-col min-w-0">
-<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Especies &amp; Razas Estandarizadas</h3>
-<span class="font-label-sm text-label-sm text-primary font-semibold">225+ perfiles taxonómicos</span>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
-          FCI / TICA
-        </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Caninos (180 razas oficiales FCI), Felinos (45 razas TICA), aves psitácidas y pequeños roedores con curvas de peso estándar.
-      </p>
-<div class="flex items-center gap-space-xs flex-wrap py-1">
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Caninos: 180
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Felinos: 45
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Exóticos: 16
-        </span>
-</div>
-<div class="pt-space-xs mt-auto">
-<button class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button">
-<span>Configurar Taxonomía</span>
-<span class="material-symbols-outlined text-[18px]">tune</span>
-</button>
-</div>
-</article>
-<!-- Card 4: Protocolos y Plantillas SOAP -->
-<article class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all" data-category="clinica" data-title="protocolos plantillas soap dermatología traumatología gastroenterología odontología historia clínica">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-[22px]">clinical_notes</span>
-</div>
-<div class="flex flex-col min-w-0">
-<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Protocolos &amp; Plantillas SOAP</h3>
-<span class="font-label-sm text-label-sm text-primary font-semibold">15 plantillas maestras</span>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
-          Auto-macros
-        </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Estructura guiada para Dermatología, Traumatología, Gastroenterología y Odontología con chequeos diagnósticos rápidos.
-      </p>
-<div class="flex items-center gap-space-xs flex-wrap py-1">
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Dermatología
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Gastroenterología
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          +13 áreas
-        </span>
-</div>
-<div class="pt-space-xs mt-auto">
-<button class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button">
-<span>Editar Plantillas</span>
-<span class="material-symbols-outlined text-[18px]">edit_note</span>
-</button>
-</div>
-</article>
-<!-- Card 5: Cuerpo Médico y Disponibilidad -->
-<article class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all" data-category="operaciones" data-title="cuerpo médico veterinarios disponibilidad quirófanos salas turnos">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-secondary text-[22px]">badge</span>
-</div>
-<div class="flex flex-col min-w-0">
-<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Cuerpo Médico &amp; Recursos</h3>
-<span class="font-label-sm text-label-sm text-primary font-semibold">6 médicos veterinarios</span>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
-          Guardias Activas
-        </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Asignación de salas de consulta (1 a 4), quirófano estéril, guardias de urgencia y configuración de turnos y firmas digitales.
-      </p>
-<div class="flex items-center gap-space-xs flex-wrap py-1">
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          4 Consultorios
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          2 Quirófanos
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Turnos 24/7
-        </span>
-</div>
-<div class="pt-space-xs mt-auto">
-<button class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button">
-<span>Gestionar Personal</span>
-<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
-</button>
-</div>
-</article>
-<!-- Card 6: Tarifas y Facturación de Actos Médicos -->
-<article class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all" data-category="operaciones" data-title="tarifas facturación precios honorarios quirúrgicos insumos consultas">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-[22px]">payments</span>
-</div>
-<div class="flex flex-col min-w-0">
-<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Tarifas &amp; Actos Médicos</h3>
-<span class="font-label-sm text-label-sm text-primary font-semibold">142 procedimientos</span>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
-          IVA Incluido
-        </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-        Baremo de honorarios quirúrgicos, consultas diurnas/nocturnas, microchips, certificados de viaje e insumos clínicos descartables.
-      </p>
-<div class="flex items-center gap-space-xs flex-wrap py-1">
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Moneda: EUR (€)
-        </span>
-<span class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
-          Recargos Nocturnos
-        </span>
-</div>
-<div class="pt-space-xs mt-auto">
-<button class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" type="button">
-<span>Actualizar Tarifas</span>
-<span class="material-symbols-outlined text-[18px]">receipt_long</span>
-</button>
-</div>
-</article>
-</div>
-<!-- Empty State for Search (Hidden by default) -->
-<div class="hidden flex-col items-center justify-center py-10 px-4 text-center" id="noResults">
-<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center mb-space-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-[28px]">search_off</span>
-</div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface">No se encontraron catálogos</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xs">
-      No hay parámetros clínicos que coincidan con los términos ingresados.
-    </p>
-</div>
-<!-- Primary Bottom Actions & Backup -->
-<div class="mt-space-xl flex flex-col gap-space-sm">
-<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-md text-headline-sm font-semibold flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99] transition-transform" id="btnNewEntry" type="button">
-<span class="material-symbols-outlined text-[20px]">add_circle</span>
-<span>+ Añadir Nuevo Registro a Catálogo</span>
-</button>
-<div class="grid grid-cols-2 gap-space-sm">
-<button class="h-11 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" id="btnExportJson" type="button">
-<span class="material-symbols-outlined text-primary text-[18px]">download</span>
-<span>Backup JSON</span>
-</button>
-<button class="h-11 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" id="btnExportCsv" type="button">
-<span class="material-symbols-outlined text-secondary text-[18px]">table_view</span>
-<span>Backup CSV</span>
-</button>
-</div>
-<!-- Security audit note -->
-<div class="mt-space-xs p-space-sm rounded-lg bg-surface-container-low flex items-center justify-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px]">lock</span>
-<span>Acceso restringido a Administradores y Directores Médicos</span>
-</div>
-</div>
-<!-- Interactive Feedback Toast (Triggered dynamically) -->
-<div class="fixed bottom-20 left-4 right-4 z-50 transform translate-y-16 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl" id="toastMessage">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-inverse-primary text-[20px]" id="toastIcon">check_circle</span>
-<span class="font-body-sm text-body-sm font-medium" id="toastText">Operación realizada con éxito</span>
-</div>
-</div>
-</div>
-<script>
-  (function () {
-    const searchInput = document.getElementById('catalogSearch');
-    const clearBtn = document.getElementById('clearSearch');
-    const cards = document.querySelectorAll('.catalog-card');
-    const filterChips = document.querySelectorAll('.filter-chip');
-    const noResults = document.getElementById('noResults');
-    const toast = document.getElementById('toastMessage');
-    const toastText = document.getElementById('toastText');
-    const toastIcon = document.getElementById('toastIcon');
+</head>
 
-    let currentFilter = 'all';
-    let currentQuery = '';
+<body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen">
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-gutter flex items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-space-sm min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center shrink-0"><span
+            class="material-symbols-outlined text-primary text-[20px]">pets</span></div>
+        <div class="flex flex-col min-w-0"><span
+            class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">VetCare Clínico</span>
+          <h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Catálogos</h1>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-xs shrink-0"><button aria-label="Buscar registros"
+          class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors"
+          type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button
+          aria-label="Notificaciones y alertas clínicas"
+          class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors"
+          type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span
+            class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen">
+    <div class="flex flex-col w-full pb-6 px-margin">
+      <!-- System Status Banner -->
+      <div
+        class="mt-space-md mb-space-lg p-space-md rounded-xl bg-surface-container-high shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-space-xs">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+            <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Configuración
+              Maestra</span>
+          </div>
+          <span
+            class="px-2 py-0.5 rounded-lg bg-surface-container-lowest text-on-surface-variant font-mono-clinical text-body-sm shadow-xs font-medium">
+            v3.2.0
+          </span>
+        </div>
+        <div>
+          <h2 class="font-headline-sm text-headline-sm text-on-surface">VetCare Core Admin</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Parametrización clínica, reglas de seguridad de
+            dosis y catálogos estandarizados.</p>
+        </div>
+        <!-- Live Sync Alert Pill -->
+        <div
+          class="mt-1 flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-lowest text-on-secondary-container">
+          <span class="material-symbols-outlined text-[18px] text-primary shrink-0">verified_user</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Sincronizado con Vademécum Oficial
+            2024</span>
+          <span class="ml-auto font-mono-clinical text-label-sm text-primary shrink-0">08:42 AM</span>
+        </div>
+      </div>
+      <!-- Search & Filter Area -->
+      <div class="mb-space-lg flex flex-col gap-space-sm">
+        <div class="relative w-full">
+          <span
+            class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+          <input
+            class="w-full h-11 pl-11 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md shadow-sm outline-none transition-all focus:bg-surface-container-low"
+            id="catalogSearch" placeholder="Buscar fármaco, vacuna, raza o código..." type="search" />
+          <button aria-label="Limpiar búsqueda"
+            class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant items-center justify-center"
+            id="clearSearch" type="button">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+          </button>
+        </div>
+        <!-- Quick Filter Category Chips -->
+        <div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+          <button
+            class="filter-chip px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap shadow-xs active:scale-95 transition-transform"
+            data-filter="all" type="button">
+            Todos (6)
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform"
+            data-filter="farmacos" type="button">
+            Farmacología
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform"
+            data-filter="clinica" type="button">
+            Clínica &amp; SOAP
+          </button>
+          <button
+            class="filter-chip px-3 py-1.5 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform"
+            data-filter="operaciones" type="button">
+            Operaciones
+          </button>
+        </div>
+      </div>
+      <!-- Master Catalogs Cards Feed -->
+      <div class="flex flex-col gap-space-md" id="catalogsList">
+        <!-- Card 1: Vademécum & Principios Activos -->
+        <article
+          class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all"
+          data-category="farmacos" data-title="vademécum principios activos fármacos dosis mg/kg">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary text-[22px]">medication</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Vademécum &amp; Principios
+                  Activos</h3>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">420 fármacos registrados</span>
+              </div>
+            </div>
+            <span
+              class="px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
+              Activo
+            </span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Control de dosis por especie (canina, felina, exóticos), validación de contraindicaciones cruzadas y
+            calculadora miligramo/kilo.
+          </p>
+          <!-- Key metrics badge pill -->
+          <div class="flex items-center gap-space-xs flex-wrap py-1">
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              12 Familias
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Alertas x Dosis: 100%
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">warning</span> 4 Restringidos
+            </span>
+          </div>
+          <div class="pt-space-xs mt-auto">
+            <button
+              class="w-full h-10 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-xs active:scale-[0.98] transition-transform"
+              type="button">
+              <span>Gestionar Vademécum</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+          </div>
+        </article>
+        <!-- Card 2: Catálogo de Vacunas y Biológicos -->
+        <article
+          class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all"
+          data-category="farmacos" data-title="vacunas biológicos wsava inmunización virus rabia parvovirus">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-secondary text-[22px]">vaccines</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Catálogo de Vacunas &amp;
+                  Biológicos</h3>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">38 biológicos homologados</span>
+              </div>
+            </div>
+            <span
+              class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
+              WSAVA 2024
+            </span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pautas oficiales y revacunación periódica, trazabilidad por lote/caducidad y laboratorios internacionales
+            autorizados.
+          </p>
+          <div class="flex items-center gap-space-xs flex-wrap py-1">
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Esenciales: 18
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Opcionales: 20
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              8 Labs
+            </span>
+          </div>
+          <div class="pt-space-xs mt-auto">
+            <button
+              class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+              type="button">
+              <span>Ver Vacunas</span>
+              <span class="material-symbols-outlined text-[18px]">visibility</span>
+            </button>
+          </div>
+        </article>
+        <!-- Card 3: Especies y Razas Estandarizadas -->
+        <article
+          class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all"
+          data-category="clinica"
+          data-title="especies razas caninos fci felinos tica exóticos aves morfología taxonomía">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-tertiary text-[22px]">pets</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Especies &amp; Razas
+                  Estandarizadas</h3>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">225+ perfiles taxonómicos</span>
+              </div>
+            </div>
+            <span
+              class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
+              FCI / TICA
+            </span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Caninos (180 razas oficiales FCI), Felinos (45 razas TICA), aves psitácidas y pequeños roedores con curvas
+            de peso estándar.
+          </p>
+          <div class="flex items-center gap-space-xs flex-wrap py-1">
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Caninos: 180
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Felinos: 45
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Exóticos: 16
+            </span>
+          </div>
+          <div class="pt-space-xs mt-auto">
+            <button
+              class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+              type="button">
+              <span>Configurar Taxonomía</span>
+              <span class="material-symbols-outlined text-[18px]">tune</span>
+            </button>
+          </div>
+        </article>
+        <!-- Card 4: Protocolos y Plantillas SOAP -->
+        <article
+          class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all"
+          data-category="clinica"
+          data-title="protocolos plantillas soap dermatología traumatología gastroenterología odontología historia clínica">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary text-[22px]">clinical_notes</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Protocolos &amp; Plantillas SOAP
+                </h3>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">15 plantillas maestras</span>
+              </div>
+            </div>
+            <span
+              class="px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
+              Auto-macros
+            </span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Estructura guiada para Dermatología, Traumatología, Gastroenterología y Odontología con chequeos
+            diagnósticos rápidos.
+          </p>
+          <div class="flex items-center gap-space-xs flex-wrap py-1">
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Dermatología
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Gastroenterología
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              +13 áreas
+            </span>
+          </div>
+          <div class="pt-space-xs mt-auto">
+            <button
+              class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+              type="button">
+              <span>Editar Plantillas</span>
+              <span class="material-symbols-outlined text-[18px]">edit_note</span>
+            </button>
+          </div>
+        </article>
+        <!-- Card 5: Cuerpo Médico y Disponibilidad -->
+        <article
+          class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all"
+          data-category="operaciones" data-title="cuerpo médico veterinarios disponibilidad quirófanos salas turnos">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-secondary text-[22px]">badge</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Cuerpo Médico &amp; Recursos</h3>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">6 médicos veterinarios</span>
+              </div>
+            </div>
+            <span
+              class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
+              Guardias Activas
+            </span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Asignación de salas de consulta (1 a 4), quirófano estéril, guardias de urgencia y configuración de turnos y
+            firmas digitales.
+          </p>
+          <div class="flex items-center gap-space-xs flex-wrap py-1">
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              4 Consultorios
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              2 Quirófanos
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Turnos 24/7
+            </span>
+          </div>
+          <div class="pt-space-xs mt-auto">
+            <button
+              class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+              type="button">
+              <span>Gestionar Personal</span>
+              <span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+            </button>
+          </div>
+        </article>
+        <!-- Card 6: Tarifas y Facturación de Actos Médicos -->
+        <article
+          class="catalog-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all"
+          data-category="operaciones" data-title="tarifas facturación precios honorarios quirúrgicos insumos consultas">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary text-[22px]">payments</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Tarifas &amp; Actos Médicos</h3>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">142 procedimientos</span>
+              </div>
+            </div>
+            <span
+              class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
+              IVA Incluido
+            </span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Baremo de honorarios quirúrgicos, consultas diurnas/nocturnas, microchips, certificados de viaje e insumos
+            clínicos descartables.
+          </p>
+          <div class="flex items-center gap-space-xs flex-wrap py-1">
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Moneda: EUR (€)
+            </span>
+            <span
+              class="px-2 py-1 rounded bg-surface-container-low font-mono-clinical text-body-sm text-on-surface-variant">
+              Recargos Nocturnos
+            </span>
+          </div>
+          <div class="pt-space-xs mt-auto">
+            <button
+              class="w-full h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+              type="button">
+              <span>Actualizar Tarifas</span>
+              <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+            </button>
+          </div>
+        </article>
+      </div>
+      <!-- Empty State for Search (Hidden by default) -->
+      <div class="hidden flex-col items-center justify-center py-10 px-4 text-center" id="noResults">
+        <div
+          class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center mb-space-sm text-on-surface-variant">
+          <span class="material-symbols-outlined text-[28px]">search_off</span>
+        </div>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface">No se encontraron catálogos</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xs">
+          No hay parámetros clínicos que coincidan con los términos ingresados.
+        </p>
+      </div>
+      <!-- Primary Bottom Actions & Backup -->
+      <div class="mt-space-xl flex flex-col gap-space-sm">
+        <button
+          class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-md text-headline-sm font-semibold flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99] transition-transform"
+          id="btnNewEntry" type="button">
+          <span class="material-symbols-outlined text-[20px]">add_circle</span>
+          <span>+ Añadir Nuevo Registro a Catálogo</span>
+        </button>
+        <div class="grid grid-cols-2 gap-space-sm">
+          <button
+            class="h-11 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform"
+            id="btnExportJson" type="button">
+            <span class="material-symbols-outlined text-primary text-[18px]">download</span>
+            <span>Backup JSON</span>
+          </button>
+          <button
+            class="h-11 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform"
+            id="btnExportCsv" type="button">
+            <span class="material-symbols-outlined text-secondary text-[18px]">table_view</span>
+            <span>Backup CSV</span>
+          </button>
+        </div>
+        <!-- Security audit note -->
+        <div
+          class="mt-space-xs p-space-sm rounded-lg bg-surface-container-low flex items-center justify-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+          <span class="material-symbols-outlined text-[16px]">lock</span>
+          <span>Acceso restringido a Administradores y Directores Médicos</span>
+        </div>
+      </div>
+      <!-- Interactive Feedback Toast (Triggered dynamically) -->
+      <div
+        class="fixed bottom-20 left-4 right-4 z-50 transform translate-y-16 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl"
+        id="toastMessage">
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-inverse-primary text-[20px]" id="toastIcon">check_circle</span>
+          <span class="font-body-sm text-body-sm font-medium" id="toastText">Operación realizada con éxito</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const searchInput = document.getElementById('catalogSearch');
+        const clearBtn = document.getElementById('clearSearch');
+        const cards = document.querySelectorAll('.catalog-card');
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const noResults = document.getElementById('noResults');
+        const toast = document.getElementById('toastMessage');
+        const toastText = document.getElementById('toastText');
+        const toastIcon = document.getElementById('toastIcon');
 
-    function showToast(message, iconName = 'check_circle') {
-      toastText.textContent = message;
-      toastIcon.textContent = iconName;
-      toast.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
-      toast.classList.add('translate-y-0', 'opacity-100');
+        let currentFilter = 'all';
+        let currentQuery = '';
 
-      setTimeout(() => {
-        toast.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
-        toast.classList.remove('translate-y-0', 'opacity-100');
-      }, 2600);
-    }
+        function showToast(message, iconName = 'check_circle') {
+          toastText.textContent = message;
+          toastIcon.textContent = iconName;
+          toast.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
 
-    function applyFilterAndSearch() {
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const searchCorpus = (card.getAttribute('data-title') || '').toLowerCase();
-        
-        const matchesCategory = currentFilter === 'all' || category === currentFilter;
-        const matchesQuery = currentQuery === '' || searchCorpus.includes(currentQuery);
-
-        if (matchesCategory && matchesQuery) {
-          card.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('hidden');
+          setTimeout(() => {
+            toast.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+          }, 2600);
         }
-      });
 
-      if (visibleCount === 0) {
-        noResults.classList.remove('hidden');
-        noResults.classList.add('flex');
-      } else {
-        noResults.classList.add('hidden');
-        noResults.classList.remove('flex');
-      }
-    }
+        function applyFilterAndSearch() {
+          let visibleCount = 0;
 
-    // Search event
-    searchInput.addEventListener('input', (e) => {
-      currentQuery = e.target.value.toLowerCase().trim();
-      if (currentQuery.length > 0) {
-        clearBtn.classList.remove('hidden');
-        clearBtn.classList.add('flex');
-      } else {
-        clearBtn.classList.add('hidden');
-        clearBtn.classList.remove('flex');
-      }
-      applyFilterAndSearch();
-    });
+          cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            const searchCorpus = (card.getAttribute('data-title') || '').toLowerCase();
 
-    clearBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      currentQuery = '';
-      clearBtn.classList.add('hidden');
-      clearBtn.classList.remove('flex');
-      applyFilterAndSearch();
-      searchInput.focus();
-    });
+            const matchesCategory = currentFilter === 'all' || category === currentFilter;
+            const matchesQuery = currentQuery === '' || searchCorpus.includes(currentQuery);
 
-    // Category tabs filtering
-    filterChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        filterChips.forEach(c => {
-          c.classList.remove('bg-primary', 'text-on-primary', 'shadow-xs');
-          c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+            if (matchesCategory && matchesQuery) {
+              card.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+            noResults.classList.add('flex');
+          } else {
+            noResults.classList.add('hidden');
+            noResults.classList.remove('flex');
+          }
+        }
+
+        // Search event
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.toLowerCase().trim();
+          if (currentQuery.length > 0) {
+            clearBtn.classList.remove('hidden');
+            clearBtn.classList.add('flex');
+          } else {
+            clearBtn.classList.add('hidden');
+            clearBtn.classList.remove('flex');
+          }
+          applyFilterAndSearch();
         });
-        chip.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
-        chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
 
-        currentFilter = chip.getAttribute('data-filter');
-        applyFilterAndSearch();
-      });
-    });
+        clearBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          currentQuery = '';
+          clearBtn.classList.add('hidden');
+          clearBtn.classList.remove('flex');
+          applyFilterAndSearch();
+          searchInput.focus();
+        });
 
-    // Action button listeners
-    document.getElementById('btnNewEntry')?.addEventListener('click', () => {
-      showToast('Abriendo asistente de registro clínico...', 'add_task');
-    });
+        // Category tabs filtering
+        filterChips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            filterChips.forEach(c => {
+              c.classList.remove('bg-primary', 'text-on-primary', 'shadow-xs');
+              c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+            });
+            chip.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+            chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
 
-    document.getElementById('btnExportJson')?.addEventListener('click', () => {
-      showToast('Copia de seguridad JSON generada (v3.2)', 'data_object');
-    });
+            currentFilter = chip.getAttribute('data-filter');
+            applyFilterAndSearch();
+          });
+        });
 
-    document.getElementById('btnExportCsv')?.addEventListener('click', () => {
-      showToast('Exportando 6 catálogos a hojas CSV...', 'table_view');
-    });
-  })();
-</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(13,28,46,0.05)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="mascotas" href="#"><span class="material-symbols-outlined text-[20px]">pets</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Mascotas</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="historial-clinico" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Historial</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="vacunacion" href="#"><span class="material-symbols-outlined text-[20px]">vaccines</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Vacunas</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="tratamientos" href="#"><span class="material-symbols-outlined text-[20px]">medication</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Tratamiento</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="citas" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Citas</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogos" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Admin</span></a></div></nav></body></html>
+        // Action button listeners
+        document.getElementById('btnNewEntry')?.addEventListener('click', () => {
+          showToast('Abriendo asistente de registro clínico...', 'add_task');
+        });
+
+        document.getElementById('btnExportJson')?.addEventListener('click', () => {
+          showToast('Copia de seguridad JSON generada (v3.2)', 'data_object');
+        });
+
+        document.getElementById('btnExportCsv')?.addEventListener('click', () => {
+          showToast('Exportando 6 catálogos a hojas CSV...', 'table_view');
+        });
+      })();
+    </script>
+  </main>
+  <nav
+    class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(13,28,46,0.05)]"
+    data-active-classes="text-primary font-semibold">
+    <div class="h-16 px-space-xs flex items-center justify-around"><a
+        class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors"
+        data-path="mascotas" href="#"><span class="material-symbols-outlined text-[20px]">pets</span><span
+          class="font-label-sm text-label-sm mt-0.5 tracking-tight">Mascotas</span></a><a
+        class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors"
+        data-path="historial-clinico" href="#"><span
+          class="material-symbols-outlined text-[20px]">clinical_notes</span><span
+          class="font-label-sm text-label-sm mt-0.5 tracking-tight">Historial</span></a><a
+        class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors"
+        data-path="vacunacion" href="#"><span class="material-symbols-outlined text-[20px]">vaccines</span><span
+          class="font-label-sm text-label-sm mt-0.5 tracking-tight">Vacunas</span></a><a
+        class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors"
+        data-path="tratamientos" href="#"><span class="material-symbols-outlined text-[20px]">medication</span><span
+          class="font-label-sm text-label-sm mt-0.5 tracking-tight">Tratamiento</span></a><a
+        class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors"
+        data-path="citas" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span
+          class="font-label-sm text-label-sm mt-0.5 tracking-tight">Citas</span></a><a
+        class="flex flex-col items-center justify-center w-14 h-12 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors"
+        data-path="catalogos" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span
+          class="font-label-sm text-label-sm mt-0.5 tracking-tight">Admin</span></a></div>
+  </nav>
+</body>
+
+</html>
