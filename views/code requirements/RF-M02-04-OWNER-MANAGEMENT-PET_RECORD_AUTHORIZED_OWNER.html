@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-highest": "#d3e4fe",
+        "tertiary-container": "#004a31",
+        "primary-fixed-dim": "#b6c4ff",
+        "on-tertiary-fixed-variant": "#005236",
+        "surface-container-low": "#eff4ff",
+        "surface-variant": "#d3e4fe",
+        "on-error-container": "#93000a",
+        "secondary": "#0051d5",
+        "tertiary-fixed-dim": "#4edea3",
+        "surface": "#f8f9ff",
+        "on-primary-fixed-variant": "#264191",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed": "#00174b",
+        "surface-container": "#e5eeff",
+        "on-secondary-container": "#fefcff",
+        "inverse-surface": "#213145",
+        "surface-dim": "#cbdbf5",
+        "on-error": "#ffffff",
+        "background": "#f8f9ff",
+        "on-surface-variant": "#444651",
+        "on-secondary-fixed-variant": "#003ea8",
+        "error-container": "#ffdad6",
+        "primary": "#00236f",
+        "outline": "#757682",
+        "on-surface": "#0b1c30",
+        "tertiary": "#00311f",
+        "primary-container": "#1e3a8a",
+        "inverse-on-surface": "#eaf1ff",
+        "secondary-container": "#316bf3",
+        "surface-bright": "#f8f9ff",
+        "primary-fixed": "#dce1ff",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#4059aa",
+        "on-primary-container": "#90a8ff",
+        "outline-variant": "#c5c5d3",
+        "surface-container-high": "#dce9ff",
+        "secondary-fixed-dim": "#b4c5ff",
+        "on-primary-fixed": "#00164e",
+        "secondary-fixed": "#dbe1ff",
+        "inverse-primary": "#b6c4ff",
+        "on-tertiary-fixed": "#002113",
+        "on-tertiary-container": "#27c38a",
+        "on-secondary": "#ffffff",
+        "tertiary-fixed": "#6ffbbe",
+        "on-primary": "#ffffff",
+        "on-background": "#0b1c30",
+        "error": "#ba1a1a"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "margin": "1rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "margin-tablet": "1.5rem",
+        "gutter": "1rem",
+        "space-xl": "2rem",
+        "gutter-desktop": "1.5rem",
+        "space-sm": "0.5rem",
+        "margin-desktop": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "headline-md": ["Inter"],
+        "label-lg": ["Inter"],
+        "label-sm": ["Inter"],
+        "display": ["Inter"],
+        "body-sm": ["Inter"],
+        "body-md": ["Inter"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"]
+      },
+      "fontSize": {
+        "headline-sm": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Regresar" class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate max-w-[240px]">Ficha De Mascota Y Propietario Autorizado</h1></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary/20"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface flex-1 min-h-screen"><div class="flex flex-col w-full px-space-md py-space-md space-y-space-md">
+<!-- 1. Cabecera Contextual de la Mascota Seleccionada -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up photography of a friendly golden retriever dog sitting calmly with warm amber eyes and golden coat in soft veterinary clinic natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEX5aV9jn5YQkU6iLBTalYaG8fmjMCPhZqnloMAdLScQlTKDQLsuGSotC1sU-KPrZslPnwE65N_vuZm2dr7o6vCNxRZ0Q7xpy2mv-p735fZkc9GX0bMQ-MKgncTBQKSVNjv9-_IRH4gJaJRaNosH8Zz0k0AjUlH5z-xoYScJBqqUIU5KQwXXbA9wbDYJTselsfPw8MOnANdFZkD1lGVEodIn4QPcQu0TBcxEtYPDg"/>
+<div class="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-tertiary-fixed border-2 border-surface-container-lowest"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Toby</h2>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm uppercase bg-tertiary-container text-on-tertiary-container">
+              Activo
+            </span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">pets</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">
+          Canino • Golden Retriever • 4 años
+        </p>
+<div class="flex items-center gap-space-xs mt-1.5 flex-wrap">
+<div class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[13px] text-primary">memory</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wide">ES-98109810239</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px] text-primary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-primary-container uppercase">Titularidad Verificada</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Propietario Principal Autorizado (Titular Legal) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-4 bg-primary-container rounded-full"></div>
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Titular Legal Vigente</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm uppercase bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+        REIAC / RIAC
+      </span>
+</div>
+<!-- Perfil del Titular -->
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-sm rounded-lg">
+<div class="relative w-12 h-12 rounded-full overflow-hidden bg-primary-container flex items-center justify-center text-on-primary flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Natural portrait of a smiling Hispanic adult man with short dark hair in neat polo shirt looking friendly against neutral studio backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCmIUlcLggIYqJiM5UIrqQiMCOCNWt1NM02Fyn5uTWZ3WPG8S2gZrv3pakEzAkvt3Y5TGNl05iDFX1rPDvPt_f22voWyrvDoyTTmg2AsC7tQZDF64iK3owVAbuTJ2jCHZuD0YkG5ZNMR7j3EvBlP5udm_52ZzqsER0wSAeIgZlrgB1tPXUPgbPfzZbs4eLekCGWBnJ6fZ_k-o7VEiMJS_DAoGux4-aEEyeJhX1338"/>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Carlos Gómez Fernández</p>
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">DNI: 47382910-K</span>
+<span class="font-body-sm text-body-sm text-secondary-container bg-surface-container px-1.5 py-0.2 rounded text-[11px]">Validado</span>
+</div>
+</div>
+</div>
+<!-- Canales de Contacto Rápidos -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between bg-surface-container-low px-space-sm py-2.5 rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Teléfono Principal</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate block">+34 612 345 678</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<a aria-label="Llamar a propietario" class="w-9 h-9 rounded-md bg-surface-container-highest flex items-center justify-center text-primary hover:bg-surface-variant active:scale-95 transition-transform" href="tel:+34612345678">
+<span class="material-symbols-outlined text-[18px]">phone_in_talk</span>
+</a>
+<a aria-label="Abrir WhatsApp con propietario" class="w-9 h-9 rounded-md bg-tertiary text-on-tertiary flex items-center justify-center hover:bg-tertiary-container active:scale-95 transition-transform" href="https://wa.me/34612345678">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<div class="flex items-center gap-2.5 bg-surface-container-low px-space-sm py-2 rounded-lg">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<div class="min-w-0 flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Correo Electrónico</span>
+<span class="font-body-md text-body-md text-on-surface truncate block">carlos.gomez@email.com</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 bg-surface-container-low px-space-sm py-2 rounded-lg">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">home_pin</span>
+</div>
+<div class="min-w-0 flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Domicilio Fiscal Registrado</span>
+<span class="font-body-md text-body-md text-on-surface truncate block">Calle Mayor 45, 3ºB, Madrid</span>
+</div>
+</div>
+</div>
+<!-- Marco de Permisos Médicos -->
+<div class="bg-surface-container p-space-sm rounded-lg space-y-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Capacidad Jurídica y Consentimiento</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Autorizado pleno para toma de decisiones médicas críticas, procedimientos quirúrgicos, protocolos de sedación, hospitalización y retirada oficial de historial clínico.
+      </p>
+</div>
+<!-- Botón Secundario Editar -->
+<button class="w-full h-11 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low active:bg-surface-container rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">edit_note</span>
+      Editar Datos de Contacto
+    </button>
+</div>
+<!-- 3. Acción Principal Destacada: Transferencia de Titularidad -->
+<div class="bg-primary text-on-primary rounded-xl p-space-md shadow-md space-y-space-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary-container/30 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">policy</span>
+        Protocolo Legal RIAC
+      </div>
+<span class="material-symbols-outlined text-primary-fixed-dim text-[24px]">published_with_changes</span>
+</div>
+<div class="relative z-10 space-y-1">
+<h3 class="font-headline-sm text-headline-sm text-on-primary">Cesión o Modificación de Custodia</h3>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">
+        Inicia el expediente oficial con firma biométrica y comunicación telemática a la base de datos de identificación animal.
+      </p>
+</div>
+<button class="w-full h-12 bg-secondary-container hover:bg-secondary active:scale-[0.99] text-on-secondary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all relative z-10 shadow">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+      Transferir o Vincular Nuevo Propietario
+    </button>
+</div>
+<!-- 4. Cotutores / Personas Autorizadas Secundarias -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-4 bg-secondary-container rounded-full"></div>
+<h3 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Cotutores y Personas Autorizadas</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">1 Activo</span>
+</div>
+<!-- Tarjeta Cotutor -->
+<div class="bg-surface-container-low rounded-lg p-space-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+<div class="min-w-0">
+<p class="font-headline-sm text-headline-sm text-on-surface truncate">Marta Silva Ramos</p>
+<span class="font-label-sm text-label-sm text-secondary block">Cónyuge • Consulta y Recogida</span>
+</div>
+</div>
+<button aria-label="Opciones del cotutor" class="p-1 rounded-full text-outline hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">call</span>
+<span class="font-body-sm text-body-sm">+34 689 112 233</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full">
+          Acceso Ordinario
+        </span>
+</div>
+</div>
+<!-- Botón Añadir Cotutor -->
+<button class="w-full py-2.5 bg-surface-container-low hover:bg-surface-container active:bg-surface-container-high text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+      + Añadir Persona Autorizada
+    </button>
+</div>
+<!-- 5. Historial de Propietarios y Trazabilidad de Tenencia -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-4 bg-outline rounded-full"></div>
+<h3 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Trazabilidad Registral Inmutable</h3>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">lock_clock</span>
+</div>
+<!-- Timeline Histórico -->
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Titular 2021-2023 -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase">2021 — 2023 • Adopción</span>
+<span class="font-body-sm text-body-sm text-outline">14/03/2023</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Elena Vega Sánchez</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Motivo: Formalización en <span class="text-on-surface font-medium">Refugio Esperanza</span>
+</p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="material-symbols-outlined text-[14px] text-outline">description</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wide">Expediente #CES-2023-882</span>
+</div>
+</div>
+</div>
+<!-- Origen Criadero 2020-2021 -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase">2020 — 2021 • Origen / Criadero</span>
+<span class="font-body-sm text-body-sm text-outline">08/11/2020</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Criadero Cantabria Pets</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Inscripción inicial en libro de camada oficial y primera implantación de microchip transpondedor.
+          </p>
+</div>
+</div>
+</div>
+<!-- Nota de Cumplimiento Legal -->
+<div class="flex items-start gap-2.5 bg-surface-container-high/60 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        El historial de titularidad anterior se conserva de forma permanente en cumplimiento de la Ley de Bienestar Animal y las normativas europeas de trazabilidad biológica mediante microchip homologado.
+      </p>
+</div>
+</div>
+</div></main></body></html>
